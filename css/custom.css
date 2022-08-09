@@ -79,6 +79,10 @@ img {
   margin-left: 0;
 }
 
+.right {
+  margin-right: 0;
+}
+
 .lit {
   font-size: 1.5rem;
   font-weight: 300;
