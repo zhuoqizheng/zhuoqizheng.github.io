@@ -17,7 +17,7 @@
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: none;
-  --global-font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+  --global-font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 body {
   background-color: var(--bgColor);
