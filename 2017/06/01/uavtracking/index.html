@@ -81,24 +81,24 @@
     <header>
   <ul class="nav">
     <li class="nav-child">
-      <a href="/">Home</a>
+      <a href="/">Home 主頁</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Projects">Projects</a>
+      <a href="/categories/Projects">Projects 項目</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Others">Others</a>
+      <a href="/categories/Others">Others 其他</a>
     </li>
     <li class="nav-child">
-      <a href="/about">About</a>
+      <a href="/about">About 關於</a>
     </li>
   </ul>
   <div class="theme-switcher" onclick="switchTheme()">☀️</div>
   <script>
     if (isNight === 'false') {
-      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
-    } else {
       document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
     }
   </script>
 </header>
@@ -142,16 +142,18 @@
   <div class="article">
   
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7dc4etU0IHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <p>In this project, an autonomous vision-based tracking system is presented to track a maneuvering target for a rotorcraft unmanned aerial vehicle (UAV) with an onboard gimbal camera.</p>
 <span id="more"></span>
-<p>The contributions of the project are summarized as follow: </p>
+<p>The contributions of the project are summarized as follow:</p>
 <ol>
-<li><p>In the case of target occlusions or loss, the status of the target, i.e. loss or not, is firstly detected based on the KCF tracker, and a computationally efficient redetection method is presented. With this scheme, the UAV can track the target again when it re-appears.</p>
+<li>
+<p>In the case of target occlusions or loss, the status of the target, i.e. loss or not, is firstly detected based on the KCF tracker, and a computationally efficient redetection method is presented. With this scheme, the UAV can track the target again when it re-appears.</p>
 </li>
-<li><p>An Interacting Multi-Model Extended Kalman Filtering (IMM-EKF) based target state estimator is presented to estimate states of the maneuvering target, and a nonlinear feedback control law is presented to stably track moving targets.</p>
+<li>
+<p>An Interacting Multi-Model Extended Kalman Filtering (IMM-EKF) based target state estimator is presented to estimate states of the maneuvering target, and a nonlinear feedback control law is presented to stably track moving targets.</p>
 </li>
-<li><p>A computationally efficient framework implemented on onboard TK1 computer is presented for ground target tracking in unstructured environments.</p>
+<li>
+<p>A computationally efficient framework implemented on onboard TK1 computer is presented for ground target tracking in unstructured environments.</p>
 </li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8205986">This project have be published in IROS 2017.</a></p>
