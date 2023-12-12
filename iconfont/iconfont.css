@@ -37,3 +37,10 @@
   content: "\e60c";
 }
 
+.icon-linkedin-box:before {
+  content: "\e8da";
+}
+.icon-linkedin:before {
+  content: "\e8db";
+}
+
