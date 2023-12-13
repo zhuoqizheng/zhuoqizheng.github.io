@@ -221,6 +221,13 @@
   </url>
   
   <url>
+    <loc>http://zhuoqi.me/tags/Guitar/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zhuoqi.me/tags/SLAM/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -236,13 +243,6 @@
   
   <url>
     <loc>http://zhuoqi.me/tags/Robotics/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zhuoqi.me/tags/Guitar/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
