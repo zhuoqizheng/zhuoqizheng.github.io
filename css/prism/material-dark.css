@@ -7,15 +7,7 @@
   word-wrap: normal;
   color: #eee;
   background: #2f2f2f;
-  font-family:-apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  Oxygen-Sans,
-  Ubuntu,
-  Cantarell,
-  "Helvetica Neue",
-  sans-serif;
+  font-family: Roboto Mono, monospace;
   font-size: 1em;
   line-height: 1.5em;
 

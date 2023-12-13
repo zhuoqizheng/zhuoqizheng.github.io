@@ -32,8 +32,12 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?famlily=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500&display=swap.css">
+
+  
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
 
@@ -42,6 +46,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
 <script>
   function setIsNight(isNight) {
     localStorage.setItem('isNight', isNight)
@@ -129,7 +136,7 @@
   </script>
   
   <div class="article-header">
-    <h1 class="article-title">Joint Prediction of Pedestrians and Occupancy Grid Map</h1>
+    <h2 class="article-title">Joint Prediction of Pedestrians and Occupancy Grid Map</h2>
     <div class="article-details">
       <div class="article-post-date"><span>Posted at </span> 2023-06-01</div>
       <div class="article-tags">
@@ -141,7 +148,10 @@
   </div>
   <div class="article">
   
-  <p>Predictions about maps can aid in the computation of information gain in autonomous exploration tasks, thereby improving exploration efficiency. Various studies have highlighted the favourable influence of precise map prediction on the effectiveness of autonomous exploration tasks.</p>
+  <div align="center">
+<img src="/image/map_prediction.jpg" width=75%>
+</div>
+<p>Predictions about maps can aid in the computation of information gain in autonomous exploration tasks, thereby improving exploration efficiency. Various studies have highlighted the favourable influence of precise map prediction on the effectiveness of autonomous exploration tasks.</p>
 <p>This project aims to develop a comprehensive framework that combines map prediction and pedestrian tracking, focusing on the interaction between pedestrians and the environment to improve performance in predicting both map and pedestrian behaviours. The joint estimation process follows an iterative approach. The integration of an artificial potential field guides pedestrian motion based on the predicted map, thus improving the accuracy of pedestrian tracking. Conversely, the predicted crowd field, derived from pedestrian tracking and prediction, refines the map prediction process by utilizing image segmentation algorithms.</p>
 <p>One key aspect of our approach is the inclusion of a feedback loop in the joint estimation system, allowing for continuous refinement and improvement of both the map prediction and pedestrian tracking components. Through iterative updates and enhancements based on the reciprocal relationship between pedestrians and the environment, our algorithm achieves increased accuracy in predicting various aspects, including the shape and size of the map and the trajectories of pedestrians.</p>
 <p>The incorporation of map prediction and pedestrian tracking in our joint estimation framework signifies a substantial breakthrough in autonomous robot exploration. By utilizing the interplay between pedestrians and the environment, our algorithm exhibits favourable outcomes in terms of enhanced prediction accuracy and robustness. This framework has the potential to facilitate more efficient and effective exploration in intricate environments, thus advancing the capabilities of autonomous mobile robots in diverse real-world scenarios.</p>
@@ -162,8 +172,8 @@
   <div class="footer-info">
     <!-- <a class="footer-i" href=""><i class="iconfont icon-wechat"></i></a> -->
     <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng"><i class="iconfont icon-github-fill"></i></a>
-    <!-- <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin"></i></a> -->
-    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin-fill"></i></a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail-fill"></i></a>
   </div>
 </footer>
   </div>

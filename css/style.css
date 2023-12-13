@@ -10,14 +10,14 @@
   --bgColor: #fff;
   --fontColor: #000;
   --bgColor2: #fafafa;
-  --spColor: #3999ff;
+  --spColor: #f59aa9;
   --tbborder: #ebebeb;
   --codebgColor: rgba(0,0,0,0.02);
 }
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: none;
-  --global-font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  --global-font-family: -apple-system, 'Noto Serif HK', BlinkMacSystemFont, sans-serif;
 }
 body {
   background-color: var(--bgColor);

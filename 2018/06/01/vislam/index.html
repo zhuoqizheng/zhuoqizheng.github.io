@@ -32,8 +32,12 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?famlily=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500&display=swap.css">
+
+  
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
 
@@ -42,6 +46,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
 <script>
   function setIsNight(isNight) {
     localStorage.setItem('isNight', isNight)
@@ -113,23 +120,26 @@
     <div class="toc-toggle">
       <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
     </div>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview-3"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method"><span class="toc-number">2.</span> <span class="toc-text">Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Result"><span class="toc-number">3.</span> <span class="toc-text">Result</span></a></li></ol>
   </div>
   
   <script>
     var show = false
     function toggleShow() {
       if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
         document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
       } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
         document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
       }
       show = !show
     }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
   </script>
   
   <div class="article-header">
-    <h1 class="article-title">Real-time Dense Visual Inertial SLAM System</h1>
+    <h2 class="article-title">Real-time Dense Visual Inertial SLAM System</h2>
     <div class="article-details">
       <div class="article-post-date"><span>Posted at </span> 2018-06-01</div>
       <div class="article-tags">
@@ -141,12 +151,20 @@
   </div>
   <div class="article">
   
-  <p><img src="/image/densevio_result.png" alt="result"></p>
+  <div align="center">
+<img src="/image/densevio_result.png" width=75%>
+</div>
+<h3 id="Overview-3">Overview</h3>
 <p>Dense mapping is always the desire of simultaneous localization and mapping (SLAM), especially for the applications that require fast and dense scene information. Visual-inertial odometry (VIO) is a light-weight and effective solution to fast self-localization. However, VIO-based SLAM systems have difficulty in providing dense mapping results due to the spatial sparsity and temporal instability of the VIO depth estimations. Although there have been great efforts on real-time mapping and depth recovery from sparse measurements, the existing solutions for VIO-based SLAM still fail to preserve sufficient geometry details in their results.</p>
-<span id="more"></span>
-<p><img src="/image/densevio_system.gif" alt="The proposed processing pipeline for depth recovery."></p>
+<div align="center">
+<img src="/image/densevio_system.gif" width=75%>
+</div>
+<h3 id="Method">Method</h3>
 <p>In this paper, we propose to embed depth recovery into VIO-based SLAM for real-time dense mapping. In the proposed method, we present a subspace-based stabilization scheme to maintain the temporal consistency and design a hierarchical pipeline for edge-preserving depth interpolation to reduce the computational burden.</p>
-<p><img src="/image/densevio_result_1.gif" alt="The comparisons between dense mapping results."></p>
+<div align="center">
+<img src="/image/densevio_result_1.gif" width=75%>
+</div>
+<h3 id="Result">Result</h3>
 <p>Numerous experiments demonstrate that our method can achieve an accuracy improvement of up to 49.1 cm compared to state-of-the-art learning-based methods for depth recovery and reconstruct sufficient geometric details in dense mapping when only 0.07% depth samples are available. Since a simple CPU implementation of our method already runs at 10-20 fps, we believe our method is very favorable for practical SLAM systems with critical computational requirements.</p>
 <p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8593917">This project have be published in IROS 2018.</a></p>
 
@@ -166,8 +184,8 @@
   <div class="footer-info">
     <!-- <a class="footer-i" href=""><i class="iconfont icon-wechat"></i></a> -->
     <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng"><i class="iconfont icon-github-fill"></i></a>
-    <!-- <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin"></i></a> -->
-    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin-fill"></i></a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail-fill"></i></a>
   </div>
 </footer>
   </div>

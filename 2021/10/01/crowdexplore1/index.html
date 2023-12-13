@@ -32,8 +32,12 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?famlily=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500&display=swap.css">
+
+  
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
 
@@ -42,6 +46,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
 <script>
   function setIsNight(isNight) {
     localStorage.setItem('isNight', isNight)
@@ -113,23 +120,26 @@
     <div class="toc-toggle">
       <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
     </div>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploration-Planner"><span class="toc-number">2.</span> <span class="toc-text">Exploration Planner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Architecture-of-the-RL-based-Navigation-Neural-Network"><span class="toc-number">3.</span> <span class="toc-text">The Architecture of the RL-based Navigation Neural Network.</span></a></li></ol>
   </div>
   
   <script>
     var show = false
     function toggleShow() {
       if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
         document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
       } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
         document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
       }
       show = !show
     }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
   </script>
   
   <div class="article-header">
-    <h1 class="article-title">A Hierarchical Approach for Mobile Robot Exploration in Pedestrian Crowd</h1>
+    <h2 class="article-title">A Hierarchical Approach for Mobile Robot Exploration in Pedestrian Crowd</h2>
     <div class="article-details">
       <div class="article-post-date"><span>Posted at </span> 2021-10-01</div>
       <div class="article-tags">
@@ -141,8 +151,20 @@
   </div>
   <div class="article">
   
-  <p><img src="/image/explore1_sys.png" alt="Exploration System"><br>
-Autonomous exploration is a fundamental task for mobile robots. However, a major limitation is that in practical applications, robots usually face dynamic obstacles such as pedestrian crowds. These dynamic objects create significant challenges for both collision-free navigation and accurate localization/mapping, which can compromise the safety and exploration performance of the robot. In this work, a hierarchical approach is proposed for both effective exploration and collision-free navigation in crowded environments. The central idea of our approach is to combine local and global information to ensure the safety and efficiency of the exploration planner. Besides, our planning method utilizes a reinforcement learning (RL)-based obstacle avoidance algorithm that allows the robot to safely follow the exploration planner’s path through the pedestrian crowd. The proposed system is thoroughly evaluated in simulation environments, and the results show that it outperforms existing methods in terms of not only the exploration efficiency but also the localization and mapping accuracy.</p>
+  <h3 id="Overview">Overview</h3>
+<p>Autonomous exploration is a fundamental task for mobile robots. However, a major limitation is that in practical applications, robots usually face dynamic obstacles such as pedestrian crowds. These dynamic objects create significant challenges for both collision-free navigation and accurate localization/mapping, which can compromise the safety and exploration performance of the robot. In this work, a hierarchical approach is proposed for both effective exploration and collision-free navigation in crowded environments. The central idea of our approach is to combine local and global information to ensure the safety and efficiency of the exploration planner. Besides, our planning method utilizes a reinforcement learning (RL)-based obstacle avoidance algorithm that allows the robot to safely follow the exploration planner’s path through the pedestrian crowd. The proposed system is thoroughly evaluated in simulation environments, and the results show that it outperforms existing methods in terms of not only the exploration efficiency but also the localization and mapping accuracy.</p>
+<h3 id="Exploration-Planner">Exploration Planner</h3>
+<div align="center">
+<img src="/image/explore1_sys.png" width=75%>
+</div>
+<p>A hierarchical autonomous exploration planner is designed to determine an exploration tour with a Travel-Salesman-Problem (TSP)-based planner on the global map and to refine the exploration path with the Next-Best-View (NBV)-based planner on local maps and, respectively. Left: the global planner provides an order to visit different unexplored regions (blue points and lines) and determines a rough global goal for the next-step exploration; Right: the local planner selects a precise viewpoint (orange point) as the intermediate goal and the RL-based motion planner determines velocity command (red arrow) to achieve the intermediate goal.</p>
+<h3 id="The-Architecture-of-the-RL-based-Navigation-Neural-Network">The Architecture of the RL-based Navigation Neural Network.</h3>
+<div align="center">
+<img src="/image/explore_rl_network.jpg" width=75%>
+</div>
+<p>Based on the optimized hierarchical exploration strategy, an RL-based collision avoidance algorithm is embedded to ensure the robot executes the navigation task safely and efficiently through the crowd. Our collision avoidance controller also implicitly models the crowd flow distribution locally around the robot to minimize the inter-interruption between the robot and the crowd, which not only improves the exploration efficiency but also increases the success rate and accuracy in both mapping and localization.</p>
+<p>The network takes the laser scans $$\mathbf{o}<em>{scan}$$, the relative position $$\mathbf{o}</em>{goal}$$ and the robot’s current velocity $$\mathbf{o}<em>{vel}$$ as inputs. And the action $$\mathbf{a}=[v,\omega]$$ is sampled from a Gaussian distribution constructed by the mean $$\mathbf{v}</em>{mean}$$ with a log standard deviation vector $$\mathbf{v}_{logstd}$$.</p>
+<p>The proposed system is thoroughly evaluated in an extensive simulation experiment, where the impact of different planning and navigation methods for navigation in crowds is investigated.</p>
 
 </div>
   <script>
@@ -160,8 +182,8 @@ Autonomous exploration is a fundamental task for mobile robots. However, a major
   <div class="footer-info">
     <!-- <a class="footer-i" href=""><i class="iconfont icon-wechat"></i></a> -->
     <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng"><i class="iconfont icon-github-fill"></i></a>
-    <!-- <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin"></i></a> -->
-    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin-fill"></i></a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail-fill"></i></a>
   </div>
 </footer>
   </div>
