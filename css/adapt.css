@@ -6,8 +6,10 @@
   footer {
     flex-direction: column;
     align-items: center;
+    bottom: 0;
   }
   .footer-i {
     margin: 0 0.5rem;
+    bottom: 0;
   }
 }
