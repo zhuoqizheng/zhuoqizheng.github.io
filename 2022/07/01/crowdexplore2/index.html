@@ -5,7 +5,7 @@
   
   <title>
     
-    Efficient Exploration in Crowds by Coupling Navigation Controller and Exploration Planner
+    Ef­fi­cient ex­plo­ration in crowds by cou­pling nav­i­ga­tion con­troller and ex­plo­ration Plan­ner
     
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,12 +32,8 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
-  
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500&family=Source+Sans+3&display=swap.css">
-
-  
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
 
@@ -46,9 +42,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
-
-
-
 <script>
   function setIsNight(isNight) {
     localStorage.setItem('isNight', isNight)
@@ -86,36 +79,33 @@
 <body>
   <div class="show-area">
     <header>
+  
+  <h2 class="blog-title">Zhuoqi&#39;s Farm</h2>
+
   <ul class="nav">
     <li class="nav-child">
-      <a href="/">Home 主頁</a>
+      <a href="/">Home</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Projects">Projects 項目</a>
+      <a href="/categories/Projects">Projects</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Others">Others 其他</a>
+      <a href="/archive">Archive</a>
     </li>
     <li class="nav-child">
-      <a href="/about">About 關於</a>
+      <a href="/about">About</a>
     </li>
   </ul>
-  <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
   <script>
     if (isNight === 'false') {
-      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
-    } else {
       document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
     }
-  </script>
+  </script> -->
 </header>
     <main class="main-body">
-  <!-- 
-<script src="/o3o/O3O.js"></script>
-
-  
-<link rel="stylesheet" href="/o3o/O3O.css">
-
   <div class="toc-container">
     <div class="toc-toggle">
       <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
@@ -137,16 +127,16 @@
     }
     document.getElementsByClassName('toc')[0].onclick = toggleShow
   </script>
-   -->
+  
   <div class="article-header">
-    <h2 class="article-title">Efficient Exploration in Crowds by Coupling Navigation Controller and Exploration Planner</h2>
+    <h2 class="article-title">Ef­fi­cient ex­plo­ration in crowds by cou­pling nav­i­ga­tion con­troller and ex­plo­ration Plan­ner</h2>
     <div class="article-details">
       <div class="article-post-date"><span>Posted at </span> 2022-07-01</div>
       <div class="article-tags">
         
-        <a href="/tags/Robotics">#Robotics</a>
+        <a href="/tags/Ro­bot­ics">#Ro­bot­ics</a>
         
-        <a href="/tags/Projects">#Projects</a>
+        <a href="/tags/Pro­jects">#Pro­jects</a>
         
       </div>
     </div>
@@ -157,27 +147,35 @@
 <img src="/image/explore2_sys.jpg" width=75%>
 </div>
 <h3 id="Overview">Overview</h3>
-<p>Autonomous exploration in scenes with moving pedestrians is critical for deploying autonomous mobile robots in populated places such as malls, airports, and museums. The existence of dynamic obstacles poses challenges on achieving an efficient, safe, and robust exploration system: the robot may get stuck in the pedestrians without making progress in scene coverage; it may collide with humans and hurt them; the human-robot collision will fail the exploration process or cause large drift and artifacts in simultaneous localization and mapping (SLAM). In this work, we propose a framework that can solve these challenges by tightly coupling a reinforcement learned navigation controller and a hierarchical exploration planner enhanced with a recovery planner. The navigation controller provides a value function describing the distribution of crowds around the robot, which will be leveraged by exploration planner and recovery planner to minimize the human-robot interruptions. We evaluate the proposed exploration framework against several methods on a set of indoor benchmarks with pedestrians, verifying the advantages of our method in terms of exploration efficiency, navigation safety, and SLAM quality.</p>
+<p>Au­tonomous ex­plo­ration in scenes with mov­ing pedes­tri­ans is crit­i­cal for de­ploy­ing au­tonomous mo­bile ro­bots in pop­u­lated places such as malls, air­ports, and mu­se­ums. The ex­is­tence of dy­namic ob­sta­cles poses chal­lenges on achiev­ing an ef­fi­cient, safe, and ro­bust ex­plo­ration sys­tem: the ro­bot may get stuck in the pedes­tri­ans with­out mak­ing progress in scene cov­er­age; it may col­lide with hu­mans and hurt them; the hu­man​-​ro­bot col­li­sion will fail the ex­plo­ration process or cause large drift and ar­ti­facts in si­mul­ta­ne­ous lo­cal­iza­tion and map­ping (SLAM). In this work, we pro­pose a frame­work that can solve these chal­lenges by tightly cou­pling a re­in­force­ment learned nav­i­ga­tion con­troller and a hi­er­ar­chi­cal ex­plo­ration plan­ner en­hanced with a re­cov­ery plan­ner. The nav­i­ga­tion con­troller pro­vides a value func­tion de­scrib­ing the dis­tri­b­u­tion of crowds around the ro­bot, which will be lever­aged by ex­plo­ration plan­ner and re­cov­ery plan­ner to min­i­mize the hu­man​-​ro­bot in­ter­rup­tions. We eval­u­ate the pro­posed ex­plo­ration frame­work against sev­eral meth­ods on a set of in­door bench­marks with pedes­tri­ans, ver­i­fy­ing the ad­van­tages of our method in terms of ex­plo­ration ef­fi­ciency, nav­i­ga­tion safety, and SLAM qual­ity.</p>
 
 </div>
-  <script>
-    // new O3O({ key: "mizore", api: "https://o3o.mizore.site:3030" }).init()
-  </script>
+  <o3o key="mizore" api="https://o3o.mizore.site:2333"></o3o>
+  <!-- 
+<script src="/o3o/o3o.js"></script>
+ -->
   
 <link rel="stylesheet" href="/css/o3o.css">
 
 </main>
     <footer>
-  <div class="footer-info">Copyright © 2016-2023 Zhuoqi.
-    <!-- All Rights Reserved | Powerd by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a
-      target="_blank" rel="noopener" href="https://github.com/mizoreyo/hexo-theme-insnow">Insnow</a> -->
-    </div>
+  <!-- <div 
+  class="footer-info">Copyright © 2016-2023 Zhuoqi.
+    </div> -->
+
   <div class="footer-info">
-    <!-- <a class="footer-i" href=""><i class="iconfont icon-wechat"></i></a> -->
-    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng"><i class="iconfont icon-github-fill"></i></a>
-    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin-fill"></i></a>
-    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail-fill"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/mizoreyo">GitHub</i></a>
+    <a class="footer-i" href="">LinkedIn</a>
+    <a class="footer-i" href="mailto:mizoreyo@outlook.com">Contact</a>
   </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
 </footer>
   </div>
 </body>

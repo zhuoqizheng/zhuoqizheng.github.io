@@ -5,7 +5,7 @@
   
   <title>
     
-    An Autonomous Vision-Based Target Tracking System for UAV
+    An au­tonomous vi­sion​-​based tar­get track­ing sys­tem for UAV
     
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,12 +32,8 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
-  
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500&family=Source+Sans+3&display=swap.css">
-
-  
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
 
@@ -46,9 +42,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
-
-
-
 <script>
   function setIsNight(isNight) {
     localStorage.setItem('isNight', isNight)
@@ -86,36 +79,33 @@
 <body>
   <div class="show-area">
     <header>
+  
+  <h2 class="blog-title">Zhuoqi&#39;s Farm</h2>
+
   <ul class="nav">
     <li class="nav-child">
-      <a href="/">Home 主頁</a>
+      <a href="/">Home</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Projects">Projects 項目</a>
+      <a href="/categories/Projects">Projects</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Others">Others 其他</a>
+      <a href="/archive">Archive</a>
     </li>
     <li class="nav-child">
-      <a href="/about">About 關於</a>
+      <a href="/about">About</a>
     </li>
   </ul>
-  <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
   <script>
     if (isNight === 'false') {
-      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
-    } else {
       document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
     }
-  </script>
+  </script> -->
 </header>
     <main class="main-body">
-  <!-- 
-<script src="/o3o/O3O.js"></script>
-
-  
-<link rel="stylesheet" href="/o3o/O3O.css">
-
   <div class="toc-container">
     <div class="toc-toggle">
       <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
@@ -134,14 +124,16 @@
       show = !show
     }
   </script>
-   -->
+  
   <div class="article-header">
-    <h2 class="article-title">An Autonomous Vision-Based Target Tracking System for UAV</h2>
+    <h2 class="article-title">An au­tonomous vi­sion​-​based tar­get track­ing sys­tem for UAV</h2>
     <div class="article-details">
       <div class="article-post-date"><span>Posted at </span> 2017-06-01</div>
       <div class="article-tags">
         
-        <a href="/tags/Projects">#Projects</a>
+        <a href="/tags/Ro­bot­ics">#Ro­bot­ics</a>
+        
+        <a href="/tags/Pro­jects">#Pro­jects</a>
         
       </div>
     </div>
@@ -149,41 +141,49 @@
   <div class="article">
   
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7dc4etU0IHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>In this project, an autonomous vision-based tracking system is presented to track a maneuvering target for a rotorcraft unmanned aerial vehicle (UAV) with an onboard gimbal camera.</p>
+<p>In this pro­ject, an au­tonomous vi­sion​-​based track­ing sys­tem is pre­sented to track a ma­neu­ver­ing tar­get for a ro­tor­craft un­manned aer­ial ve­hi­cle (UAV) with an on­board gim­bal cam­era.</p>
 <span id="more"></span>
-<p>The contributions of the project are summarized as follow:</p>
+<p>The con­tri­bu­tions of the pro­ject are sum­ma­rized as fol­low:</p>
 <ol>
 <li>
-<p>In the case of target occlusions or loss, the status of the target, i.e. loss or not, is firstly detected based on the KCF tracker, and a computationally efficient redetection method is presented. With this scheme, the UAV can track the target again when it re-appears.</p>
+<p>In the case of tar­get oc­clu­sions or loss, the sta­tus of the tar­get, i.e. loss or not, is firstly de­tected based on the KCF tracker, and a com­pu­ta­tion­ally ef­fi­cient re­de­tec­tion method is pre­sented. With this scheme, the UAV can track the tar­get again when it re​-​ap­pears.</p>
 </li>
 <li>
-<p>An Interacting Multi-Model Extended Kalman Filtering (IMM-EKF) based target state estimator is presented to estimate states of the maneuvering target, and a nonlinear feedback control law is presented to stably track moving targets.</p>
+<p>An In­ter­act­ing Multi​-​Model Ex­tended Kalman Fil­ter­ing (IMM​-​EKF) based tar­get state es­ti­ma­tor is pre­sented to es­ti­mate states of the ma­neu­ver­ing tar­get, and a non­lin­ear feed­back con­trol law is pre­sented to sta­bly track mov­ing tar­gets.</p>
 </li>
 <li>
-<p>A computationally efficient framework implemented on onboard TK1 computer is presented for ground target tracking in unstructured environments.</p>
+<p>A com­pu­ta­tion­ally ef­fi­cient frame­work im­ple­mented on on­board TK1 com­puter is pre­sented for ground tar­get track­ing in un­struc­tured en­vi­ron­ments.</p>
 </li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8205986">This project have be published in IROS 2017.</a></p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8205986">This pro­ject have be pub­lished in IROS 2017.</a></p>
 
 </div>
-  <script>
-    // new O3O({ key: "mizore", api: "https://o3o.mizore.site:3030" }).init()
-  </script>
+  <o3o key="mizore" api="https://o3o.mizore.site:2333"></o3o>
+  <!-- 
+<script src="/o3o/o3o.js"></script>
+ -->
   
 <link rel="stylesheet" href="/css/o3o.css">
 
 </main>
     <footer>
-  <div class="footer-info">Copyright © 2016-2023 Zhuoqi.
-    <!-- All Rights Reserved | Powerd by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a
-      target="_blank" rel="noopener" href="https://github.com/mizoreyo/hexo-theme-insnow">Insnow</a> -->
-    </div>
+  <!-- <div 
+  class="footer-info">Copyright © 2016-2023 Zhuoqi.
+    </div> -->
+
   <div class="footer-info">
-    <!-- <a class="footer-i" href=""><i class="iconfont icon-wechat"></i></a> -->
-    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng"><i class="iconfont icon-github-fill"></i></a>
-    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin-fill"></i></a>
-    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail-fill"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/mizoreyo">GitHub</i></a>
+    <a class="footer-i" href="">LinkedIn</a>
+    <a class="footer-i" href="mailto:mizoreyo@outlook.com">Contact</a>
   </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
 </footer>
   </div>
 </body>

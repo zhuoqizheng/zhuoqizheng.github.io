@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    Joint pre­dic­tion of pedes­tri­ans and oc­cu­pancy grid map
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  
+  <h2 class="blog-title">Zhuoqi&#39;s Farm</h2>
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</header>
+    <main class="main-body">
+  <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    
+  </div>
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+  </script>
+  
+  <div class="article-header">
+    <h2 class="article-title">Joint pre­dic­tion of pedes­tri­ans and oc­cu­pancy grid map</h2>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2023-05-01</div>
+      <div class="article-tags">
+        
+        <a href="/tags/Ro­bot­ics">#Ro­bot­ics</a>
+        
+        <a href="/tags/Pro­jects">#Pro­jects</a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="article">
+  
+  <div align="center">
+<img src="/image/map_prediction.jpg" width=75%>
+</div>
+<p>Pre­dic­tions about maps can aid in the com­pu­ta­tion of in­for­ma­tion gain in au­tonomous ex­plo­ration tasks, thereby im­prov­ing ex­plo­ration ef­fi­ciency. Var­i­ous stud­ies have high­lighted the favourable in­flu­ence of pre­cise map pre­dic­tion on the ef­fec­tive­ness of au­tonomous ex­plo­ration tasks.</p>
+<p>This pro­ject aims to de­velop a com­pre­hen­sive frame­work that com­bines map pre­dic­tion and pedes­trian track­ing, fo­cus­ing on the in­ter­ac­tion be­tween pedes­tri­ans and the en­vi­ron­ment to im­prove per­for­mance in pre­dict­ing both map and pedes­trian be­hav­iours. The joint es­ti­ma­tion process fol­lows an it­er­a­tive ap­proach. The in­te­gra­tion of an ar­ti­fi­cial po­ten­tial field guides pedes­trian mo­tion based on the pre­dicted map, thus im­prov­ing the ac­cu­racy of pedes­trian track­ing. Con­versely, the pre­dicted crowd field, de­rived from pedes­trian track­ing and pre­dic­tion, re­fines the map pre­dic­tion process by uti­liz­ing im­age seg­men­ta­tion al­go­rithms.</p>
+<p>One key as­pect of our ap­proach is the in­clu­sion of a feed­back loop in the joint es­ti­ma­tion sys­tem, al­low­ing for con­tin­u­ous re­fine­ment and im­prove­ment of both the map pre­dic­tion and pedes­trian track­ing com­po­nents. Through it­er­a­tive up­dates and en­hance­ments based on the rec­i­p­ro­cal re­la­tion­ship be­tween pedes­tri­ans and the en­vi­ron­ment, our al­go­rithm achieves in­creased ac­cu­racy in pre­dict­ing var­i­ous as­pects, in­clud­ing the shape and size of the map and the tra­jec­to­ries of pedes­tri­ans.</p>
+<p>The in­cor­po­ra­tion of map pre­dic­tion and pedes­trian track­ing in our joint es­ti­ma­tion frame­work sig­ni­fies a sub­stan­tial break­through in au­tonomous ro­bot ex­plo­ration. By uti­liz­ing the in­ter­play be­tween pedes­tri­ans and the en­vi­ron­ment, our al­go­rithm ex­hibits favourable out­comes in terms of en­hanced pre­dic­tion ac­cu­racy and ro­bust­ness. This frame­work has the po­ten­tial to fa­cil­i­tate more ef­fi­cient and ef­fec­tive ex­plo­ration in in­tri­cate en­vi­ron­ments, thus ad­vanc­ing the ca­pa­bil­i­ties of au­tonomous mo­bile ro­bots in di­verse real​-​world sce­nar­ios.</p>
+
+</div>
+  <o3o key="mizore" api="https://o3o.mizore.site:2333"></o3o>
+  <!-- 
+<script src="/o3o/o3o.js"></script>
+ -->
+  
+<link rel="stylesheet" href="/css/o3o.css">
+
+</main>
+    <footer>
+  <!-- <div 
+  class="footer-info">Copyright © 2016-2023 Zhuoqi.
+    </div> -->
+
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/mizoreyo">GitHub</i></a>
+    <a class="footer-i" href="">LinkedIn</a>
+    <a class="footer-i" href="mailto:mizoreyo@outlook.com">Contact</a>
+  </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>

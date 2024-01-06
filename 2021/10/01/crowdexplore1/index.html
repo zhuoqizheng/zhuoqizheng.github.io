@@ -5,7 +5,7 @@
   
   <title>
     
-    A Hierarchical Approach for Mobile Robot Exploration in Pedestrian Crowd
+    A hi­er­ar­chi­cal ap­proach for mo­bile ro­bot ex­plo­ration in pedes­trian crowd
     
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,12 +32,8 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
-  
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500&family=Source+Sans+3&display=swap.css">
-
-  
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
 
@@ -46,9 +42,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
-
-
-
 <script>
   function setIsNight(isNight) {
     localStorage.setItem('isNight', isNight)
@@ -86,41 +79,38 @@
 <body>
   <div class="show-area">
     <header>
+  
+  <h2 class="blog-title">Zhuoqi&#39;s Farm</h2>
+
   <ul class="nav">
     <li class="nav-child">
-      <a href="/">Home 主頁</a>
+      <a href="/">Home</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Projects">Projects 項目</a>
+      <a href="/categories/Projects">Projects</a>
     </li>
     <li class="nav-child">
-      <a href="/categories/Others">Others 其他</a>
+      <a href="/archive">Archive</a>
     </li>
     <li class="nav-child">
-      <a href="/about">About 關於</a>
+      <a href="/about">About</a>
     </li>
   </ul>
-  <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
   <script>
     if (isNight === 'false') {
-      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
-    } else {
       document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
     }
-  </script>
+  </script> -->
 </header>
     <main class="main-body">
-  <!-- 
-<script src="/o3o/O3O.js"></script>
-
-  
-<link rel="stylesheet" href="/o3o/O3O.css">
-
   <div class="toc-container">
     <div class="toc-toggle">
       <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
     </div>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploration-Planner"><span class="toc-number">2.</span> <span class="toc-text">Exploration Planner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Architecture-of-the-RL-based-Navigation-Neural-Network"><span class="toc-number">3.</span> <span class="toc-text">The Architecture of the RL-based Navigation Neural Network.</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ex%C2%ADplo%C2%ADration-Plan%C2%ADner"><span class="toc-number">2.</span> <span class="toc-text">Ex­plo­ration Plan­ner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Ar%C2%ADchi%C2%ADtec%C2%ADture-of-the-RL%E2%80%8B-%E2%80%8Bbased-Nav%C2%ADi%C2%ADga%C2%ADtion-Neural-Net%C2%ADwork"><span class="toc-number">3.</span> <span class="toc-text">The Ar­chi­tec­ture of the RL​-​based Nav­i­ga­tion Neural Net­work.</span></a></li></ol>
   </div>
   
   <script>
@@ -137,14 +127,16 @@
     }
     document.getElementsByClassName('toc')[0].onclick = toggleShow
   </script>
-   -->
+  
   <div class="article-header">
-    <h2 class="article-title">A Hierarchical Approach for Mobile Robot Exploration in Pedestrian Crowd</h2>
+    <h2 class="article-title">A hi­er­ar­chi­cal ap­proach for mo­bile ro­bot ex­plo­ration in pedes­trian crowd</h2>
     <div class="article-details">
       <div class="article-post-date"><span>Posted at </span> 2021-10-01</div>
       <div class="article-tags">
         
-        <a href="/tags/Projects">#Projects</a>
+        <a href="/tags/Ro­bot­ics">#Ro­bot­ics</a>
+        
+        <a href="/tags/Pro­jects">#Pro­jects</a>
         
       </div>
     </div>
@@ -152,39 +144,47 @@
   <div class="article">
   
   <h3 id="Overview">Overview</h3>
-<p>Autonomous exploration is a fundamental task for mobile robots. However, a major limitation is that in practical applications, robots usually face dynamic obstacles such as pedestrian crowds. These dynamic objects create significant challenges for both collision-free navigation and accurate localization/mapping, which can compromise the safety and exploration performance of the robot. In this work, a hierarchical approach is proposed for both effective exploration and collision-free navigation in crowded environments. The central idea of our approach is to combine local and global information to ensure the safety and efficiency of the exploration planner. Besides, our planning method utilizes a reinforcement learning (RL)-based obstacle avoidance algorithm that allows the robot to safely follow the exploration planner’s path through the pedestrian crowd. The proposed system is thoroughly evaluated in simulation environments, and the results show that it outperforms existing methods in terms of not only the exploration efficiency but also the localization and mapping accuracy.</p>
-<h3 id="Exploration-Planner">Exploration Planner</h3>
+<p>Au­tonomous ex­plo­ration is a fun­da­men­tal task for mo­bile ro­bots. How­ever, a ma­jor lim­i­ta­tion is that in prac­ti­cal ap­pli­ca­tions, ro­bots usu­ally face dy­namic ob­sta­cles such as pedes­trian crowds. These dy­namic ob­jects cre­ate sig­nif­i­cant chal­lenges for both col­li­sion​-​free nav­i­ga­tion and ac­cu­rate lo­cal­iza­tion/​map­ping, which can com­pro­mise the safety and ex­plo­ration per­for­mance of the ro­bot. In this work, a hi­er­ar­chi­cal ap­proach is pro­posed for both ef­fec­tive ex­plo­ration and col­li­sion​-​free nav­i­ga­tion in crowded en­vi­ron­ments. The cen­tral idea of our ap­proach is to com­bine lo­cal and global in­for­ma­tion to en­sure the safety and ef­fi­ciency of the ex­plo­ration plan­ner. Be­sides, our plan­ning method uti­lizes a re­in­force­ment learn­ing (RL)-based ob­sta­cle avoid­ance al­go­rithm that al­lows the ro­bot to safely fol­low the ex­plo­ration plan­ner’s path through the pedes­trian crowd. The pro­posed sys­tem is thor­oughly eval­u­ated in sim­u­la­tion en­vi­ron­ments, and the re­sults show that it out­per­forms ex­ist­ing meth­ods in terms of not only the ex­plo­ration ef­fi­ciency but also the lo­cal­iza­tion and map­ping ac­cu­racy.</p>
+<h3 id="Ex­plo­ration-Plan­ner">Ex­plo­ration Plan­ner</h3>
 <div align="center">
 <img src="/image/explore1_sys.png" width=75%>
 </div>
-<p>A hierarchical autonomous exploration planner is designed to determine an exploration tour with a Travel-Salesman-Problem (TSP)-based planner on the global map and to refine the exploration path with the Next-Best-View (NBV)-based planner on local maps and, respectively. Left: the global planner provides an order to visit different unexplored regions (blue points and lines) and determines a rough global goal for the next-step exploration; Right: the local planner selects a precise viewpoint (orange point) as the intermediate goal and the RL-based motion planner determines velocity command (red arrow) to achieve the intermediate goal.</p>
-<h3 id="The-Architecture-of-the-RL-based-Navigation-Neural-Network">The Architecture of the RL-based Navigation Neural Network.</h3>
+<p>A hi­er­ar­chi­cal au­tonomous ex­plo­ration plan­ner is de­signed to de­ter­mine an ex­plo­ration tour with a Travel​-​Sales­man​-​Prob­lem (TSP)-based plan­ner on the global map and to re­fine the ex­plo­ration path with the Next​-​Best​-​View (NBV)-based plan­ner on lo­cal maps and, re­spec­tively. Left: the global plan­ner pro­vides an or­der to visit dif­fer­ent un­ex­plored re­gions (blue points and lines) and de­ter­mines a rough global goal for the next​-​step ex­plo­ration; Right: the lo­cal plan­ner se­lects a pre­cise view­point (or­ange point) as the in­ter­me­di­ate goal and the RL​-​based mo­tion plan­ner de­ter­mines ve­loc­ity com­mand (red ar­row) to achieve the in­ter­me­di­ate goal.</p>
+<h3 id="The-Ar­chi­tec­ture-of-the-RL​-​based-Nav­i­ga­tion-Neural-Net­work">The Ar­chi­tec­ture of the RL​-​based Nav­i­ga­tion Neural Net­work.</h3>
 <div align="center">
 <img src="/image/explore_rl_network.jpg" width=75%>
 </div>
-<p>Based on the optimized hierarchical exploration strategy, an RL-based collision avoidance algorithm is embedded to ensure the robot executes the navigation task safely and efficiently through the crowd. Our collision avoidance controller also implicitly models the crowd flow distribution locally around the robot to minimize the inter-interruption between the robot and the crowd, which not only improves the exploration efficiency but also increases the success rate and accuracy in both mapping and localization.</p>
-<p>The network takes the laser scans $$\mathbf{o}<em>{scan}$$, the relative position $$\mathbf{o}</em>{goal}$$ and the robot’s current velocity $$\mathbf{o}<em>{vel}$$ as inputs. And the action $$\mathbf{a}=[v,\omega]$$ is sampled from a Gaussian distribution constructed by the mean $$\mathbf{v}</em>{mean}$$ with a log standard deviation vector $$\mathbf{v}_{logstd}$$.</p>
-<p>The proposed system is thoroughly evaluated in an extensive simulation experiment, where the impact of different planning and navigation methods for navigation in crowds is investigated.</p>
+<p>Based on the op­ti­mized hi­er­ar­chi­cal ex­plo­ration strat­egy, an RL​-​based col­li­sion avoid­ance al­go­rithm is em­bed­ded to en­sure the ro­bot ex­e­cutes the nav­i­ga­tion task safely and ef­fi­ciently through the crowd. Our col­li­sion avoid­ance con­troller also im­plic­itly mod­els the crowd flow dis­tri­b­u­tion lo­cally around the ro­bot to min­i­mize the in­ter​-​in­ter­rup­tion be­tween the ro­bot and the crowd, which not only im­proves the ex­plo­ration ef­fi­ciency but also in­creases the suc­cess rate and ac­cu­racy in both map­ping and lo­cal­iza­tion.</p>
+<p>The net­work takes the laser scans <img src="https://math.now.sh?inline=%5Cmathbf%7Bo%7D_%7Bscan%7D" style="display:inline-block;margin: 0;"/>, the rel­a­tive po­si­tion <img src="https://math.now.sh?inline=%5Cmathbf%7Bo%7D_%7Bgoal%7D" style="display:inline-block;margin: 0;"/> and the ro­bot’s cur­rent ve­loc­ity <img src="https://math.now.sh?inline=%5Cmathbf%7Bo%7D_%7Bvel%7D" style="display:inline-block;margin: 0;"/> as in­puts. And the ac­tion <img src="https://math.now.sh?inline=%5Cmathbf%7Ba%7D%3D%5Bv%2C%5Comega%5D" style="display:inline-block;margin: 0;"/> is sam­pled from a Gauss­ian dis­tri­b­u­tion con­structed by the mean <img src="https://math.now.sh?inline=%5Cmathbf%7Bv%7D_%7Bmean%7D" style="display:inline-block;margin: 0;"/> with a log stan­dard de­vi­a­tion vec­tor <img src="https://math.now.sh?inline=%5Cmathbf%7Bv%7D_%7Blogstd%7D" style="display:inline-block;margin: 0;"/>.</p>
+<p>The pro­posed sys­tem is thor­oughly eval­u­ated in an ex­ten­sive sim­u­la­tion ex­per­i­ment, where the im­pact of dif­fer­ent plan­ning and nav­i­ga­tion meth­ods for nav­i­ga­tion in crowds is in­ves­ti­gated.</p>
 
 </div>
-  <script>
-    // new O3O({ key: "mizore", api: "https://o3o.mizore.site:3030" }).init()
-  </script>
+  <o3o key="mizore" api="https://o3o.mizore.site:2333"></o3o>
+  <!-- 
+<script src="/o3o/o3o.js"></script>
+ -->
   
 <link rel="stylesheet" href="/css/o3o.css">
 
 </main>
     <footer>
-  <div class="footer-info">Copyright © 2016-2023 Zhuoqi.
-    <!-- All Rights Reserved | Powerd by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a
-      target="_blank" rel="noopener" href="https://github.com/mizoreyo/hexo-theme-insnow">Insnow</a> -->
-    </div>
+  <!-- <div 
+  class="footer-info">Copyright © 2016-2023 Zhuoqi.
+    </div> -->
+
   <div class="footer-info">
-    <!-- <a class="footer-i" href=""><i class="iconfont icon-wechat"></i></a> -->
-    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng"><i class="iconfont icon-github-fill"></i></a>
-    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/"><i class="iconfont icon-linkedin-fill"></i></a>
-    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com"><i class="iconfont icon-mail-fill"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/mizoreyo">GitHub</i></a>
+    <a class="footer-i" href="">LinkedIn</a>
+    <a class="footer-i" href="mailto:mizoreyo@outlook.com">Contact</a>
   </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
 </footer>
   </div>
 </body>
