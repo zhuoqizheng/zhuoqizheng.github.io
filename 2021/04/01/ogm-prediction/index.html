@@ -148,13 +148,12 @@
   <div align="center">
 <img src="/image/ogmprediction.jpg" width=85%>
 </div>
+
 <p>Fast, col­li­sion​-​free move­ment in an un­seen en­vi­ron­ment re­mains a chal­lenge for mo­bile ro­bot sys­tems. The ro­bot’s abil­ity to rea­son about its fu­ture mo­tion is of­ten lim­ited by the sen­sor’s Field of View (FOV). In con­trast, bi­o­log­i­cal sys­tems usu­ally pre­dict the fu­ture un­ob­served based on pre­vi­ous ex­pe­ri­ence by con­sid­er­ing what might ex­ist out­side of the cur­rent ob­ser­va­tion.</p>
 <p>The Oc­cu­pancy Grid Map (OGM) gen­er­ated by the si­mul­ta­ne­ous lo­cal­iza­tion and map­ping (SLAM) al­go­rithm us­ing the laser scan sen­sor is widely used in both mo­bile ro­bots and un­manned ve­hi­cles. An OGM di­vides the space around the ro­bot into cells rep­re­sent­ing the state of the en­vi­ron­ment, i.e., free, oc­cu­pied, or un­known. Var­i­ous meth­ods have been pro­posed for the pre­dic­tion of OGMs, which are en­coded as im­ages. Some work fo­cuses on the es­ti­ma­tion and pre­dic­tion of the tra­jec­tory of mov­ing ob­jects in OGM, while oth­ers con­cen­trate on the struc­ture of the en­vi­ron­ment. In one study, the au­thor uses sev­eral deep learn­ing​-​based meth­ods, such as UNet and Gen­er­a­tive ad­ver­sar­ial net­work (GAN), to pre­dict the ex­panded OGM. In an­other study, Vari­a­tional Au­toen­coders (VAE) are ap­plied to pre­dict the struc­ture of some un­mapped re­gions.</p>
 <p>In this pro­ject, we fo­cus on a data​-​dri­ven ap­proach that does not rely on ex­plicit as­sump­tions about the en­vi­ron­ment but in­stead learns reg­u­lar­i­ties from ex­am­ples. Specif­i­cally, in­spired by pre­vi­ous work, we em­ploy UNet, VAE, and GAN to pre­dict un­known map re­gions be­yond fron­tiers. Al­though this pro­ject uses a net­work struc­ture sim­i­lar to pre­vi­ous stud­ies, we have adopted a dif­fer­ent en­cod­ing method for OGMs into tra­vers­a­ble and un­tra­vers­a­ble cells.</p>
 <p>The work con­cerned in this pro­ject is listed as fol­lows:</p>
-<p>We col­lected datasets for the deep learn­ing​-​based OGM pre­dic­tion task and pre­processed the data for net­work train­ing.<br>
-We im­ple­mented sev­eral dif­fer­ent OGM pre­dic­tion net­works, in­clud­ing UNet, VAE, and GAN.<br>
-We trained and tested the above three net­works and com­pared their per­for­mance on the OGM pre­dic­tion task.</p>
+<p>We col­lected datasets for the deep learn­ing​-​based OGM pre­dic­tion task and pre­processed the data for net­work train­ing.<br>We im­ple­mented sev­eral dif­fer­ent OGM pre­dic­tion net­works, in­clud­ing UNet, VAE, and GAN.<br>We trained and tested the above three net­works and com­pared their per­for­mance on the OGM pre­dic­tion task.</p>
 
 </div>
 </main>
