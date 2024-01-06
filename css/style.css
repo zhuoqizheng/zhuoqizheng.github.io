@@ -283,8 +283,8 @@ header {
 }
 .nav-child {
   font-size: 1.7rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
   cursor: pointer;
   font-family: var(--global-font-family);
   font-weight: bold;
