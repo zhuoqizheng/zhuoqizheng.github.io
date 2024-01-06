@@ -45,11 +45,22 @@ body {
   justify-content: center;
 }
 .main-body {
-  margin-top: 2rem;
+  margin-top: 0rem;
   animation-name: main-up;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   min-height: 70vh;
+}
+.main-body-inside {
+  margin-top: 0rem;
+  animation-name: main-up;
+  animation-duration: 0s;
+  animation-timing-function: ease-out;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
 }
 .blog-title-container {
   display: flex;
@@ -61,7 +72,7 @@ body {
   margin: 1rem;
 }
 .blog-desc {
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   font-weight: normal;
   text-align: center;
 }
@@ -171,6 +182,7 @@ footer {
   padding: 2rem 0;
   font-size: 1.4rem;
   margin-top: auto;
+  font-weight: bold;
 }
 .footer-info {
   font-family: var(--global-font-family);
@@ -213,16 +225,20 @@ footer {
 .center-section,
 .right-section {
   width: 100%;
-  float: left;
+  display: flex;
+  float: inherit;
   padding: 20px;
   text-align: center;
   align-items: center;
+  align-content: stretch;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 .content-wrapper {
   display: flex;
   flex-direction: column /* Stack items vertically by default */;
   justify-content: space-between;
-  margin: 5rem 0 0;
+  margin: 2rem 0 0;
 }
 @media screen and (min-width: 768px) {
   .content-wrapper {
@@ -231,11 +247,15 @@ footer {
   .left-section,
   .center-section,
   .right-section {
-    width: 33%;
+    width: 50%;
+    display: flex;
     float: inherit;
     padding: 20px;
     text-align: center;
     align-items: center;
+    align-content: stretch;
+    justify-content: flex-end;
+    flex-direction: column;
   }
 }
 header {
@@ -246,8 +266,6 @@ header {
   background-color: var(--bgColor);
   box-shadow: 0 -1px var(--bgColor);
   z-index: 998;
-  position: sticky;
-  top: 0;
   transition-property: background-color, color, box-shadow;
   transition-duration: 0.5s;
   flex-direction: column;
@@ -258,15 +276,19 @@ header {
   flex-grow: 1;
   overflow: scroll;
   justify-content: center;
+  align-items: center;
 }
 .nav::-webkit-scrollbar {
   display: none;
 }
 .nav-child {
   font-size: 1.7rem;
+  margin-left: 2rem;
   margin-right: 2rem;
   cursor: pointer;
   font-family: var(--global-font-family);
+  font-weight: bold;
+  text-align: center;
 }
 .nav-child a {
   color: var(--fontColor);
@@ -279,6 +301,14 @@ header {
 }
 .nav-child a:hover {
   color: var(--spColor);
+}
+.logo-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo-section img {
+  max-width: 40%;
+  height: auto;
 }
 .theme-switcher {
   width: 2.5rem;
