@@ -17,7 +17,7 @@
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: none;
-  --global-font-family: 'Noto Sans SC', sans-serif;
+  --global-font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
 }
 body {
   background-color: var(--bgColor);
@@ -36,7 +36,7 @@ body {
   transition: color 0.5s;
 }
 .show-area {
-  width: 65rem;
+  width: 70rem;
   margin: auto;
   margin-top: 5rem;
   flex-direction: column;
@@ -53,8 +53,9 @@ body {
 }
 .main-body-inside {
   margin-top: 0rem;
+  margin-bottom: 0rem;
   animation-name: main-up;
-  animation-duration: 0s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-out;
   min-height: 70vh;
   display: flex;
@@ -228,7 +229,7 @@ footer {
   width: 100%;
   display: flex;
   float: inherit;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   align-items: center;
   align-content: stretch;
@@ -239,7 +240,6 @@ footer {
   display: flex;
   flex-direction: column /* Stack items vertically by default */;
   justify-content: space-between;
-  margin: 2rem 0 0;
 }
 @media screen and (min-width: 768px) {
   .content-wrapper {
@@ -251,7 +251,7 @@ footer {
     width: 50%;
     display: flex;
     float: inherit;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     align-items: center;
     align-content: stretch;
@@ -263,7 +263,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10rem; /* 或适当的高度 */
+  height: 15rem; /* 或适当的高度 */
   background-color: var(--bgColor);
   box-shadow: 0 -1px var(--bgColor);
   z-index: 998;
