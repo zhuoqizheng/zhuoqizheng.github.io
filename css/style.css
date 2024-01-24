@@ -184,7 +184,7 @@ footer {
   padding: 2rem 0;
   font-size: 1.4rem;
   margin-top: auto;
-  font-weight: bold;
+  font-weight: 500;
 }
 .footer-info {
   font-family: var(--global-font-family);
@@ -288,7 +288,7 @@ header {
   margin-right: 1.2rem;
   cursor: pointer;
   font-family: var(--global-font-family);
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
 }
 .nav-child a {
