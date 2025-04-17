@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    Multi-scale guided mask refinement for RGB-D perception
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  <div class="logo-section">
+    <a href="/">
+      <img src="/image/logo.png" alt="Logo">
+    </a>
+
+  </div>
+  <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">Tags</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</header>
+    <main class="main-body">
+  <!-- <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    
+  </div> -->
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">Multi-scale guided mask refinement for RGB-D perception</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2018-08</div>
+      <!-- <div class="article-tags">
+        
+        <a href="/tags/Robotics">#Robotics</a>
+        
+        <a href="/tags/Projects">#Projects</a>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="article">
+  
+  <p><img src="/image/ms_system.gif" alt="The pipeline of the proposed multi-scale guided mask refinement."></p>
+<p> Pixel-level object segmentation is highly desired in robot perception systems due to its importance for many vision applications. Existing approaches for pixel-level segmentation are mainly based on deep neutral networks (DNN), which can achieve high accuracy in generating the semantic masks. However, they still have difficulties in being applied to robot vision due to the large requirements of storage and computing resources. Motivated by the recent works on utilizing depth cues and edge-preserving components for more accurate segmentations.</p>
+<span id="more"></span>
+<p><img src="/image/ms_result.png" alt="Visual comparisons on a RGB-D frame in Cespatx_ds."><br> In this paper, we propose to imitate the DNN architecture using light-weight components and design a multi-scale guided mask refinement method to enhance the coarse segmentations to fine-scale ones. Taking foreground segmentation and temporal object segmentation as two representative applications, we quantitatively evaluate the proposed method on benchmark datasets. It is demonstrated in the experimental results that our method can achieve not only significant accuracy improve- ments compared to other alternatives, but also the superior edge-preserving capability with limited storing and computing resources. We believe that our method is feasible for real-time pixel-level perception on robotic systems due to its scalable implementation and small resource requirements.</p>
+<p> <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8573890">This project have be published on SPL.</a></p>
+
+</div>
+</main>
+    <footer>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/">LinkedIn</a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
+  </div>
+
+    <div 
+  class="footer-info">Copyright © 2016-2025 Zhuoqi.
+    </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>

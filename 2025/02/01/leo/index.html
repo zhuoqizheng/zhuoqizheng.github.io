@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    LEO Satellites, Transforming Smart Mobility with Advanced Simulation
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  <div class="logo-section">
+    <a href="/">
+      <img src="/image/logo.png" alt="Logo">
+    </a>
+
+  </div>
+  <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">Tags</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</header>
+    <main class="main-body">
+  <!-- <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Need-for-Sky-Land-Solutions"><span class="toc-number">1.</span> <span class="toc-text">The Need for Sky-Land Solutions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LEO-Satellite-Simulation-A-Digital-Space-Lab"><span class="toc-number">2.</span> <span class="toc-text">LEO Satellite Simulation: A Digital Space Lab</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Orbit-Simulation"><span class="toc-number">2.1.</span> <span class="toc-text">Orbit Simulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Communication-Modeling"><span class="toc-number">2.2.</span> <span class="toc-text">Communication Modeling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Payload-Emulation"><span class="toc-number">2.3.</span> <span class="toc-text">Payload Emulation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sky-Land-Co-Simulation-Where-Satellites-Meet-Traffic"><span class="toc-number">3.</span> <span class="toc-text">Sky-Land Co-Simulation: Where Satellites Meet Traffic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-This-Matters"><span class="toc-number">4.</span> <span class="toc-text">Why This Matters</span></a></li></ol>
+  </div> -->
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">LEO Satellites, Transforming Smart Mobility with Advanced Simulation</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2025-02</div>
+      <!-- <div class="article-tags">
+        
+        <a href="/tags/Projects">#Projects</a>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="article">
+  
+  <p>Imagine vehicles communicating instantly and navigating with pinpoint accuracy, even in remote areas, all thanks to Low Earth Orbit (LEO) satellites. These satellites, orbiting 500 to 1,200 km above Earth, promise low-latency, robust connectivity for Vehicle-to-Everything (V2X) and Connected Autonomous Vehicle (CAV) systems. A pioneering project is bringing this vision to life through a powerful LEO-Enabled V2X Simulator, blending sophisticated satellite modeling with ground traffic simulation. As a tech enthusiast, I’m excited to explore how this simulator is shaping the future of smart mobility.</p>
+<h2 id="The-Need-for-Sky-Land-Solutions"><a href="#The-Need-for-Sky-Land-Solutions" class="headerlink" title="The Need for Sky-Land Solutions"></a>The Need for Sky-Land Solutions</h2><p>Smart mobility relies on real-time communication and precise positioning, but traditional ground-based systems like Roadside Units (RSUs) are costly and limited in coverage. LEO satellites, with their proximity to Earth and strong signals, offer a cost-effective alternative. The challenge lies in testing how these satellites integrate with ground vehicles in complex scenarios. This project tackles that with a state-of-the-art simulator that creates a virtual world where satellites and traffic interact seamlessly.</p>
+<h2 id="LEO-Satellite-Simulation-A-Digital-Space-Lab"><a href="#LEO-Satellite-Simulation-A-Digital-Space-Lab" class="headerlink" title="LEO Satellite Simulation: A Digital Space Lab"></a>LEO Satellite Simulation: A Digital Space Lab</h2><p>The heart of the project is its LEO satellite simulation, a virtual environment that mimics real satellite behavior with impressive fidelity. Here’s what makes it tick:</p>
+<h3 id="Orbit-Simulation"><a href="#Orbit-Simulation" class="headerlink" title="Orbit Simulation"></a>Orbit Simulation</h3><p>Using the Simplified General Perturbations Model 4 (SGP4) and Two-Line Element (TLE) data, the simulator calculates satellite positions and velocities. It accounts for gravitational forces and atmospheric drag, ensuring accurate orbital paths and visibility patterns.</p>
+<h3 id="Communication-Modeling"><a href="#Communication-Modeling" class="headerlink" title="Communication Modeling"></a>Communication Modeling</h3><p>The system simulates how satellites transmit V2X messages, like MapData Messages (MAP) for road layouts and Basic Safety Messages (BSMs) for vehicle status. It factors in signal latency and attenuation for realistic data exchange.</p>
+<h3 id="Payload-Emulation"><a href="#Payload-Emulation" class="headerlink" title="Payload Emulation"></a>Payload Emulation</h3><p>Running on the RODOS real-time operating system within a QEMU emulator, the virtual satellite payload processes data and manages communications via UDP, mirroring real satellite operations.</p>
+<p>This setup allows researchers to experiment with satellite performance without the expense of physical launches, making it a game-changer for development.</p>
+<h2 id="Sky-Land-Co-Simulation-Where-Satellites-Meet-Traffic"><a href="#Sky-Land-Co-Simulation-Where-Satellites-Meet-Traffic" class="headerlink" title="Sky-Land Co-Simulation: Where Satellites Meet Traffic"></a>Sky-Land Co-Simulation: Where Satellites Meet Traffic</h2><p>The simulator’s true brilliance lies in its sky-land co-simulation, which integrates satellite models with CARLA, an open-source platform that recreates dynamic traffic scenarios. This fusion creates a cohesive system where satellites and vehicles interact in real time. Key features include:</p>
+<ol>
+<li><p>Seamless Integration: CARLA loads TLE files to track satellites, establishing communication links with the QEMU-emulated satellite system. Vehicles in CARLA send data to satellites, which relay traffic updates, all synchronized for realism.</p>
+</li>
+<li><p>Realistic Testing: The co-simulation supports practical use cases:</p>
+</li>
+<li><p>Traffic Information Broadcast: Satellites deliver MAP messages to vehicles, enhancing navigation and traffic awareness.<br>Fleet Monitoring: Vehicles send BSMs to satellites for real-time tracking of position, speed, and status, ideal for fleet management.</p>
+</li>
+<li><p>Long-Range Connectivity: In areas without ground infrastructure, satellites relay critical alerts, like accident warnings, ensuring safety.</p>
+</li>
+<li><p>Enhanced Navigation: By blending LEO and GNSS signals, the system boosts positioning accuracy, crucial for autonomous driving.</p>
+</li>
+</ol>
+<h2 id="Why-This-Matters"><a href="#Why-This-Matters" class="headerlink" title="Why This Matters"></a>Why This Matters</h2><p>The LEO-Enabled V2X Simulator is a breakthrough for smart mobility. It enables researchers to:</p>
+<ol>
+<li>Test Efficiently: Explore countless scenarios without costly infrastructure.</li>
+<li>Optimize Systems: Fine-tune satellite coverage, latency, and data processing.</li>
+<li>Accelerate Innovation: Validate concepts quickly, speeding up real-world deployment.</li>
+</ol>
+
+</div>
+</main>
+    <footer>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/">LinkedIn</a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
+  </div>
+
+    <div 
+  class="footer-info">Copyright © 2016-2025 Zhuoqi.
+    </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>

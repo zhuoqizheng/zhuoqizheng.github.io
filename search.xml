@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Get Back on the Stage</title>
+      <link href="/2025/04/12/back_to_stage/"/>
+      <url>/2025/04/12/back_to_stage/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Back-to-stage-in-2025"><a href="#Back-to-stage-in-2025" class="headerlink" title="Back to stage in 2025!"></a>Back to stage in 2025!</h1><div align="center">  <img src="/image/music_live/scm_live_1.jpg" width="40%" style="display: inline-block;">  <img src="/image/music_live/scm_live_2.jpg" width="40%" style="display: inline-block;"></div><p>Life’s been a grind—drowning in books, slogging through a PhD, working full-time. </p><p>Music? A ghost, my guitar buried in dust.</p><p>But 2025’s the year. I joined a new band, and we’re hitting the stage at my university. It’s no grand venue, just the school’s auditorium. </p><p>Still feels right. Stepping up with my new crew closes the loop.</p><p>Music’s got power—it drags you back, wakes you up. I owe it everything.</p><p>“Get back, get back. Get back to where you once belonged”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Travel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LEO Satellites, Transforming Smart Mobility with Advanced Simulation</title>
+      <link href="/2025/02/01/leo/"/>
+      <url>/2025/02/01/leo/</url>
+      
+        <content type="html"><![CDATA[<p>Imagine vehicles communicating instantly and navigating with pinpoint accuracy, even in remote areas, all thanks to Low Earth Orbit (LEO) satellites. These satellites, orbiting 500 to 1,200 km above Earth, promise low-latency, robust connectivity for Vehicle-to-Everything (V2X) and Connected Autonomous Vehicle (CAV) systems. A pioneering project is bringing this vision to life through a powerful LEO-Enabled V2X Simulator, blending sophisticated satellite modeling with ground traffic simulation. As a tech enthusiast, I’m excited to explore how this simulator is shaping the future of smart mobility.</p><h2 id="The-Need-for-Sky-Land-Solutions"><a href="#The-Need-for-Sky-Land-Solutions" class="headerlink" title="The Need for Sky-Land Solutions"></a>The Need for Sky-Land Solutions</h2><p>Smart mobility relies on real-time communication and precise positioning, but traditional ground-based systems like Roadside Units (RSUs) are costly and limited in coverage. LEO satellites, with their proximity to Earth and strong signals, offer a cost-effective alternative. The challenge lies in testing how these satellites integrate with ground vehicles in complex scenarios. This project tackles that with a state-of-the-art simulator that creates a virtual world where satellites and traffic interact seamlessly.</p><h2 id="LEO-Satellite-Simulation-A-Digital-Space-Lab"><a href="#LEO-Satellite-Simulation-A-Digital-Space-Lab" class="headerlink" title="LEO Satellite Simulation: A Digital Space Lab"></a>LEO Satellite Simulation: A Digital Space Lab</h2><p>The heart of the project is its LEO satellite simulation, a virtual environment that mimics real satellite behavior with impressive fidelity. Here’s what makes it tick:</p><h3 id="Orbit-Simulation"><a href="#Orbit-Simulation" class="headerlink" title="Orbit Simulation"></a>Orbit Simulation</h3><p>Using the Simplified General Perturbations Model 4 (SGP4) and Two-Line Element (TLE) data, the simulator calculates satellite positions and velocities. It accounts for gravitational forces and atmospheric drag, ensuring accurate orbital paths and visibility patterns.</p><h3 id="Communication-Modeling"><a href="#Communication-Modeling" class="headerlink" title="Communication Modeling"></a>Communication Modeling</h3><p>The system simulates how satellites transmit V2X messages, like MapData Messages (MAP) for road layouts and Basic Safety Messages (BSMs) for vehicle status. It factors in signal latency and attenuation for realistic data exchange.</p><h3 id="Payload-Emulation"><a href="#Payload-Emulation" class="headerlink" title="Payload Emulation"></a>Payload Emulation</h3><p>Running on the RODOS real-time operating system within a QEMU emulator, the virtual satellite payload processes data and manages communications via UDP, mirroring real satellite operations.</p><p>This setup allows researchers to experiment with satellite performance without the expense of physical launches, making it a game-changer for development.</p><h2 id="Sky-Land-Co-Simulation-Where-Satellites-Meet-Traffic"><a href="#Sky-Land-Co-Simulation-Where-Satellites-Meet-Traffic" class="headerlink" title="Sky-Land Co-Simulation: Where Satellites Meet Traffic"></a>Sky-Land Co-Simulation: Where Satellites Meet Traffic</h2><p>The simulator’s true brilliance lies in its sky-land co-simulation, which integrates satellite models with CARLA, an open-source platform that recreates dynamic traffic scenarios. This fusion creates a cohesive system where satellites and vehicles interact in real time. Key features include:</p><ol><li><p>Seamless Integration: CARLA loads TLE files to track satellites, establishing communication links with the QEMU-emulated satellite system. Vehicles in CARLA send data to satellites, which relay traffic updates, all synchronized for realism.</p></li><li><p>Realistic Testing: The co-simulation supports practical use cases:</p></li><li><p>Traffic Information Broadcast: Satellites deliver MAP messages to vehicles, enhancing navigation and traffic awareness.<br>Fleet Monitoring: Vehicles send BSMs to satellites for real-time tracking of position, speed, and status, ideal for fleet management.</p></li><li><p>Long-Range Connectivity: In areas without ground infrastructure, satellites relay critical alerts, like accident warnings, ensuring safety.</p></li><li><p>Enhanced Navigation: By blending LEO and GNSS signals, the system boosts positioning accuracy, crucial for autonomous driving.</p></li></ol><h2 id="Why-This-Matters"><a href="#Why-This-Matters" class="headerlink" title="Why This Matters"></a>Why This Matters</h2><p>The LEO-Enabled V2X Simulator is a breakthrough for smart mobility. It enables researchers to:</p><ol><li>Test Efficiently: Explore countless scenarios without costly infrastructure.</li><li>Optimize Systems: Fine-tune satellite coverage, latency, and data processing.</li><li>Accelerate Innovation: Validate concepts quickly, speeding up real-world deployment.</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Shanxi, A treasure trove of ancient architecture 山西：古建築寶庫（1）</title>
+      <link href="/2023/11/07/datong-travel/"/>
+      <url>/2023/11/07/datong-travel/</url>
+      
+        <content type="html"><![CDATA[<div align="center">  <img src="/image/datong/datong1.jpeg" width="85%" style="display: inline-block;"></div><p>河北正定回來後，對古建築產生了很大興趣。所謂：“地上文物看山西。” 。11月初在網上看見山西的深度研學團，就馬上報名了。此時，廣州氣溫20度左右，但是山西正碰上降溫，馬上要降到10度以下。嚴寒沒能戰勝心裡出發的衝動，此行帶上最後的衝鋒衣打包好行李，就立即出發了。</p><h3 id="Day-1：出發"><a href="#Day-1：出發" class="headerlink" title="Day 1：出發"></a>Day 1：出發</h3><p>第一天一早就出發了，路線有點波折，飛機是深圳飛往太原，然後還要乘坐動車到大同。</p><div align="center">  <img src="/image/datong/d1.jpeg" width="30%" style="display: inline-block;">  <img src="/image/datong/d2.jpeg" width="30%" style="display: inline-block;">    <img src="/image/datong/d3.jpeg" width="30%" style="display: inline-block;"></div><p>下午飛達太原機場，幸好有機場接駁車直達太原火車站。離動車出發還有一點時間，首次落地山西，當然要先嘗嘗山西著名的刀削麵。太原火車站廣場對面有一家叫做“順溜”的麵館，看起來是比較乾淨整潔的連鎖店。除了湯麵還有各式小涼菜和熱滷可選。我挑選的滷肉刀削麵，與平常在粵的“蘭州拉麵”麵館形狀口感都不一樣。此處刀削麵較為細長，口感更加順滑。飯後，在火車站廣場尋找進站的方向，突然有一大媽過來問：”要不要找地方放鬆一下？“。受到驚嚇，此地竟然如此猖狂。</p><p>進站，太原站應該不是新建的高鐵站，是老舊的火車站。候車室很少，車站內壁畫裝飾，墻壁上方掛著舊時候的指針時鐘。太原往大同的動車比較慢，天已經黑了，窗外除了間歇零星的村落燈光，都是一片漆黑。晚上接近九點，到達大同南站。站外一如既往很多司機師傅拉你上車，這個時候高德打車也很久沒有響應，最後只能跟一個司機師傅談好價格，前往住宿處。出租車在站外的停車場，到了才發現車上還有另外的乘客，才發覺原來是拼車。入夜了，心想：人生地不熟，只能期望能安全順利到達目的地。</p><p>第一天，花了接近一天的時間，終於在晚上十點多抵達大同古城旁的酒店下榻。大同天氣確實冷冽，還好室內有暖氣。酒店位於古城外不遠，次日的集合點在城內的善化寺門口。</p><h3 id="Day-2：善化寺-華嚴寺-雲岡石窟"><a href="#Day-2：善化寺-華嚴寺-雲岡石窟" class="headerlink" title="Day 2：善化寺 - 華嚴寺 - 雲岡石窟"></a>Day 2：善化寺 - 華嚴寺 - 雲岡石窟</h3><p>第二天，早起步行前往旅行團在善化寺門外的集合點。同行團友大概十來人，有四人家庭組合，有夫婦，有姐妹朋友，也有幾個像我一樣的“獨行俠”。稍作整頓，就正式開始這次的山西之旅了。</p><h4 id="善化寺"><a href="#善化寺" class="headerlink" title="善化寺"></a>善化寺</h4><div align="center">  <img src="/image/datong/shanhua1.jpeg" width="24%" style="display: inline-block;">  <img src="/image/datong/shanhua2.jpeg" width="24%" style="display: inline-block;">    <img src="/image/datong/shanhua3.jpeg" width="24%" style="display: inline-block;"><img src="/image/datong/shanhua4.jpeg" width="24%" style="display: inline-block;"></div><p>讲解老师带着，从寺庙门前的五龙壁开始，经过天王殿和三圣殿，最后攀上高台，善化寺的大雄宝殿终于展现咋眼前。<br>在講解老師的帶領下，一行人從寺廟門前的五龍壁開始，經過天王殿和三聖殿。三聖殿正面，最引人注目的是那個碩大的蓮花狀斗拱，確實是一对错综复杂的庞然大物。攀上高臺，善化寺的大雄寶殿終於展現在眼前。殿內供奉這精美的五方佛和二十四諸天，建築結構中的諸如斗拱、橫樑、藻井，都異常精美。這是我第一次這麼近距離的感受如此宏偉的北方古建築。</p><h4 id="華嚴寺"><a href="#華嚴寺" class="headerlink" title="華嚴寺"></a>華嚴寺</h4><p>結束了善化寺參觀後，我們前往同樣在大同古城內的華嚴寺。首先經過的是普光明殿，這個建築前面伸出的抱廈頂上的藻井是是圓拱形的結構，挺有特色。走過兩座小建築後，終於看見了高聳在巨大臺基上的大雄寶殿。還沒走上臺基的樓梯，就可以看見這個大殿頂上巨大的鴟吻和正門上的方形匾額，提寫着“大雄寶殿”四個大字。走上臺階後，打開廣角大概能拍到大雄寶殿雄偉的姿態，幸好現在是淡季，建築內外都沒什麼人。</p><p>走進大殿後，可以看見五尊佛像，擡頭看見的是精美的“天花板”，與之前看的裸露的樑架結構不同。大殿的兩側也有二十四諸天的造像。導遊逐一講解這二十四諸天的名字，重點講了鬼子母的故事。後來我才知道這個鬼子母的故事是導遊講解界的網紅款，都喜歡講她。</p><p>大雄寶殿出來之後，一行人前往另外一個院落，所謂華嚴寺下寺。在這裏主要參觀的是薄伽教藏殿。薄伽教藏殿是什麼意思呢，，通俗一點就是佛教藏經閣。所以這裏的主要看點除了主體建築外，還有佛像後面的藏經閣樓，稱爲“天空樓閣”，可惜由於殿內光線昏暗，前面又有不少造像遮擋，暫時是看不見了。華嚴寺門口外的商業街，就是這個看不見的天宮樓閣的放大版。</p><p>後來，我再找了一下薄伽教藏到底是什麼意思。薄伽教藏英文爲 Bhagavad Sutra Hall，也有稱爲Bhagavad Scripture Storage Hall。前面Bhagavad都是一致的，在佛经中，薄伽梵是对佛陀的敬称，译作世尊。Sutra是經書的梵文，寫成Scripture Storage就更好理解了。有趣的是，與薄伽梵相關的《薄伽梵歌》，即Bhagavad Gita，是一部印度佛教經典。奧本海默電影中所說的“我現在成了死神，世界的毀滅者。”就是出自薄伽梵歌。</p><p>參觀完畢，從華嚴寺下寺正門出來，已經是中午了，第一次參加這種深度講解的團，一早上只是聽也感覺累了。寺廟外是新建的仿古商業街，昨天晚上到的大同，還沒有吃過著名的大同刀削麪。剛好附近有一家華嚴寺附近有一家叫做喜晉道麪館的，就進去品嚐一下。</p><p>麪館裝修挺精緻，有一個開放式廚房，可以看見師傅現場在削麪和一盆盆滷肉澆頭。我點了一碗傳統肉沫刀削麪，上來的時候還配了小涼菜。面上肉沫澆頭有點油，湯是濃郁大骨湯，和肉沫的汁交互在一起。刀削麪細長均勻，與一般在蘭州拉麪館吃的不一樣，入口很有嚼勁。濃郁的肉沫配上這種粗粗的面在這麼冷的冬天是最快活的。飯畢，下午乘車前往雲岡石窟。</p><h4 id="雲岡石窟"><a href="#雲岡石窟" class="headerlink" title="雲岡石窟"></a>雲岡石窟</h4><p>從售票區進入，我們好像沒有走正常的路線，而是從側邊的一個新建的仿北魏的靈岩寺。山西的仿古建築也是很講究的，導遊着重講了處於寺廟中前部的佛塔，強調了唐朝之前以佛塔爲中心的寺廟建築結構。同時，介紹了一下北魏特色的人字拱。</p><p>經過靈巖寺，就進入了雲岡石窟的重點部分。雲岡石窟的洞窟數量是在是多，此處需要結合照片和網上資料再進一步整理。</p><p>大概是從東向西走，遊覽了不少洞窟後，聽了很多北魏鮮卑族皇帝拓跋什麼什麼與雲岡石窟的關係。最後終於走到雲岡石窟的名片，那個最大的大佛。此時已經接近下午五點，太陽西下，陽光剛好照在大佛造像之上，石頭上的佛像背光的雕刻變得更清晰了。此處應是雲岡石窟最熱門的打卡點，這裏的遊客數量算是在這幾天在山西見過的最多的一個點了。</p><p>宿大同，晚上去一家叫做“紫泥369粗糧季”的餐廳，點了大魚泡餅一個大菜，還有懷仁羊雜，青菜，一份黃米涼糕。大魚泡餅就像是燉煮的大頭魚，味道還行，配着幾個脆脆的煎餅吃。懷仁羊雜上來，肉不太多，下面全是粉，微辣，味道一般般。黃米涼糕甜的，不愛吃，pass。</p><h3 id="Day-3：懸空寺-永安禪寺-圓覺寺"><a href="#Day-3：懸空寺-永安禪寺-圓覺寺" class="headerlink" title="Day 3：懸空寺 - 永安禪寺 - 圓覺寺"></a>Day 3：懸空寺 - 永安禪寺 - 圓覺寺</h3><h4 id="懸空寺"><a href="#懸空寺" class="headerlink" title="懸空寺"></a>懸空寺</h4><p>今天一大早就起來了，需要前往恆山腳下的懸空寺。懸空寺景區在一個峽谷之中，峽谷上方恆山下來有一水壩，水壩下引出中間一條小河順着峽谷流出。早上九點多，太陽沒照到峽谷裏面，天氣是在是太冷了，導遊領着我們走上了懸空寺另一邊有陽光的小坡遠眺講解。</p><p>登臨懸空寺需要走過峽谷經過小河，沿途有李白和徐霞客之類的題詞。幾天下來最難受的地方就是懸空寺下方這個峽谷底了，大風呼呼地吹，旁邊的小河使得這裏的體感溫度更低了。冷風吹過面部像是一把菜刀在你腦殼上敲。艱難地熬過景區九曲十八彎的峽谷底小路，終於開始登臨上懸空寺的山路。</p><p>雖然現在遊客不對，但是在懸空寺面積這麼小的空間裏，單向的遊覽路線也顯得略微擁擠。走過門口土地廟和小門，就可以正式踏上懸空寺的木構建築了。中間經過的廊橋，可以觸摸到懸空寺建築外部細長的用於“支撐”立柱，上面寫着“爲了您和他人安全，請勿晃動立柱”。實際上這些立柱並不是真的用於支撐，懸空寺結構的支撐點只要是打入山體的固定橫樑。</p><p>懸空寺距離峽谷底部大概有幾十米，有遊客大媽走到一半開始哭了走不動，有恐高症的還是不要登臨了。走過的木結構大多都挺結實的，只是外部的圍欄太矮了，比小腿略高。這種低於腰部的圍欄實在是太危險了，感覺一不小心就會翻到懸崖下面，所以每次走動雙手都不敢離開欄杆柱子。一遍緊緊抓住柱子一遍慢慢挪動，走到最高處準備折返的時候，手心已經出汗了。</p><p>很快就逛了一圈結束了，下來之後原路返回下車點。現在已經到達了渾源縣，中午我們前往渾源縣城，嚐嚐渾源涼粉。</p><h4 id="永安禪寺"><a href="#永安禪寺" class="headerlink" title="永安禪寺"></a>永安禪寺</h4><h4 id="圓覺寺"><a href="#圓覺寺" class="headerlink" title="圓覺寺"></a>圓覺寺</h4><p>To be continued</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Travel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Finally, I got my PhD</title>
+      <link href="/2023/09/01/gotmyphd/"/>
+      <url>/2023/09/01/gotmyphd/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><img src="/image/phd_pizza.jpg" width=75%></div><p>Completing a PhD has been a challenging yet rewarding journey. In this blog post, I will share the key stages of my final phase.</p><h4 id="Oral-Examination-Mid-September"><a href="#Oral-Examination-Mid-September" class="headerlink" title="Oral Examination (Mid-September):"></a>Oral Examination (Mid-September):</h4><p>Consisting of a 40-minute concise presentation and a 90-minute question-and-answer session, the viva provided an enlightening experience that enriched my understanding of the topic.</p><h4 id="Minor-Revision-Submitted-in-mid-October"><a href="#Minor-Revision-Submitted-in-mid-October" class="headerlink" title="Minor Revision (Submitted in mid-October):"></a>Minor Revision (Submitted in mid-October):</h4><p>Following the viva, a minor modification process was undertaken. I refined my paper based on constructive feedback to ensure it met the academic standards.</p><h4 id="Final-Submission-December"><a href="#Final-Submission-December" class="headerlink" title="Final Submission (December):"></a>Final Submission (December):</h4><p>After a prolonged wait for defense committee and faculty review, the journey culminated in the final submission, marking the end of my PhD career.</p><p>After several years, the journey finally came to an end. I recently came across this sentence:</p><blockquote><p>Not everyone is capable of doing a PhD.”</p></blockquote><p>Sad but true.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> University </tag>
+            
+            <tag> Bullshit </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Quanzhou, the melting pot of religions 泉州：宗教大熔爐</title>
+      <link href="/2023/06/12/quanzhou-travel/"/>
+      <url>/2023/06/12/quanzhou-travel/</url>
+      
+        <content type="html"><![CDATA[<div align="center">  <img src="/image/quanzhou/quanzhou.jpeg" width="85%" style="display: inline-block;"></div><h3 id="Day-1：广州-泉州-承天禅寺-西街"><a href="#Day-1：广州-泉州-承天禅寺-西街" class="headerlink" title="Day 1：广州 - 泉州 - 承天禅寺 - 西街"></a>Day 1：广州 - 泉州 - 承天禅寺 - 西街</h3><p>從廣州出發，高铁下午到达泉州。</p><div align="center">  <img src="/image/quanzhou/zongzi.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/steak.jpeg" width="40%" style="display: inline-block;"></div><p>在市中心的西街附近酒店下榻後，馬上出門品嘗了泉州美食肉粽和牛排饭。</p><div align="center">  <img src="/image/quanzhou/chengtian1.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/chengtian2.jpeg" width="40%" style="display: inline-block;"></div><p>下午茶後，前往遊覽承天寺。</p><div align="center">  <img src="/image/quanzhou/church1_1.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/church1_2.jpeg" width="40%" style="display: inline-block;"></div><p>離開承天寺後，对面出現一家教堂，進門口被傳教士拉著講耶穌將近一個小時。不過，在教堂天台可以俯瞰泉州城市景觀</p><div align="center">  <img src="/image/quanzhou/duck1.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/duck2.jpeg" width="40%" style="display: inline-block;"></div><p>晚飯是泉州著名的薑母鴨，鴨肉軟爛入味，很下飯。</p><div align="center">  <img src="/image/quanzhou/weststreet.jpeg" width="30%" style="display: inline-block;">  <img src="/image/quanzhou/worm.jpeg" width="30%" style="display: inline-block;">    <img src="/image/quanzhou/bar1.jpeg" width="30%" style="display: inline-block;"></div><p>晚飯後回酒店稍微休息，晚上遊覽泉州西街，並在西街小酌一杯。</p><h3 id="Day-2：-开元寺-文庙-天后宫-清净寺-岳廟-銅佛寺-玄妙觀-基督教泉南堂"><a href="#Day-2：-开元寺-文庙-天后宫-清净寺-岳廟-銅佛寺-玄妙觀-基督教泉南堂" class="headerlink" title="Day 2： 开元寺 - 文庙 - 天后宫 - 清净寺 - 岳廟 - 銅佛寺 - 玄妙觀 - 基督教泉南堂"></a>Day 2： 开元寺 - 文庙 - 天后宫 - 清净寺 - 岳廟 - 銅佛寺 - 玄妙觀 - 基督教泉南堂</h3><div align="center">  <img src="/image/quanzhou/kaiyuan1.jpeg" width="30%" style="display: inline-block;">  <img src="/image/quanzhou/kaiyuan2.jpeg" width="30%" style="display: inline-block;"><img src="/image/quanzhou/kaiyuan3.jpeg" width="30%" style="display: inline-block;"></div><p>第二天一大早就前往了泉州最大的佛教寺廟：開元寺。</p><div align="center">  <img src="/image/quanzhou/seafoodnoodle.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/church2.jpeg" width="40%" style="display: inline-block;"></div><p>午飯，吃完海鮮拌麵，途徑花巷天主教堂，前往文廟。</p><div align="center">  <img src="/image/quanzhou/wenmiao1.jpeg" width="30%" style="display: inline-block;">  <img src="/image/quanzhou/wenmiao2.jpeg" width="30%" style="display: inline-block;"><img src="/image/quanzhou/wenmiao3.jpeg" width="30%" style="display: inline-block;"></div><p>泉州文廟面闊七間，重簷廡殿頂，屋簷曲線優美，殿內梁柱上的精緻彩繪以令人讚歎。</p><div align="center">  <img src="/image/quanzhou/tianhou1.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/tianhou2.jpeg" width="40%" style="display: inline-block;"></div><p>天后宮比較遠，幸好泉州有白色的電動小巴，2塊錢可以前往老城內的任意地方。</p><div align="center">  <img src="/image/quanzhou/qingjing1.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/qingjing2.jpeg" width="40%" style="display: inline-block;"></div><p>看完道教場所天后宮後，又乘坐小白車前往伊斯蘭教的清淨寺。</p><p>清淨寺旁有一家比較出名的海蛎煎，下午茶就是它了。</p><div align="center">  <img src="/image/quanzhou/yue1.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/yue2.jpeg" width="40%" style="display: inline-block;"></div><p>稍作休息後便前往清淨寺旁的岳廟 岳廟是道教或者民間信仰，主要祭拜的不是岳飛，而是關羽，其實岳廟全稱是‘關岳廟’</p><div align="center">  <img src="/image/quanzhou/tongfo.jpeg" width="30%" style="display: inline-block;">  <img src="/image/quanzhou/xuanmiao.jpeg" width="30%" style="display: inline-block;"><img src="/image/quanzhou/quannan.jpeg" width="30%" style="display: inline-block;"></div><p>岳廟出來後，準備徒步回酒店，路途中順便參觀了銅佛寺、玄妙觀以及基督教泉南堂”</p><h3 id="Day3-闽台缘博物馆-泉州博物馆"><a href="#Day3-闽台缘博物馆-泉州博物馆" class="headerlink" title="Day3 闽台缘博物馆 - 泉州博物馆 -"></a>Day3 闽台缘博物馆 - 泉州博物馆 -</h3><div align="center">  <img src="/image/quanzhou/mianxian.jpeg" width="40%" style="display: inline-block;">  <img src="/image/quanzhou/mianxian2.jpeg" width="40%" style="display: inline-block;"></div><p><strong>To be continued</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Travel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Joint prediction of pedestrians and occupancy grid map</title>
+      <link href="/2023/05/01/map-prediction/"/>
+      <url>/2023/05/01/map-prediction/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><img src="/image/map_prediction.jpg" width=75%></div><p>Predictions about maps can aid in the computation of information gain in autonomous exploration tasks, thereby improving exploration efficiency. Various studies have highlighted the favourable influence of precise map prediction on the effectiveness of autonomous exploration tasks.</p><p>This project aims to develop a comprehensive framework that combines map prediction and pedestrian tracking, focusing on the interaction between pedestrians and the environment to improve performance in predicting both map and pedestrian behaviours. The joint estimation process follows an iterative approach. The integration of an artificial potential field guides pedestrian motion based on the predicted map, thus improving the accuracy of pedestrian tracking. Conversely, the predicted crowd field, derived from pedestrian tracking and prediction, refines the map prediction process by utilizing image segmentation algorithms.</p><p>One key aspect of our approach is the inclusion of a feedback loop in the joint estimation system, allowing for continuous refinement and improvement of both the map prediction and pedestrian tracking components. Through iterative updates and enhancements based on the reciprocal relationship between pedestrians and the environment, our algorithm achieves increased accuracy in predicting various aspects, including the shape and size of the map and the trajectories of pedestrians.</p><p>The incorporation of map prediction and pedestrian tracking in our joint estimation framework signifies a substantial breakthrough in autonomous robot exploration. By utilizing the interplay between pedestrians and the environment, our algorithm exhibits favourable outcomes in terms of enhanced prediction accuracy and robustness. This framework has the potential to facilitate more efficient and effective exploration in intricate environments, thus advancing the capabilities of autonomous mobile robots in diverse real-world scenarios.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Guitar collection, part 3</title>
+      <link href="/2022/10/01/My-Guitar-3/"/>
+      <url>/2022/10/01/My-Guitar-3/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><img src="/image/3guitar.jpg" width=75%></div><h2 id="Current-Electric-guitars"><a href="#Current-Electric-guitars" class="headerlink" title="Current Electric guitars"></a>Current Electric guitars</h2><div align="center"><img src="/image/3guitar1.jpg" width=75%></div><h3 id="Fender-Eric-Clapton-Stratocaster"><a href="#Fender-Eric-Clapton-Stratocaster" class="headerlink" title="Fender Eric Clapton Stratocaster"></a>Fender Eric Clapton Stratocaster</h3><p>First of all, without discussing the CS or Lace Sensor versions, let’s focus on this budget-friendly version. The Tokai TLB-180, brand new and unboxed, is priced at 17,000 HKD, discounted to 12,900 HKD. Signature models usually don’t participate in discount activities, commonly priced at 85% of the regular price, while display models seem to be at 80%.<br>首先說，不討論CS，或者Lace拾音器版本，先關註這個乞丐版。通利全新開箱，標價17k，折後12900港幣，簽名款一般很少會參與打折活動，普遍標價85折，陳列品好像是8折。</p><div align="center"><img src="/image/fendereric1.jpg" width=55%></div><p>Let’s start with the drawbacks: </p><ol><li><p>the vintage-style tone knob isn’t very stable, the single-ply pickguard is prone to deformation, and getting used to the finer threads may take some time.<br>先說缺點：復古調音旋鈕不夠穩定，單層護板容易變形，細小品絲需要重新習慣。</p></li><li><p>Pay attention to the details; the Soft V-shaped neck is not much different from a regular C, suitable for a rock-style grip, and it offers very comfortable support. The neck isn’t glossy, which is great as it doesn’t get sticky!<br>需要留意的細節，soft V琴頸與普通C差別不大，適合搖滾手型，支撐非常舒服；琴頸不是光漆，不粘手這一點非常好！</p></li><li><p>Key point!!!! The circuit is very versatile, and many people who find the sound not to their liking might not be using its circuit properly!<br>重點！！！！！！電路非常豐富，很多人覺得聲音不好聽是不會使用它的電路！</p></li></ol><div align="center"><img src="/image/fendereric2.jpg" width=75%></div><p>Three knobs: the first one is Volume, the second is Tone, and the third is Boost. If you set all three knobs to 10 when you pick it up, you’re doing it wrong.<br>三個旋鈕，第一個是音量Volume，第二個音色Tone，第三個是激勵Boost。假如當你上手把三個旋鈕全打到10就錯了。</p><ul><li><p>Volume: At 10, it has a boost of about 10-12db compared to a regular Strat, usually used around 7 to match a regular Strat.<br>Volume：10的時候相比於普通strat大概有10-12db的Boost，一般使用在7左右與普通Strat相同；</p></li><li><p>Tone: It has a TBX knob, generally set at 5, equivalent to 10 on a regular Strat, 0-5 is the same as a regular Strat’s tone knob, and 5-10 can increase the high tones.<br>Tone：TBX旋鈕，一般使用在5，與普通strat的10相同，0-5與普通strat音色旋鈕相同，5-10可以增加高音；</p></li><li><p>Boost: At 0, it’s the same as a regular Strat, increasing the mid-frequency gain by about 12db from 0 to 10.<br>Boost：0與普通strat相同，0-10增加中頻增益大概有12db左右。</p></li></ul><p>So, to get a normal Strat sound, set Volume to 7, Tone to 5, and Boost to 0.<br>To get close to a fat humbucker tone, set Boost to 10, Tone to 5, and adjust Volume accordingly.<br>所以，想要獲得正常Strat聲音，需要Volume 7，Tone 5，Boost 0。<br>想要接近雙線圈肥厚音色，Boost 10，Tone 5，Volume自行調整。</p><p>By using these knobs in combination, you can achieve a wide range of output combinations. For example, if you want a solo, you can pull up the Boost and set Tone to 10, achieving a sound similar to a Strat after a light overdrive.<br>這幾個旋鈕配合使用，可以得到非常多的輸出組合。比如，想要solo的時候，可以不用踩額外踏板，把Boost拉起來，Tone也拉到10，可以得到類似於通過了輕過載後的Strat音色。</p><h3 id="Charvel-DK24-Super-Stratocaster"><a href="#Charvel-DK24-Super-Stratocaster" class="headerlink" title="Charvel DK24 Super Stratocaster"></a>Charvel DK24 Super Stratocaster</h3><div align="center"><img src="/image/charvel3.jpg" width=75%></div><h2 id="Amplifiers"><a href="#Amplifiers" class="headerlink" title="Amplifiers"></a>Amplifiers</h2><h3 id="Supro-Delta-King-10"><a href="#Supro-Delta-King-10" class="headerlink" title="Supro Delta King 10"></a>Supro Delta King 10</h3><div align="center"><img src="/image/supro.jpg" width=75%></div>### Yamaha THR10]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+            <tag> Guitar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Efficient exploration in crowds by coupling navigation controller and exploration Planner</title>
+      <link href="/2022/07/01/crowdexplore2/"/>
+      <url>/2022/07/01/crowdexplore2/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><img src="/image/explore2_sys.jpg" width=75%></div><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Autonomous exploration in scenes with moving pedestrians is critical for deploying autonomous mobile robots in populated places such as malls, airports, and museums. The existence of dynamic obstacles poses challenges on achieving an efficient, safe, and robust exploration system: the robot may get stuck in the pedestrians without making progress in scene coverage; it may collide with humans and hurt them; the human-robot collision will fail the exploration process or cause large drift and artifacts in simultaneous localization and mapping (SLAM). In this work, we propose a framework that can solve these challenges by tightly coupling a reinforcement learned navigation controller and a hierarchical exploration planner enhanced with a recovery planner. The navigation controller provides a value function describing the distribution of crowds around the robot, which will be leveraged by exploration planner and recovery planner to minimize the human-robot interruptions. We evaluate the proposed exploration framework against several methods on a set of indoor benchmarks with pedestrians, verifying the advantages of our method in terms of exploration efficiency, navigation safety, and SLAM quality.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A hierarchical approach for mobile robot exploration in pedestrian crowd</title>
+      <link href="/2021/10/01/crowdexplore1/"/>
+      <url>/2021/10/01/crowdexplore1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Autonomous exploration is a fundamental task for mobile robots. However, a major limitation is that in practical applications, robots usually face dynamic obstacles such as pedestrian crowds. These dynamic objects create significant challenges for both collision-free navigation and accurate localization&#x2F;mapping, which can compromise the safety and exploration performance of the robot. In this work, a hierarchical approach is proposed for both effective exploration and collision-free navigation in crowded environments. The central idea of our approach is to combine local and global information to ensure the safety and efficiency of the exploration planner. Besides, our planning method utilizes a reinforcement learning (RL)-based obstacle avoidance algorithm that allows the robot to safely follow the exploration planner’s path through the pedestrian crowd. The proposed system is thoroughly evaluated in simulation environments, and the results show that it outperforms existing methods in terms of not only the exploration efficiency but also the localization and mapping accuracy.</p><h3 id="Exploration-Planner"><a href="#Exploration-Planner" class="headerlink" title="Exploration Planner"></a>Exploration Planner</h3><div align="center"><img src="/image/explore1_sys.png" width=75%></div><p>A hierarchical autonomous exploration planner is designed to determine an exploration tour with a Travel-Salesman-Problem (TSP)-based planner on the global map and to refine the exploration path with the Next-Best-View (NBV)-based planner on local maps and, respectively. Left: the global planner provides an order to visit different unexplored regions (blue points and lines) and determines a rough global goal for the next-step exploration; Right: the local planner selects a precise viewpoint (orange point) as the intermediate goal and the RL-based motion planner determines velocity command (red arrow) to achieve the intermediate goal.</p><h3 id="The-Architecture-of-the-RL-based-Navigation-Neural-Network"><a href="#The-Architecture-of-the-RL-based-Navigation-Neural-Network" class="headerlink" title="The Architecture of the RL-based Navigation Neural Network."></a>The Architecture of the RL-based Navigation Neural Network.</h3><div align="center"><img src="/image/explore_rl_network.jpg" width=75%></div><p>Based on the optimized hierarchical exploration strategy, an RL-based collision avoidance algorithm is embedded to ensure the robot executes the navigation task safely and efficiently through the crowd. Our collision avoidance controller also implicitly models the crowd flow distribution locally around the robot to minimize the inter-interruption between the robot and the crowd, which not only improves the exploration efficiency but also increases the success rate and accuracy in both mapping and localization. </p><p>The network takes the laser scans $\mathbf{o}<em>{scan}$, the relative position $\mathbf{o}</em>{goal}$ and the robot’s current velocity $\mathbf{o}<em>{vel}$ as inputs. And the action $\mathbf{a}&#x3D;[v,\omega]$ is sampled from a Gaussian distribution constructed by the mean $\mathbf{v}</em>{mean}$ with a log standard deviation vector $\mathbf{v}_{logstd}$.</p><p>The proposed system is thoroughly evaluated in an extensive simulation experiment, where the impact of different planning and navigation methods for navigation in crowds is investigated.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Crowd simulation with Menge in ROS Gazebo</title>
+      <link href="/2020/12/01/crowdsimulation/"/>
+      <url>/2020/12/01/crowdsimulation/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><ul><li>Ubuntu 16.04</li><li>python2</li><li>ROS Kinect</li></ul><h2 id="How-to-install"><a href="#How-to-install" class="headerlink" title="How to install"></a>How to install</h2><ol><li><p>Download special gazebo and sdformat from <a href="https://drive.google.com/file/d/1fd9kkLMhFpMRD5V3X3eSXpvSt9fIzT95/view?usp=sharing">source</a>.</p></li><li><p>Install gazebo dependency following the <a href="http://gazebosim.org/tutorials?tut=install_dependencies_from_source">order</a> .</p></li></ol><ul><li>ign-cmake</li><li>ign-common</li><li>ign-math</li><li>ign-msgs</li><li>ign-transport</li><li><a href="https://github.com/protocolbuffers/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.bz2">protobuf-2.6.1</a></li></ul><ol start="3"><li><p>build <em>Gazebo</em> from source</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make -j</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></li><li><p>build Menge from <a href="https://drive.google.com/file/d/18IZwvpHemEXJpFnQfVCHV_Ui2w2ZAfv1/view?usp=sharing">source</a></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd projects/g++</span><br><span class="line">mkdir build</span><br><span class="line">cmake -DCMAKE_BUILD_TYPE=Debug ..</span><br><span class="line">make -j</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></li><li><p>catkin make gazebo_menge from <a href="https://drive.google.com/file/d/1990j1PpEFesHYJz06gug7A45u2AOiQDJ/view?usp=sharing">source</a></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd catkin_ws</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure></li><li><p>build new version turtlebot package for Gazebo 8 from <a href="https://drive.google.com/open?id=1fuhXE4My1FWQhaV7dxN6V-tfc8uP9O9-">source</a></p></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd catkin_ws</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure><hr><h2 id="How-to-run"><a href="#How-to-run" class="headerlink" title="How to run"></a>How to run</h2><ol><li><p>start roscore</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure></li><li><p>modify <em>env_setup.sh</em> to make menge and gazebo consistance. After that</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash env_setup.sh</span><br></pre></td></tr></table></figure></li><li><p>start gazebo_menge, which define the menge setup</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch menge_gazebo_worlds turtlebot.launch</span><br></pre></td></tr></table></figure></li><li><p>create a turtlebot and visualize Gazebo</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch menge_gazebo_worlds start_bot.launch</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Simulation </tag>
+            
+            <tag> Crowd </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Occupancy grid map prediction for mobile robots</title>
+      <link href="/2020/04/01/ogm-prediction/"/>
+      <url>/2020/04/01/ogm-prediction/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><img src="/image/ogmprediction.jpg" width=85%></div><p>Fast, collision-free movement in an unseen environment remains a challenge for mobile robot systems. The robot’s ability to reason about its future motion is often limited by the sensor’s Field of View (FOV). In contrast, biological systems usually predict the future unobserved based on previous experience by considering what might exist outside of the current observation.</p><p>The Occupancy Grid Map (OGM) generated by the simultaneous localization and mapping (SLAM) algorithm using the laser scan sensor is widely used in both mobile robots and unmanned vehicles. An OGM divides the space around the robot into cells representing the state of the environment, i.e., free, occupied, or unknown. Various methods have been proposed for the prediction of OGMs, which are encoded as images. Some work focuses on the estimation and prediction of the trajectory of moving objects in OGM, while others concentrate on the structure of the environment. In one study, the author uses several deep learning-based methods, such as UNet and Generative adversarial network (GAN), to predict the expanded OGM. In another study, Variational Autoencoders (VAE) are applied to predict the structure of some unmapped regions.</p><p>In this project, we focus on a data-driven approach that does not rely on explicit assumptions about the environment but instead learns regularities from examples. Specifically, inspired by previous work, we employ UNet, VAE, and GAN to predict unknown map regions beyond frontiers. Although this project uses a network structure similar to previous studies, we have adopted a different encoding method for OGMs into traversable and untraversable cells.</p><p>The work concerned in this project is listed as follows:</p><p>We collected datasets for the deep learning-based OGM prediction task and preprocessed the data for network training.<br>We implemented several different OGM prediction networks, including UNet, VAE, and GAN.<br>We trained and tested the above three networks and compared their performance on the OGM prediction task.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Bought a new Charvel super-stratocaster</title>
+      <link href="/2019/09/01/New-Charvel-Guitar-Get/"/>
+      <url>/2019/09/01/New-Charvel-Guitar-Get/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/image/charvel_1.jpg" alt="Headstock"></p><p>Recently I was immersed in various metal music. The traditional Fender strat can’t satisfy me.</p><p>I am going to buy a new guitar for metal! But I like the one with a strat headstock.</p><p>There is a brand called Charvel, which is dedicated to Superstrat.</p><p>I have the first Superstrat!</p><p><img src="/image/charvel_2.jpg" alt="Body"></p><!-- ![Body](/new-charvel-guitar-get/charvel_1.jpg) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+            <tag> Guitar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Multi-scale guided mask refinement for RGB-D perception</title>
+      <link href="/2018/08/01/maskrefinement/"/>
+      <url>/2018/08/01/maskrefinement/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/image/ms_system.gif" alt="The pipeline of the proposed multi-scale guided mask refinement."></p><p> Pixel-level object segmentation is highly desired in robot perception systems due to its importance for many vision applications. Existing approaches for pixel-level segmentation are mainly based on deep neutral networks (DNN), which can achieve high accuracy in generating the semantic masks. However, they still have difficulties in being applied to robot vision due to the large requirements of storage and computing resources. Motivated by the recent works on utilizing depth cues and edge-preserving components for more accurate segmentations.</p><span id="more"></span><p><img src="/image/ms_result.png" alt="Visual comparisons on a RGB-D frame in Cespatx_ds."><br> In this paper, we propose to imitate the DNN architecture using light-weight components and design a multi-scale guided mask refinement method to enhance the coarse segmentations to fine-scale ones. Taking foreground segmentation and temporal object segmentation as two representative applications, we quantitatively evaluate the proposed method on benchmark datasets. It is demonstrated in the experimental results that our method can achieve not only significant accuracy improve- ments compared to other alternatives, but also the superior edge-preserving capability with limited storing and computing resources. We believe that our method is feasible for real-time pixel-level perception on robotic systems due to its scalable implementation and small resource requirements.</p><p> <a href="https://ieeexplore.ieee.org/abstract/document/8573890">This project have be published on SPL.</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Real-time dense visual inertial SLAM system</title>
+      <link href="/2018/06/01/vislam/"/>
+      <url>/2018/06/01/vislam/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><img src="/image/densevio_result.png" width=75%></div><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Dense mapping is always the desire of simultaneous localization and mapping (SLAM), especially for the applications that require fast and dense scene information. Visual-inertial odometry (VIO) is a light-weight and effective solution to fast self-localization. However, VIO-based SLAM systems have difficulty in providing dense mapping results due to the spatial sparsity and temporal instability of the VIO depth estimations. Although there have been great efforts on real-time mapping and depth recovery from sparse measurements, the existing solutions for VIO-based SLAM still fail to preserve sufficient geometry details in their results.</p><div align="center"><img src="/image/densevio_system.gif" width=75%></div><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>In this paper, we propose to embed depth recovery into VIO-based SLAM for real-time dense mapping. In the proposed method, we present a subspace-based stabilization scheme to maintain the temporal consistency and design a hierarchical pipeline for edge-preserving depth interpolation to reduce the computational burden. </p><div align="center"><img src="/image/densevio_result_1.gif" width=75%></div><h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p>Numerous experiments demonstrate that our method can achieve an accuracy improvement of up to 49.1 cm compared to state-of-the-art learning-based methods for depth recovery and reconstruct sufficient geometric details in dense mapping when only 0.07% depth samples are available. Since a simple CPU implementation of our method already runs at 10-20 fps, we believe our method is very favorable for practical SLAM systems with critical computational requirements.</p><p><a href="https://ieeexplore.ieee.org/abstract/document/8593917">This project have be published in IROS 2018.</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+            <tag> SLAM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Guitar collection, part 1</title>
+      <link href="/2018/01/01/My-Guitar-1/"/>
+      <url>/2018/01/01/My-Guitar-1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/image/gtr_tele_cover.jpg" alt="A gig with my standard telecaster in Zhuhai"></p><p>I visited Tomlee Music last month. As I picked up the guitar and suddenly found that I have almost forgotten how to play it. Then I realized that, I have not practiced it for half a year since I arrived in Hong Kong. Here, I want to show my previous guitars.</p><span id="more"></span><h2 id="Electric-guitars"><a href="#Electric-guitars" class="headerlink" title="Electric guitars"></a>Electric guitars</h2><h3 id="First-electric-guitar"><a href="#First-electric-guitar" class="headerlink" title="First electric guitar"></a>First electric guitar</h3><h4 id="Squier-model-0912-Stratocaster"><a href="#Squier-model-0912-Stratocaster" class="headerlink" title="Squier model 0912 Stratocaster"></a>Squier model 0912 Stratocaster</h4><div align="center"><img src="/image/sq1.jpg" width=75%></div><p>My first electric guitar was an Squier model 0912 Stratocaster, which was so popular for beginners who wants a Fender Stracocater but can’t afford it.<br>At that time, I was a huge fan of Eric Clapton, so I chose a Squier Stratocaster with black finish, pretending that I had a ‘Blackie’.</p><div align="center"><img src="/image/sq_2.jpg" width=75%></div><p>Then, I painted my ‘Blackie’ Squier. Here is a gig with the psychedelic Squier:</p><div align="center"><img src="/image/sq_show.jpg" width=75%></div><h3 id="First-Fender-guitar"><a href="#First-Fender-guitar" class="headerlink" title="First Fender guitar"></a>First Fender guitar</h3><p>This is my first Fender Telecaster made in Mexico.<br>I bought it in Tomlee Music.</p><div align="center"><img src="/image/tele.jpg" width=75%></div><p>A gig with the telecaster</p><div align="center"><img src="/image/tele_show.jpg" width=75%></div><h3 id="More-Fender"><a href="#More-Fender" class="headerlink" title="More Fender!"></a>More Fender!</h3><div align="center"><img src="/image/fender_strat_1.jpg" width=75%></div><p>This is my Fender Stratocaster made in Japan.<br>It is a second hand guitar, but it is good condition.<br>One thing I don’t like is the noise came out of the vintage single-coil pickup.<br>So later I change those 3 pickup with a set of Fender N3 Noisless pickup.</p><div align="center"><img src="/image/strat_show.jpg" width=75%></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+            <tag> Guitar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Guitar collection, part 2</title>
+      <link href="/2018/01/01/My-Guitar-2/"/>
+      <url>/2018/01/01/My-Guitar-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Electric-bass"><a href="#Electric-bass" class="headerlink" title="Electric bass"></a>Electric bass</h2><p>Squier P bass maded in Japan</p><div align="center"><img src="/image/sq_bass.jpg" width=75%></div><h2 id="Acoustic-guitar"><a href="#Acoustic-guitar" class="headerlink" title="Acoustic guitar"></a>Acoustic guitar</h2><p>Takemine D26s made in China</p><div align="center"><img src="/image/takamine_1.jpg" width=75%></div><p>Taylor BT2 made in China</p><div align="center"><img src="/image/taylor.jpg" width=75%></div><p>Takemine D26s made in China</p><div align="center"><img src="/image/takamine_2.jpg" width=75%>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+            <tag> Guitar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>An autonomous vision-based target tracking system for UAV</title>
+      <link href="/2017/06/01/uavtracking/"/>
+      <url>/2017/06/01/uavtracking/</url>
+      
+        <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7dc4etU0IHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>In this project, an autonomous vision-based tracking system is presented to track a maneuvering target for a rotorcraft unmanned aerial vehicle (UAV) with an onboard gimbal camera.</p><span id="more"></span><p>The contributions of the project are summarized as follow: </p><ol><li><p>In the case of target occlusions or loss, the status of the target, i.e. loss or not, is firstly detected based on the KCF tracker, and a computationally efficient redetection method is presented. With this scheme, the UAV can track the target again when it re-appears.</p></li><li><p>An Interacting Multi-Model Extended Kalman Filtering (IMM-EKF) based target state estimator is presented to estimate states of the maneuvering target, and a nonlinear feedback control law is presented to stably track moving targets.</p></li><li><p>A computationally efficient framework implemented on onboard TK1 computer is presented for ground target tracking in unstructured environments.</p></li></ol><p><a href="https://ieeexplore.ieee.org/abstract/document/8205986">This project have be published in IROS 2017.</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Notes on state derivation of IMU model in OKVIS</title>
+      <link href="/2017/05/14/OKVIS-IMU-Derivation-Notes/"/>
+      <url>/2017/05/14/OKVIS-IMU-Derivation-Notes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>In OKVIS paper, states are:<br>$$<br>\mathbf{x}<em>{\mathrm{R}}:&#x3D;\left[</em>{W} \mathbf{r}<em>{S}^{\mathrm{T}}, \mathbf{q}</em>{W S}^{\mathrm{T}}, s \mathbf{v}^{\mathrm{T}}, \mathbf{b}<em>{\mathrm{g}}^{\mathrm{T}}, \mathbf{b}</em>{\mathrm{a}}^{\mathrm{T}}\right]^{\mathrm{T}} \in \mathbb{R}^{3} \times S^{3} \times \mathbb{R}^{9}<br>$$</p><p>The minimal robot error state error:<br>$$<br>\delta \boldsymbol{\chi}<em>{\mathrm{R}}&#x3D;\left[\delta \mathbf{p}^{\mathrm{T}}, \delta \boldsymbol{\alpha}^{\mathrm{T}}, \delta \mathbf{v}^{\mathrm{T}}, \delta \mathbf{b}</em>{\mathrm{g}}^{\mathrm{T}}, \delta \mathbf{b}_{\mathrm{a}}^{\mathrm{T}}\right]^{\mathrm{T}} \in \mathbb{R}^{15}<br>$$</p><p>We devive the linearized model of the error states:</p><p>$$<br>\delta \dot{\boldsymbol{\chi}}<em>{\mathrm{R}} \approx \mathbf{F}</em>{c}\left(\overline{\mathbf{x}}<em>{\mathrm{R}}\right) \delta \boldsymbol{\chi}</em>{\mathrm{R}}+\mathbf{G}\left(\overline{\mathbf{x}}_{\mathrm{R}}\right) \mathbf{w}<br>$$</p><h2 id="Derivation"><a href="#Derivation" class="headerlink" title="Derivation"></a>Derivation</h2><h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><p>$$\begin{aligned} \delta_{W} \dot{\mathbf{r}}<em>{S} &amp;&#x3D;\delta \mathbf{C}</em>{WS}{<em>S\mathbf{v}}<br>\ &amp;&#x3D;\dot{\mathbf{C}}</em>{WS} { <em>S\mathbf{v} + \mathbf{C}</em>{WS}} {<em>S\mathbf{\dot{v}}}<br>\ &amp;&#x3D;-[\delta \boldsymbol{a}]</em>{\times} \mathbf{C}<em>{WS} {<em>S\mathbf{v}}+\mathbf{C}</em>{W S} \delta</em>{S} \mathbf{v} <br>\ &amp;&#x3D;-\left[\mathbf{C}<em>{WS} {<em>S\mathbf{v}}\right]</em>{\times} \delta \boldsymbol{\alpha}+\mathbf{C}</em>{W S} \delta_{S} \mathbf{v} <br>\ &amp;&#x3D;\left[\mathbf{C}<em>{W S}{<em>S\mathbf{v}}\right]</em>{\times} \delta \boldsymbol{a}+\mathbf{C}</em>{W S} \delta_{S} \mathbf{v} \end{aligned}$$</p><h3 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h3><p>$$\because \mathbf{C}<em>{W S}&#x3D;\left[\mathbf{I}-[\delta \boldsymbol{a}]</em>{\times}\right] \overline{\mathbf{C}}<em>{W S} \quad \therefore[\delta \boldsymbol{a}]</em>{\times}&#x3D;\mathbf{I}-\mathbf{C}<em>{W S} \overline{\mathbf{C}}</em>{W S}^{T}$$</p><p>$$\therefore[\delta \ddot{a}]<em>{\times}&#x3D;-\dot{\mathbf{C}}</em>{W S} \overline{\mathbf{C}}<em>{W S}^{T}-\mathbf{C}</em>{W S} \dot{\overline{\mathbf{C}}}_{W S}^{T}$$</p><p>$$<br>\begin{aligned} \because \dot{\mathbf{C}}<em>{W S} &amp;&#x3D;\mathbf{C}</em>{W S} \mathbf{\Omega}, \quad \mathbf{\Omega}&#x3D;[\mathbf{\omega}]<em>{\times} \ \dot{\overline{\mathbf{C}}}</em>{W S} &amp;&#x3D;\overline{\mathbf{C}}<em>{W S} \overline{\mathbf{\Omega}}, \quad \overline{\mathbf{\Omega}}&#x3D;[\overline{\mathbf{\omega}}]</em>{\mathbf{X}} \end{aligned}<br>$$</p><p>$$\begin{aligned} \therefore[\delta \dot{\mathbf{a}}]<em>{\mathrm{X}} &amp;&#x3D;-\mathbf{C}</em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}<em>{W S}^{T}-\mathbf{C}</em>{W S}\left(\overline{\mathbf{C}}<em>{W S} \overline{\mathbf{\Omega}}\right)^{T}<br>\\ &amp;&#x3D;-\mathbf{C}</em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}<em>{W S}^{T}+\mathbf{C}</em>{W S} \overline{\mathbf{\Omega}}^{T} \overline{\mathbf{C}}<em>{W S}^{T}<br>\\ &amp;&#x3D;-\left[\mathbf{I}-[\delta \boldsymbol{a}]</em>{\times}\right] \overline{\mathbf{C}}<em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}</em>{W S}^{T}+\left[\mathbf{I}-[\delta \boldsymbol{a}]<em>{\times}\right] \overline{\mathbf{C}}</em>{W S} \overline{\mathbf{\Omega}}^{T} \overline{\mathbf{C}}<em>{W S}^{T} \\<br>&amp;&#x3D;-\overline{\mathbf{C}}</em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}<em>{W S}^{T}+[\delta \boldsymbol{a}]</em>{\times} \overline{\mathbf{C}}<em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}</em>{W S}^{T}+\overline{\mathbf{C}}<em>{W S} \overline{\mathbf{\Omega}}^{T} \overline{\mathbf{C}}</em>{W S}^{T}-[\delta \boldsymbol{a}]<em>{\times} \overline{\mathbf{C}}</em>{W S}^{T} \overline{\mathbf{C}}<em>{W S}^{T} \\<br>&amp;&#x3D;-\overline{\mathbf{C}}</em>{W S}(\mathbf{\Omega}-\overline{\boldsymbol{\Omega}}) \overline{\mathbf{C}}<em>{W S}^{T}+[\delta \boldsymbol{a}]</em>{\times} \overline{\mathbf{C}}<em>{W S}(\mathbf{\Omega}-\overline{\boldsymbol{\Omega}}) \overline{\mathbf{C}}</em>{W S}^{T} \end{aligned}$$</p><p>Let $[\delta \mathbf{\omega}]<em>{\times}&#x3D;\mathbf{\Omega}-\overline{\mathbf{\Omega}}$, ignore $[\delta \dot{\boldsymbol{a}}]</em>{\times} \approx-\overline{\mathbf{C}}<em>{W S}[\delta \boldsymbol{\omega}]</em>{\times} \overline{\mathbf{C}}_{W S}^{T}$</p><p>$${\because[\mathbf{C r}]<em>{\times}&#x3D;\mathbf{C}[\mathbf{r}]</em>{\times} \mathbf{C}^{T}}$$</p><p>$${\therefore[\delta \dot{\boldsymbol{a}}]<em>{\times}&#x3D;-\left[\overline{\mathbf{C}}</em>{W S} \delta \mathbf{\omega}\right]<em>{\times} \Rightarrow \delta \dot{\boldsymbol{\alpha}}&#x3D;-\overline{\mathbf{C}}</em>{W S} \delta \boldsymbol{\omega}}$$</p><p>$${\because \delta \mathbf{\omega}&#x3D;\delta\left(\tilde{\mathbf{\omega}}+\mathbf{w}<em>{\mathrm{g}}-\mathbf{b}</em>{\mathrm{g}}\right)&#x3D;-\delta \mathbf{b}_{\mathrm{g}}}$$</p><p>$${\therefore \delta \dot{\boldsymbol{\alpha}}&#x3D;-\overline{\mathbf{C}}<em>{W S}\left(-\delta \mathbf{b}</em>{\mathrm{g}}\right)&#x3D;\overline{\mathbf{C}}<em>{W S} \delta \mathbf{b}</em>{\mathrm{g}}}$$</p><h3 id="Velocity"><a href="#Velocity" class="headerlink" title="Velocity"></a>Velocity</h3><p>$$<br>\begin{array}{l}{\delta_{S} \dot{\mathbf{v}}&#x3D;\delta\left(<em>{S} \mathbf{a}+\mathbf{w}</em>{a}-\mathbf{b}<em>{a}+\mathbf{C}</em>{S W W} \mathbf{g}-\left(<em>{S} \mathbf{\omega}\right) \times</em>{S} \mathbf{v}\right)} \\ {\quad&#x3D;-\delta \mathbf{b}<em>{a}+\mathbf{C}</em>{S W}[\delta \boldsymbol{a}]<em>{\times W} \mathbf{g}-\left[\delta</em>{S} \mathbf{\omega}\right]<em>{\times S} \mathbf{v}-\left[</em>{S} \mathbf{\omega}\right]<em>{\times} \delta</em>{S} \mathbf{v}} \\ {\quad&#x3D;-\mathbf{C}<em>{S W}\left[</em>{W} \mathbf{g}\right]<em>{\times} \delta \boldsymbol{\alpha}-\left[-\delta \mathbf{b}</em>{g}\right]<em>{\times S} \mathbf{v}-\left[</em>{S} \boldsymbol{\omega}\right]<em>{\times} \delta</em>{S} \mathbf{v}-\delta \mathbf{b}<em>{a}} \\ {\quad&#x3D;-\mathbf{C}</em>{S W}\left[<em>{W} \mathbf{g}\right]</em>{\times} \delta \boldsymbol{\alpha}-\left[<em>{S} \mathbf{\omega}\right]</em>{\times} \delta_{S} \mathbf{v}-\left[<em>{S} \mathbf{v}\right]</em>{\times} \delta \mathbf{b}<em>{g}-\delta \mathbf{b}</em>{a}}\end{array}<br>$$</p><h3 id="Gyro-Bias"><a href="#Gyro-Bias" class="headerlink" title="Gyro Bias"></a>Gyro Bias</h3><p>$$\delta \dot{\mathbf{b}}_{g}&#x3D;0$$</p><h3 id="Accelerometer-Bias"><a href="#Accelerometer-Bias" class="headerlink" title="Accelerometer Bias"></a>Accelerometer Bias</h3><p>$$\delta \dot{\mathbf{b}}<em>{\mathrm{a}}&#x3D;-\frac{1}{\tau} \delta \mathbf{b}</em>{\mathrm{a}}$$</p><p>Finally, we get:<br>$$<br>\delta \dot{\boldsymbol{\chi}}<em>{\mathrm{R}} \approx \mathbf{F}</em>{c}\left(\overline{\mathbf{x}}<em>{\mathrm{R}}\right) \delta \boldsymbol{\chi}</em>{\mathrm{R}}+\mathbf{G}\left(\overline{\mathbf{x}}<em>{\mathrm{R}}\right) \mathbf{w}<br>$$<br>where<br>$$<br>\mathbf{F}</em>{c}&#x3D;\left[\begin{array}{ccccc}{\mathbf{0}<em>{3 \times 3}} &amp; {\left[\mathbf{C}</em>{W S S} \overline{\mathbf{v}}\right]^{\times}} &amp; {\overline{\mathbf{C}}<em>{W S}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} \ {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\overline{\mathbf{C}}<em>{W S}} &amp; {\mathbf{0}</em>{3 \times 3}} \ {\mathbf{0}<em>{3 \times 3}} &amp; {-\overline{\mathbf{C}}</em>{W S}\left[<em>{W \mathbf{B}}\right]^{\times}} &amp; {-\left[</em>{S} \overline{\boldsymbol{\omega}}\right]^{\times}} &amp; {-[s \overline{\mathbf{v}}]^{\times}} &amp; {-\mathbf{I}<em>{3}} \ {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} \ {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {-\frac{1}{\tau} \mathbf{I}<em>{3}}\end{array}\right],<br>$$<br>and<br>$$<br>\mathbf{G}&#x3D;\left[\begin{array}{cccc}{\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} \ {\mathbf{I}</em>{3}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} \ {\mathbf{0}} &amp; {\mathbf{I}<em>{3}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} \ {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{I}</em>{3}} &amp; {\mathbf{0}} \ {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{I}_{3}}\end{array}\right]<br>$$</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol><li>Leutenegger, S., Lynen, S., Bosse, M., Siegwart, R., &amp; Furgale, P. (2015). Keyframe-based visual–inertial odometry using nonlinear optimization. The International Journal of Robotics Research, 34(3), 314-334.</li><li>Savage, Paul G. “Strapdown inertial navigation integration algorithm design part 1: Attitude algorithms.” Journal of guidance, control, and dynamics 21.1 (1998): 19-28.</li><li>Savage, Paul G. “Strapdown inertial navigation integration algorithm design part 2: Velocity and position algorithms.” Journal of Guidance, Control, and Dynamics 21.2 (1998): 208-221.</li><li>Shin, Eun-Hwan, and Naser El-Sheimy. “An unscented Kalman filter for in-motion alignment of low-cost IMUs.” Position Location and Navigation Symposium, 2004. PLANS 2004. IEEE, 2004.</li><li>Sola, Joan. “Quaternion kinematics for the error-state KF.” Laboratoire d’Analyse et d’Architecture des Systemes-Centre national de la recherche scientifique (LAAS-CNRS), Toulouse, France, Tech. Rep (2012).</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Robotics </tag>
+            
+            <tag> Projects </tag>
+            
+            <tag> SLAM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Iconic moments of Eric Clapton</title>
+      <link href="/2016/05/19/Spiral-Eric-Clapton/"/>
+      <url>/2016/05/19/Spiral-Eric-Clapton/</url>
+      
+        <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-gKPuxV3MkY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><h2 id="New-MV-Released"><a href="#New-MV-Released" class="headerlink" title="New MV Released"></a>New MV Released</h2><p>A few days ago, Eric Clapton released the MV of the song “Spiral” in the new album “I Still Do”.</p><p>The MV took Peter Blake’s portrait as his starting point and entered one psychedelic vortex.<br>The whirlpool presents the guitar God is near.<br>The animation of the classic moments of the 50-year musical career, from the near and far, Eric Clapton’s various periods of Icon from the 70-year-old tour back to the Yardbirds period.<br>The entire MV is a review of Eric Clapton’s career.</p><p>The song is a typical Clapton-style slow blues, still his sweet Strat overload sound, in particular, the most touching me is the deep confession of blues in the lyrics:</p><blockquote><p>“You don’t know how much it means,<br> To have the music in me”<br>“I gotta have it,<br> I gotta have this blues,<br> I gotta have it”</p></blockquote><p>For decades, Eric has been loyal to his favorite blues music while experimenting with different musical styles. Looking at the recent visit to Eric, he said that he did not say that he is ready to retire, but does not rule out this possibility.</p><p>The following is a snippet from the Spiral MV to find the classic moment of Eric Clapton’s musical career as a reminiscence of his 50-year career with a small EC powder.</p><h2 id="Iconic-Moments"><a href="#Iconic-Moments" class="headerlink" title="Iconic Moments"></a>Iconic Moments</h2><h3 id="70-years-old-Royal-Albert-Hall-performance-in-2015"><a href="#70-years-old-Royal-Albert-Hall-performance-in-2015" class="headerlink" title="70 years old Royal Albert Hall performance in 2015"></a>70 years old Royal Albert Hall performance in 2015</h3><p><img src="/image/clapton_1a.jpg"><br><img src="/image/clapton_1b.jpg"></p><h3 id="Long-hair-flowing-in-2010-with-Winwood’s-tour-and-Crossroads-Festival"><a href="#Long-hair-flowing-in-2010-with-Winwood’s-tour-and-Crossroads-Festival" class="headerlink" title="Long hair flowing in 2010 with Winwood’s tour and Crossroads Festival"></a>Long hair flowing in 2010 with Winwood’s tour and Crossroads Festival</h3><p><img src="/image/clapton_2a.jpg"><br><img src="/image/clapton_2b.jpg"></p><h3 id="2004-classic-color-Fender-EC-Crash-Concept-Model-guitar"><a href="#2004-classic-color-Fender-EC-Crash-Concept-Model-guitar" class="headerlink" title="2004 classic color Fender EC Crash Concept Model guitar"></a>2004 classic color Fender EC Crash Concept Model guitar</h3><p><img src="/image/clapton_3a.jpg"><br><img src="/image/clapton_3b.jpg"></p><h3 id="The-famous-“Unplugged”-concert-in-1992"><a href="#The-famous-“Unplugged”-concert-in-1992" class="headerlink" title="The famous “Unplugged” concert in 1992"></a>The famous “Unplugged” concert in 1992</h3><p><img src="/image/clapton_4a.jpg"><br><img src="/image/clapton_4b.jpg"></p><h3 id="White-Fender-live-performance-in-the-80s"><a href="#White-Fender-live-performance-in-the-80s" class="headerlink" title="White Fender live performance in the 80s"></a>White Fender live performance in the 80s</h3><p><img src="/image/clapton_5a.jpg"><br><img src="/image/clapton_5b.jpg"></p><h3 id="“24-Nights”-concert-in-1990-1991"><a href="#“24-Nights”-concert-in-1990-1991" class="headerlink" title="“24 Nights” concert in 1990-1991"></a>“24 Nights” concert in 1990-1991</h3><p><img src="/image/clapton_6a.jpg"><br><img src="/image/clapton_6b.jpg"></p><h3 id="Tour-in-1981"><a href="#Tour-in-1981" class="headerlink" title="Tour in 1981"></a>Tour in 1981</h3><p><img src="/image/clapton_7a.jpg"><br><img src="/image/clapton_7b.jpg"></p><h3 id="Derek-and-Dominos-period-Fender-Strat"><a href="#Derek-and-Dominos-period-Fender-Strat" class="headerlink" title="Derek and Dominos period, Fender Strat"></a>Derek and Dominos period, Fender Strat</h3><p><img src="/image/clapton_8a.jpg"><br><img src="/image/clapton_8.jpg"></p><h3 id="Cream-ES335-guitar"><a href="#Cream-ES335-guitar" class="headerlink" title="Cream, ES335 guitar"></a>Cream, ES335 guitar</h3><p><img src="/image/clapton_9a.jpg"><br><img src="/image/clapton_9b.jpg"></p><h3 id="Cream-“The-Fool”-SG-Guitar"><a href="#Cream-“The-Fool”-SG-Guitar" class="headerlink" title="Cream, “The Fool” SG Guitar"></a>Cream, “The Fool” SG Guitar</h3><p><img src="/image/clapton_10a.jpg"><br><img src="/image/clapton_10b.jpg"></p><h3 id="Yardbirds-era-Eric-used-a-red-Tele"><a href="#Yardbirds-era-Eric-used-a-red-Tele" class="headerlink" title="Yardbirds era, Eric used a red Tele"></a>Yardbirds era, Eric used a red Tele</h3><p><img src="/image/clapton_11a.jpg"><br><img src="/image/clapton_11b.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+            <tag> Guitar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Layla, you&#39;ve got me on my knees.</title>
+      <link href="/2016/03/03/layla/"/>
+      <url>/2016/03/03/layla/</url>
+      
+        <content type="html"><![CDATA[<p>Vol.6|我已彻底为你倾倒 —《Layla - Derek and the Dominos》</p><p>数年前因对Eric Clapton的痴迷，触发了我对电吉他的兴趣。我的梦想是买一把像Blackie一样的Stratocaster。结果我买的第一把电吉他并不是Blackie，Brownie或者Fender签名款，而是一把价格低廉的烂大街Squire牌的黑色Stratocaster。虽然只是一把几百块得吉他，我也异常激动，这是我能力范围内能买到的最接近Blackie的吉他了，加上Ernie Ball的EC同款背带，插上电，第一次弹出的就是《Layla》的连复段，在我心中这是一个永恒的连复段。《Layla》承载着我的许多的第一次，第一次排练、第一次演出（虽然是黑历史般的车祸现场）…….《Layla》在我心中是一首永恒的、史诗般的、波澜壮阔的情歌。</p><p>众所周知，这是一首Eric Clapton用来追求好友George  Harrison妻子Pattie Boyd的情歌。今天想说说名曲《Layla》背后故事背后的故事。</p><p>这是一个古老的阿拉伯爱情故事。</p><p>很久很久以前，男孩Qays深深地爱上了女孩Layla。很快地，Qays开始为Layla书写美丽的情诗，然后在街头大声朗读。如此激情的示爱使得人们把Qays叫做“Majnun”，意为疯子。</p><p>一天，Qays鼓起勇气向Layla的父亲请求成全这一婚事，但Layla的父亲毅然拒绝了，原因是女儿与一个称为疯子的人结婚是极不体面的，认为对于家族来说是一件丑闻。相反，Layla父亲决定把她嫁给隔壁村的一个男人。</p><p>Majnun悲痛欲绝，他离开了自己的家人，在尘世中消失了。他秘密地在荒野中游荡，与野生动物为友，在荒野中，Majnu孤身吟唱诗歌，吟唱他的所爱。然而Layla被迫出嫁，她并不爱自己的丈夫因为她心已属Majnun。但是，即使Layla不爱她的丈夫，她仍然努力成为一个听话的女儿，一个忠诚的妻子。</p><p>Majnun的父母非常想念儿子，每天都渴望他能平安归来。但是Layla出嫁的消息摧残了Majnun的心，他继续一个人在野外写诗，拒绝回家与父母团聚，独自留在荒野书写孤独的诗歌，一话不说。Majnun，四处游荡，在旷野中只有动物在他身旁，只有动物在漫长的荒漠之夜中保护他。路过的路人会看到Majnun，他们说Majnun以背诵诗歌度日，用长棍在沙上写诗。人们认为Majnun真的已经因为伤心过度疯了。</p><p>许多年过去了，Majnun父母去世。Layla知道Majnun是深爱父母的，想把这个消息告诉Majnun。于是Layla找到了一个声称在荒漠中见过Majnun的老人，经过一番恳求后，老人同意帮Layla传话。有一天，老人经过荒漠遇到了Majnun，郑重地告诉他父母去世的消息。结果，Majnun带着悔恨与遗憾，决定把自己禁锢起来，发誓一辈子都要住在荒野。</p><p>几年后，Layla的丈夫去世了，她希望从此能够与真正的爱人在一起，但可悲的是，传统要求独自一人在家中守寡哀悼丈夫的离世两年。这两年是Layla不能忍受的，她大半辈子已经与Majnun分离，再多等两年足以令她放弃自己生命。</p><p>得知Layla自杀，Majnun立刻奔赴Layla埋葬的地方，一直在墓碑旁哭泣，歇斯底里，直至死在爱人的身旁。</p><p>留下一段诗歌：</p><p>“I pass by these walls, the walls of Layla</p><p>And kiss this wall and that wall.</p><p>It’s not love of the houses that hastaken my heart</p><p>but of the One who dwells in thosehouses.”</p><p>《Layla》的歌词便是是基于这一古老的爱情故事而来，当年Eric Clapton看过由这一故事写成的诗集后，将 Majnun与Layla相爱而不能在一起的故事投射到自己和好友George Harrison的妻子Pattie Boyd的关系中，表达面对不可触碰之爱的痛苦。</p><p>图片</p><p>上图为Eric与Pattie</p><p>《Layla》</p><p>Verse 1:</p><p>What’ll you do when you get lonely</p><p>孤单的你不知所措</p><p>And nobody’s waiting by your side</p><p>无人在你身旁守候</p><p>You’ve been running and hiding much too long. </p><p>只能一直逃跑躲避</p><p>You know it’s just your foolish pride.</p><p>不放下愚蠢的傲慢</p><p>Verse 2:</p><p>I tried to give you consolation</p><p>当他令到你失望时</p><p>When your old man had let you down.</p><p>我会给你温暖安慰</p><p>Like a fool’ I fell in love with you’</p><p>疯了一般地爱上你</p><p>Turned my whole world upside down.</p><p>我的世界上下颠倒</p><p>Verse 3:</p><p>Let’s make the best of the situation</p><p>在我彻底疯掉之前</p><p>Before I finally go insane.</p><p>来作出最好的决定</p><p>Please don’t say we’ll never find a way</p><p>别说你我永不可能</p><p>And tell me all my love’s in vain.</p><p>别说我爱皆是徒劳</p><p>Chorus:</p><p>Layla’ you’ve got me on my knees.</p><p>Layla，我已彻底为你倾倒</p><p>Layla’ I’m begging’ darling please.</p><p>Layla，我一直在苦苦哀求</p><p>Layla’ darling won’t you ease myworried mind.</p><p>Layla，请安抚我不安的心</p><p>我喜欢将《Layla》，《WonderfulTonight》和《Old Love》称为他们二人爱情的三部曲。</p><p>疯狂追求好友妻子，</p><p>写下激情澎湃的《Layla》；</p><p>婚后热恋舞会前夜，</p><p>写下感动幸福的《Wonderful Tonight》；</p><p>婚姻遗憾破碎告终，</p><p>写下撕心裂肺的《Old Love》</p><p>《Layla》版本首推Derek and the Dominos 的专辑《Layla and Other Assorted Love Songs》录音室原版，Brownie的Fender经典音色非常狂野，Duane  Allman的Slide Guitar更是激情澎湃，激情过后的钢琴outro部分也是令人津津乐道的，这版本是经典中的经典，必须听CD或者无损，后半部分Allman的吉他音轨音量不大，可怕的MP3根本听不出精湛的Slide Guitar演奏。</p><p>第二是Eric Clapton在《One More Car, One More Rider》专辑中的现场版，这版本比较现代，此段时间Clapton用上了主动拾音器，中间solo无可匹敌。</p><p>第三是Eric Clapton的《Unplugged》专辑中的不插电现场版，没有了狂风暴雨的电吉他，取而代之的是柔情似水的木吉他和唱腔，像是一个老男人在和你诉说往事，当中木吉他的solo也是经典中的经典。</p><p>《Wonderful Tonight》与《OldLove》首推专辑《24 Nights》的现场版，相信我，听完你会落泪的，你会爱上Eric Clapton这个男人和他的Fender吉他，他能把吉他推出哭泣之声，数个简单的音符就能够触碰到你的心灵深处。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Love in vain, Robert Johnson</title>
+      <link href="/2016/02/19/lovinvain/"/>
+      <url>/2016/02/19/lovinvain/</url>
+      
+        <content type="html"><![CDATA[<p>在Robert Johnson一生的29首作品中，《Love in Vain》始终是我的最爱。当Robert Johnson在这种陈旧的密西西比三角洲蓝调唱出关于爱情的歌时，里面的歌词浅显易懂但却催人落泪，更像是一首情诗，在轻松自然的语调中道出歌者无尽的失落：一次又一次地寻找爱情只不过是徒劳的追逐，导致的是比伤心更心痛糟糕的东西。</p><p>《Love in Vain》讲述的是一个非常简单的故事：与爱人在火车站分别。故事只有三段，分别是到火车站，火车到了，火车离开。歌词十分简单浅显，故事的高潮理所当然发生在火车离开时，伟大的Robert Johnson道出了自己心中最深的伤口：</p><blockquote><p>When the train it left the station, </p></blockquote><p>火车离站</p><p>It was two lights on behind </p><p>车尾上两盏灯</p><p>When the train it left the station, </p><p>火车离站</p><p>It was two lights on behind </p><p>车尾上两盏灯</p><p>Well the blue light was my blues and the red light was my mind </p><p>蓝色的正是我的忧愁，而红色的是我的心</p><p>All my love’s in vain </p><p>我的爱都是徒劳</p><p>在如此分别的时刻，心爱的人已决心远去，爱已成了过去式，所有的事情都是徒劳无功的，忧愁不断地积压在心中，虽然已经肝肠寸断，却一话不说，像在第二段歌词中说到的：“And I looked her in the eye，Whoa, I felt so sad so lonesome.That I could not help but cry（我看着她的双眼，感到自己无比的孤独，忍不住哭了起来）”。最后，火车离去，无法挽留自己心爱的人，只能独自一人在站台目送火车离去，此时看着火车的尾灯，心中黯然感叹：“蓝灯是我的忧愁，而红灯是我的心思”。难以相信如此神乎其技的比喻出自一位1930s美国黑人的歌词当中，不得不相信，Robert Johnson这样的布鲁斯奇才，只能是通过在十字路口与魔鬼交易出卖自己的灵魂才能有如此高度。</p><p>不得不提滚石乐队在专辑《Let it Bleed》中的翻唱版本，有趣的是，这首歌中最精华的一句歌词：“the blue light was my blues”在滚石的经典翻唱中改成了“The blue light was my baby ”，相对Robert Johnson的原作，滚石的翻唱版本较容易接受，当中Country风格的吉他伴奏，滑棒吉他与曼陀铃的演奏无比优美的动人，米大嘴的演唱更是令人肝肠寸断。</p><p>对过去感到徒劳无功，对未来不知所措，生活中并没有完美的童话故事，遗憾总是无处不在，而我们，总是如此的无能为力。</p><p>“现在不是更好吗</p><p>她永远变了一幅画</p><p>你只需要间中挂起她”</p><p>——mla</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Babe I&#39;m gonna leave you, Led Zeppelin,</title>
+      <link href="/2016/02/06/Zeppelin-BIGLY/"/>
+      <url>/2016/02/06/Zeppelin-BIGLY/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Frustration-in-the-pains-of-separation"><a href="#Frustration-in-the-pains-of-separation" class="headerlink" title="Frustration in the pains of separation"></a>Frustration in the pains of separation</h2><p style="text-align:center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/zX_wwlIZ6ko?si=p-f_2hVJ0lAqvjbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p><h3 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h3><p>This is a sad song from Led Zeppelin’s album “Led Zeppelin.” There is no place in the sound of Page’s guitar and Plant that does not reveal the sorrow of parting. With the intensive decomposition of the guitar, the lead singer has already revealed a great desperation. The addition of bass and drums in the middle of the song is an explosion in silence, but everything is gone in silence and madness.</p><h3 id="Lyrics"><a href="#Lyrics" class="headerlink" title="Lyrics"></a>Lyrics</h3><p>I have two understandings about lyrics. One is more obvious, the boy is about to leave the girl, but this is what he does not want. The other is a darker understanding: in the song, the lyrics mean that the man left not only the girl but a place:</p><blockquote><p>“But I got to go away from this place…”</p></blockquote><p>He didn’t really want to leave her, but to leave a place, and he kept mentioning “home.” Home is a very common metaphor for heaven.</p><p>The lyrics said:</p><blockquote><p>“It feels good to have you back again,<br>And I know that one day, baby,<br>it’s gonna really grow, yes it is.<br>We gonna go walkin’ through the park every day.”</p></blockquote><p>Yes, they will eventually be together, they will be together in heaven.</p><p>According to this explanation, the man is going to commit suicide.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The confused and desperate junior year</title>
+      <link href="/2013/12/31/Junior-Year/"/>
+      <url>/2013/12/31/Junior-Year/</url>
+      
+        <content type="html"><![CDATA[<p>How time flies! It feels like just yesterday I entered junior year. This year is probably the most crucial, as all post-university destinations hinge on its outcomes. Even if the prospect of finding a job after graduation has been dismissed, the pressure of continuing studies is undeniable.</p><p>I believe that if my GPA isn’t up to par, my only option might be pursuing an MSc in Hong Kong. In recent years, MSc programs there have unfortunately gained a reputation akin to “buying a degree.” Nevertheless, my consistently ranked second GPA over the past two years provides me with confidence. I can persevere for another year, competing for research opportunities and studying further, perhaps even seeking education abroad. However, with more choices come more complications.</p><p>Reflecting on the past two years of university life, it feels somewhat monotonous. I often feel like I haven’t achieved much during this time. Perhaps it’s because I tend to measure success in utilitarian terms. I thought that good grades would bring some recognition, but it seems like no one notices.</p><p>After my freshman year, I left the student union and joined the guitar association. I owe gratitude to my friends in the Band Society. This shift allowed me to rekindle my passion for music, particularly in blues.</p><p>Being alone comes with its fair share of loneliness and dissatisfaction. I find myself frequently in low spirits, but instead of sharing with others, I express my feelings through my guitar, making blues a powerful outlet.’</p><hr><p>This is an old post translated from my Sina Blog.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> University </tag>
+            
+            <tag> Bullshit </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Thinking about freshman year in at university</title>
+      <link href="/2011/12/01/Freshman-Year/"/>
+      <url>/2011/12/01/Freshman-Year/</url>
+      
+        <content type="html"><![CDATA[<p>In September, I left my hometown and headed to a coastal city to enroll in university. Everything was new—new environment, new classmates, new goals.</p><p>Initially, the university posed a perplexing challenge. I yearned to engage in more student activities and set clear goals, perhaps aiming for a postgraduate program four years later.</p><p>What kind of place is a university? I resonate strongly with Mr. Chen Yinque’s words:</p><blockquote><p>“The spirit of freedom, the idea of independence.”</p></blockquote><p>In the university setting, one can choose their favorite classes, participate in preferred activities, gradually forming their own personality and worldview. Each person’s thoughts should be open and free, unburdened by the influence of ideological and political education. Additionally, in spare moments, it’s valuable to reflect on different levels, stages, goals, and standards.</p><p>My high school classmates have ventured into prestigious schools like Stanford and Berkeley in the United States, while others have chosen more general colleges and universities. We are all different, but the question remains: how do we walk our unique paths with our own goals and aspirations?</p><blockquote><p>“Man’s dearest possession is life. It is given to him but once, and he must live it so as to feel no torturing regrets for wasted years, never know the burning shame of a mean and petty past.” – Nikolai Ostrovsky</p></blockquote><hr><p>This is an old post translated from my Sina Blog.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> University </tag>
+            
+            <tag> Bullshit </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

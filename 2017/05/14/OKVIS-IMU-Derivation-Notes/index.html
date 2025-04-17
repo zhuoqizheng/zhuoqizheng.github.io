@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    Notes on state derivation of IMU model in OKVIS
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  <div class="logo-section">
+    <a href="/">
+      <img src="/image/logo.png" alt="Logo">
+    </a>
+
+  </div>
+  <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">Tags</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</header>
+    <main class="main-body">
+  <!-- <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Background"><span class="toc-number">1.</span> <span class="toc-text">Background</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Derivation"><span class="toc-number">2.</span> <span class="toc-text">Derivation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Translation"><span class="toc-number">2.1.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rotation"><span class="toc-number">2.2.</span> <span class="toc-text">Rotation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Velocity"><span class="toc-number">2.3.</span> <span class="toc-text">Velocity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gyro-Bias"><span class="toc-number">2.4.</span> <span class="toc-text">Gyro Bias</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Accelerometer-Bias"><span class="toc-number">2.5.</span> <span class="toc-text">Accelerometer Bias</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">3.</span> <span class="toc-text">Reference</span></a></li></ol>
+  </div> -->
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">Notes on state derivation of IMU model in OKVIS</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2017-05</div>
+      <!-- <div class="article-tags">
+        
+        <a href="/tags/Robotics">#Robotics</a>
+        
+        <a href="/tags/Projects">#Projects</a>
+        
+        <a href="/tags/SLAM">#SLAM</a>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="article">
+  
+  <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>In OKVIS paper, states are:<br>$$<br>\mathbf{x}<em>{\mathrm{R}}:&#x3D;\left[</em>{W} \mathbf{r}<em>{S}^{\mathrm{T}}, \mathbf{q}</em>{W S}^{\mathrm{T}}, s \mathbf{v}^{\mathrm{T}}, \mathbf{b}<em>{\mathrm{g}}^{\mathrm{T}}, \mathbf{b}</em>{\mathrm{a}}^{\mathrm{T}}\right]^{\mathrm{T}} \in \mathbb{R}^{3} \times S^{3} \times \mathbb{R}^{9}<br>$$</p>
+<p>The minimal robot error state error:<br>$$<br>\delta \boldsymbol{\chi}<em>{\mathrm{R}}&#x3D;\left[\delta \mathbf{p}^{\mathrm{T}}, \delta \boldsymbol{\alpha}^{\mathrm{T}}, \delta \mathbf{v}^{\mathrm{T}}, \delta \mathbf{b}</em>{\mathrm{g}}^{\mathrm{T}}, \delta \mathbf{b}_{\mathrm{a}}^{\mathrm{T}}\right]^{\mathrm{T}} \in \mathbb{R}^{15}<br>$$</p>
+<p>We devive the linearized model of the error states:</p>
+<p>$$<br>\delta \dot{\boldsymbol{\chi}}<em>{\mathrm{R}} \approx \mathbf{F}</em>{c}\left(\overline{\mathbf{x}}<em>{\mathrm{R}}\right) \delta \boldsymbol{\chi}</em>{\mathrm{R}}+\mathbf{G}\left(\overline{\mathbf{x}}_{\mathrm{R}}\right) \mathbf{w}<br>$$</p>
+<h2 id="Derivation"><a href="#Derivation" class="headerlink" title="Derivation"></a>Derivation</h2><h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><p>$$\begin{aligned} \delta_{W} \dot{\mathbf{r}}<em>{S} &amp;&#x3D;\delta \mathbf{C}</em>{WS}{<em>S\mathbf{v}}<br>\ &amp;&#x3D;\dot{\mathbf{C}}</em>{WS} { <em>S\mathbf{v} + \mathbf{C}</em>{WS}} {<em>S\mathbf{\dot{v}}}<br>\ &amp;&#x3D;-[\delta \boldsymbol{a}]</em>{\times} \mathbf{C}<em>{WS} {<em>S\mathbf{v}}+\mathbf{C}</em>{W S} \delta</em>{S} \mathbf{v} <br>\ &amp;&#x3D;-\left[\mathbf{C}<em>{WS} {<em>S\mathbf{v}}\right]</em>{\times} \delta \boldsymbol{\alpha}+\mathbf{C}</em>{W S} \delta_{S} \mathbf{v} <br>\ &amp;&#x3D;\left[\mathbf{C}<em>{W S}{<em>S\mathbf{v}}\right]</em>{\times} \delta \boldsymbol{a}+\mathbf{C}</em>{W S} \delta_{S} \mathbf{v} \end{aligned}$$</p>
+<h3 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h3><p>$$\because \mathbf{C}<em>{W S}&#x3D;\left[\mathbf{I}-[\delta \boldsymbol{a}]</em>{\times}\right] \overline{\mathbf{C}}<em>{W S} \quad \therefore[\delta \boldsymbol{a}]</em>{\times}&#x3D;\mathbf{I}-\mathbf{C}<em>{W S} \overline{\mathbf{C}}</em>{W S}^{T}$$</p>
+<p>$$\therefore[\delta \ddot{a}]<em>{\times}&#x3D;-\dot{\mathbf{C}}</em>{W S} \overline{\mathbf{C}}<em>{W S}^{T}-\mathbf{C}</em>{W S} \dot{\overline{\mathbf{C}}}_{W S}^{T}$$</p>
+<p>$$<br>\begin{aligned} \because \dot{\mathbf{C}}<em>{W S} &amp;&#x3D;\mathbf{C}</em>{W S} \mathbf{\Omega}, \quad \mathbf{\Omega}&#x3D;[\mathbf{\omega}]<em>{\times} \ \dot{\overline{\mathbf{C}}}</em>{W S} &amp;&#x3D;\overline{\mathbf{C}}<em>{W S} \overline{\mathbf{\Omega}}, \quad \overline{\mathbf{\Omega}}&#x3D;[\overline{\mathbf{\omega}}]</em>{\mathbf{X}} \end{aligned}<br>$$</p>
+<p>$$\begin{aligned} \therefore[\delta \dot{\mathbf{a}}]<em>{\mathrm{X}} &amp;&#x3D;-\mathbf{C}</em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}<em>{W S}^{T}-\mathbf{C}</em>{W S}\left(\overline{\mathbf{C}}<em>{W S} \overline{\mathbf{\Omega}}\right)^{T}<br>\\ &amp;&#x3D;-\mathbf{C}</em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}<em>{W S}^{T}+\mathbf{C}</em>{W S} \overline{\mathbf{\Omega}}^{T} \overline{\mathbf{C}}<em>{W S}^{T}<br>\\ &amp;&#x3D;-\left[\mathbf{I}-[\delta \boldsymbol{a}]</em>{\times}\right] \overline{\mathbf{C}}<em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}</em>{W S}^{T}+\left[\mathbf{I}-[\delta \boldsymbol{a}]<em>{\times}\right] \overline{\mathbf{C}}</em>{W S} \overline{\mathbf{\Omega}}^{T} \overline{\mathbf{C}}<em>{W S}^{T} \\<br>&amp;&#x3D;-\overline{\mathbf{C}}</em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}<em>{W S}^{T}+[\delta \boldsymbol{a}]</em>{\times} \overline{\mathbf{C}}<em>{W S} \mathbf{\Omega} \overline{\mathbf{C}}</em>{W S}^{T}+\overline{\mathbf{C}}<em>{W S} \overline{\mathbf{\Omega}}^{T} \overline{\mathbf{C}}</em>{W S}^{T}-[\delta \boldsymbol{a}]<em>{\times} \overline{\mathbf{C}}</em>{W S}^{T} \overline{\mathbf{C}}<em>{W S}^{T} \\<br>&amp;&#x3D;-\overline{\mathbf{C}}</em>{W S}(\mathbf{\Omega}-\overline{\boldsymbol{\Omega}}) \overline{\mathbf{C}}<em>{W S}^{T}+[\delta \boldsymbol{a}]</em>{\times} \overline{\mathbf{C}}<em>{W S}(\mathbf{\Omega}-\overline{\boldsymbol{\Omega}}) \overline{\mathbf{C}}</em>{W S}^{T} \end{aligned}$$</p>
+<p>Let $[\delta \mathbf{\omega}]<em>{\times}&#x3D;\mathbf{\Omega}-\overline{\mathbf{\Omega}}$, ignore $[\delta \dot{\boldsymbol{a}}]</em>{\times} \approx-\overline{\mathbf{C}}<em>{W S}[\delta \boldsymbol{\omega}]</em>{\times} \overline{\mathbf{C}}_{W S}^{T}$</p>
+<p>$${\because[\mathbf{C r}]<em>{\times}&#x3D;\mathbf{C}[\mathbf{r}]</em>{\times} \mathbf{C}^{T}}$$</p>
+<p>$${\therefore[\delta \dot{\boldsymbol{a}}]<em>{\times}&#x3D;-\left[\overline{\mathbf{C}}</em>{W S} \delta \mathbf{\omega}\right]<em>{\times} \Rightarrow \delta \dot{\boldsymbol{\alpha}}&#x3D;-\overline{\mathbf{C}}</em>{W S} \delta \boldsymbol{\omega}}$$</p>
+<p>$${\because \delta \mathbf{\omega}&#x3D;\delta\left(\tilde{\mathbf{\omega}}+\mathbf{w}<em>{\mathrm{g}}-\mathbf{b}</em>{\mathrm{g}}\right)&#x3D;-\delta \mathbf{b}_{\mathrm{g}}}$$</p>
+<p>$${\therefore \delta \dot{\boldsymbol{\alpha}}&#x3D;-\overline{\mathbf{C}}<em>{W S}\left(-\delta \mathbf{b}</em>{\mathrm{g}}\right)&#x3D;\overline{\mathbf{C}}<em>{W S} \delta \mathbf{b}</em>{\mathrm{g}}}$$</p>
+<h3 id="Velocity"><a href="#Velocity" class="headerlink" title="Velocity"></a>Velocity</h3><p>$$<br>\begin{array}{l}{\delta_{S} \dot{\mathbf{v}}&#x3D;\delta\left(<em>{S} \mathbf{a}+\mathbf{w}</em>{a}-\mathbf{b}<em>{a}+\mathbf{C}</em>{S W W} \mathbf{g}-\left(<em>{S} \mathbf{\omega}\right) \times</em>{S} \mathbf{v}\right)} \\ {\quad&#x3D;-\delta \mathbf{b}<em>{a}+\mathbf{C}</em>{S W}[\delta \boldsymbol{a}]<em>{\times W} \mathbf{g}-\left[\delta</em>{S} \mathbf{\omega}\right]<em>{\times S} \mathbf{v}-\left[</em>{S} \mathbf{\omega}\right]<em>{\times} \delta</em>{S} \mathbf{v}} \\ {\quad&#x3D;-\mathbf{C}<em>{S W}\left[</em>{W} \mathbf{g}\right]<em>{\times} \delta \boldsymbol{\alpha}-\left[-\delta \mathbf{b}</em>{g}\right]<em>{\times S} \mathbf{v}-\left[</em>{S} \boldsymbol{\omega}\right]<em>{\times} \delta</em>{S} \mathbf{v}-\delta \mathbf{b}<em>{a}} \\ {\quad&#x3D;-\mathbf{C}</em>{S W}\left[<em>{W} \mathbf{g}\right]</em>{\times} \delta \boldsymbol{\alpha}-\left[<em>{S} \mathbf{\omega}\right]</em>{\times} \delta_{S} \mathbf{v}-\left[<em>{S} \mathbf{v}\right]</em>{\times} \delta \mathbf{b}<em>{g}-\delta \mathbf{b}</em>{a}}\end{array}<br>$$</p>
+<h3 id="Gyro-Bias"><a href="#Gyro-Bias" class="headerlink" title="Gyro Bias"></a>Gyro Bias</h3><p>$$\delta \dot{\mathbf{b}}_{g}&#x3D;0$$</p>
+<h3 id="Accelerometer-Bias"><a href="#Accelerometer-Bias" class="headerlink" title="Accelerometer Bias"></a>Accelerometer Bias</h3><p>$$\delta \dot{\mathbf{b}}<em>{\mathrm{a}}&#x3D;-\frac{1}{\tau} \delta \mathbf{b}</em>{\mathrm{a}}$$</p>
+<p>Finally, we get:<br>$$<br>\delta \dot{\boldsymbol{\chi}}<em>{\mathrm{R}} \approx \mathbf{F}</em>{c}\left(\overline{\mathbf{x}}<em>{\mathrm{R}}\right) \delta \boldsymbol{\chi}</em>{\mathrm{R}}+\mathbf{G}\left(\overline{\mathbf{x}}<em>{\mathrm{R}}\right) \mathbf{w}<br>$$<br>where<br>$$<br>\mathbf{F}</em>{c}&#x3D;\left[\begin{array}{ccccc}{\mathbf{0}<em>{3 \times 3}} &amp; {\left[\mathbf{C}</em>{W S S} \overline{\mathbf{v}}\right]^{\times}} &amp; {\overline{\mathbf{C}}<em>{W S}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} \ {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\overline{\mathbf{C}}<em>{W S}} &amp; {\mathbf{0}</em>{3 \times 3}} \ {\mathbf{0}<em>{3 \times 3}} &amp; {-\overline{\mathbf{C}}</em>{W S}\left[<em>{W \mathbf{B}}\right]^{\times}} &amp; {-\left[</em>{S} \overline{\boldsymbol{\omega}}\right]^{\times}} &amp; {-[s \overline{\mathbf{v}}]^{\times}} &amp; {-\mathbf{I}<em>{3}} \ {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} \ {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {\mathbf{0}<em>{3 \times 3}} &amp; {\mathbf{0}</em>{3 \times 3}} &amp; {-\frac{1}{\tau} \mathbf{I}<em>{3}}\end{array}\right],<br>$$<br>and<br>$$<br>\mathbf{G}&#x3D;\left[\begin{array}{cccc}{\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} \ {\mathbf{I}</em>{3}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} \ {\mathbf{0}} &amp; {\mathbf{I}<em>{3}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} \ {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{I}</em>{3}} &amp; {\mathbf{0}} \ {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{0}} &amp; {\mathbf{I}_{3}}\end{array}\right]<br>$$</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>Leutenegger, S., Lynen, S., Bosse, M., Siegwart, R., &amp; Furgale, P. (2015). Keyframe-based visual–inertial odometry using nonlinear optimization. The International Journal of Robotics Research, 34(3), 314-334.</li>
+<li>Savage, Paul G. “Strapdown inertial navigation integration algorithm design part 1: Attitude algorithms.” Journal of guidance, control, and dynamics 21.1 (1998): 19-28.</li>
+<li>Savage, Paul G. “Strapdown inertial navigation integration algorithm design part 2: Velocity and position algorithms.” Journal of Guidance, Control, and Dynamics 21.2 (1998): 208-221.</li>
+<li>Shin, Eun-Hwan, and Naser El-Sheimy. “An unscented Kalman filter for in-motion alignment of low-cost IMUs.” Position Location and Navigation Symposium, 2004. PLANS 2004. IEEE, 2004.</li>
+<li>Sola, Joan. “Quaternion kinematics for the error-state KF.” Laboratoire d’Analyse et d’Architecture des Systemes-Centre national de la recherche scientifique (LAAS-CNRS), Toulouse, France, Tech. Rep (2012).</li>
+</ol>
+
+</div>
+</main>
+    <footer>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/">LinkedIn</a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
+  </div>
+
+    <div 
+  class="footer-info">Copyright © 2016-2025 Zhuoqi.
+    </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>

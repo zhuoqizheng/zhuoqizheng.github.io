@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    A hierarchical approach for mobile robot exploration in pedestrian crowd
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  <div class="logo-section">
+    <a href="/">
+      <img src="/image/logo.png" alt="Logo">
+    </a>
+
+  </div>
+  <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">Tags</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</header>
+    <main class="main-body">
+  <!-- <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploration-Planner"><span class="toc-number">2.</span> <span class="toc-text">Exploration Planner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Architecture-of-the-RL-based-Navigation-Neural-Network"><span class="toc-number">3.</span> <span class="toc-text">The Architecture of the RL-based Navigation Neural Network.</span></a></li></ol>
+  </div> -->
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">A hierarchical approach for mobile robot exploration in pedestrian crowd</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2021-10</div>
+      <!-- <div class="article-tags">
+        
+        <a href="/tags/Robotics">#Robotics</a>
+        
+        <a href="/tags/Projects">#Projects</a>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="article">
+  
+  <h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Autonomous exploration is a fundamental task for mobile robots. However, a major limitation is that in practical applications, robots usually face dynamic obstacles such as pedestrian crowds. These dynamic objects create significant challenges for both collision-free navigation and accurate localization&#x2F;mapping, which can compromise the safety and exploration performance of the robot. In this work, a hierarchical approach is proposed for both effective exploration and collision-free navigation in crowded environments. The central idea of our approach is to combine local and global information to ensure the safety and efficiency of the exploration planner. Besides, our planning method utilizes a reinforcement learning (RL)-based obstacle avoidance algorithm that allows the robot to safely follow the exploration planner’s path through the pedestrian crowd. The proposed system is thoroughly evaluated in simulation environments, and the results show that it outperforms existing methods in terms of not only the exploration efficiency but also the localization and mapping accuracy.</p>
+<h3 id="Exploration-Planner"><a href="#Exploration-Planner" class="headerlink" title="Exploration Planner"></a>Exploration Planner</h3><div align="center">
+<img src="/image/explore1_sys.png" width=75%>
+</div>
+
+<p>A hierarchical autonomous exploration planner is designed to determine an exploration tour with a Travel-Salesman-Problem (TSP)-based planner on the global map and to refine the exploration path with the Next-Best-View (NBV)-based planner on local maps and, respectively. Left: the global planner provides an order to visit different unexplored regions (blue points and lines) and determines a rough global goal for the next-step exploration; Right: the local planner selects a precise viewpoint (orange point) as the intermediate goal and the RL-based motion planner determines velocity command (red arrow) to achieve the intermediate goal.</p>
+<h3 id="The-Architecture-of-the-RL-based-Navigation-Neural-Network"><a href="#The-Architecture-of-the-RL-based-Navigation-Neural-Network" class="headerlink" title="The Architecture of the RL-based Navigation Neural Network."></a>The Architecture of the RL-based Navigation Neural Network.</h3><div align="center">
+<img src="/image/explore_rl_network.jpg" width=75%>
+</div>
+
+<p>Based on the optimized hierarchical exploration strategy, an RL-based collision avoidance algorithm is embedded to ensure the robot executes the navigation task safely and efficiently through the crowd. Our collision avoidance controller also implicitly models the crowd flow distribution locally around the robot to minimize the inter-interruption between the robot and the crowd, which not only improves the exploration efficiency but also increases the success rate and accuracy in both mapping and localization. </p>
+<p>The network takes the laser scans $\mathbf{o}<em>{scan}$, the relative position $\mathbf{o}</em>{goal}$ and the robot’s current velocity $\mathbf{o}<em>{vel}$ as inputs. And the action $\mathbf{a}&#x3D;[v,\omega]$ is sampled from a Gaussian distribution constructed by the mean $\mathbf{v}</em>{mean}$ with a log standard deviation vector $\mathbf{v}_{logstd}$.</p>
+<p>The proposed system is thoroughly evaluated in an extensive simulation experiment, where the impact of different planning and navigation methods for navigation in crowds is investigated.</p>
+
+</div>
+</main>
+    <footer>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/">LinkedIn</a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
+  </div>
+
+    <div 
+  class="footer-info">Copyright © 2016-2025 Zhuoqi.
+    </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>

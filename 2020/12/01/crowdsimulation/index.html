@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    Crowd simulation with Menge in ROS Gazebo
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  <div class="logo-section">
+    <a href="/">
+      <img src="/image/logo.png" alt="Logo">
+    </a>
+
+  </div>
+  <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">Tags</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</header>
+    <main class="main-body">
+  <!-- <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment"><span class="toc-number">1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-install"><span class="toc-number">2.</span> <span class="toc-text">How to install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-run"><span class="toc-number">3.</span> <span class="toc-text">How to run</span></a></li></ol>
+  </div> -->
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">Crowd simulation with Menge in ROS Gazebo</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2020-12</div>
+      <!-- <div class="article-tags">
+        
+        <a href="/tags/Robotics">#Robotics</a>
+        
+        <a href="/tags/Simulation">#Simulation</a>
+        
+        <a href="/tags/Crowd">#Crowd</a>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="article">
+  
+  <h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><ul>
+<li>Ubuntu 16.04</li>
+<li>python2</li>
+<li>ROS Kinect</li>
+</ul>
+<h2 id="How-to-install"><a href="#How-to-install" class="headerlink" title="How to install"></a>How to install</h2><ol>
+<li><p>Download special gazebo and sdformat from <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1fd9kkLMhFpMRD5V3X3eSXpvSt9fIzT95/view?usp=sharing">source</a>.</p>
+</li>
+<li><p>Install gazebo dependency following the <a target="_blank" rel="noopener" href="http://gazebosim.org/tutorials?tut=install_dependencies_from_source">order</a> .</p>
+</li>
+</ol>
+<ul>
+<li>ign-cmake</li>
+<li>ign-common</li>
+<li>ign-math</li>
+<li>ign-msgs</li>
+<li>ign-transport</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/protocolbuffers/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.bz2">protobuf-2.6.1</a></li>
+</ul>
+<ol start="3">
+<li><p>build <em>Gazebo</em> from source</p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make -j</span><br><span class="line">make install</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>build Menge from <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/18IZwvpHemEXJpFnQfVCHV_Ui2w2ZAfv1/view?usp=sharing">source</a></p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd projects/g++</span><br><span class="line">mkdir build</span><br><span class="line">cmake -DCMAKE_BUILD_TYPE=Debug ..</span><br><span class="line">make -j</span><br><span class="line">make install</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>catkin make gazebo_menge from <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1990j1PpEFesHYJz06gug7A45u2AOiQDJ/view?usp=sharing">source</a></p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd catkin_ws</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>build new version turtlebot package for Gazebo 8 from <a target="_blank" rel="noopener" href="https://drive.google.com/open?id=1fuhXE4My1FWQhaV7dxN6V-tfc8uP9O9-">source</a></p>
+</li>
+</ol>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd catkin_ws</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></div></figure>
+
+<hr>
+<h2 id="How-to-run"><a href="#How-to-run" class="headerlink" title="How to run"></a>How to run</h2><ol>
+<li><p>start roscore</p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>modify <em>env_setup.sh</em> to make menge and gazebo consistance. After that</p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash env_setup.sh</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>start gazebo_menge, which define the menge setup</p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch menge_gazebo_worlds turtlebot.launch</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>create a turtlebot and visualize Gazebo</p>
+<figure class="highlight shell"><div class="article-table"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch menge_gazebo_worlds start_bot.launch</span><br></pre></td></tr></table></div></figure></li>
+</ol>
+
+</div>
+</main>
+    <footer>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng/">LinkedIn</a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
+  </div>
+
+    <div 
+  class="footer-info">Copyright © 2016-2025 Zhuoqi.
+    </div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>
