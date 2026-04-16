@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    StreamVLN Deployment on AGIBOT D1 Quadruped Robot - End-to-End Closed-Loop Navigation Practice
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
+  
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
+  
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=JetBrains+Mono&family=Noto+Serif:wght@500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap.css">
+
+  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  const THEME_KEY = 'isNight'
+
+  function setIsNight(isNight) {
+    localStorage.setItem(THEME_KEY, isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem(THEME_KEY)
+  }
+
+  function applyTheme(themeName) {
+    document.documentElement.className = themeName
+  }
+
+  function syncThemeButton() {
+    const switcher = document.getElementsByClassName('theme-switcher')[0]
+    if (!switcher) return
+    const isDark = document.documentElement.className === 'dark'
+    switcher.textContent = isDark ? 'Dark' : 'Light'
+    switcher.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme')
+  }
+
+  function switchTheme() {
+    const isDark = document.documentElement.className === 'dark'
+    if (isDark) {
+      applyTheme('light')
+      setIsNight('false')
+    } else {
+      applyTheme('dark')
+      setIsNight('true')
+    }
+    syncThemeButton()
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  applyTheme(isNight === 'true' ? 'dark' : 'light')
+  document.addEventListener('DOMContentLoaded', syncThemeButton)
+</script>
+
+<body>
+  <div class="show-area">
+    <header>
+  <div class="logo-section">
+    <a href="/">
+      <img class="logo-light" src="/image/logo.png" alt="Logo">
+      <img class="logo-dark" src="/image/logo_2.png" alt="Logo">
+    </a>
+
+  </div>
+  <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
+
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">Home</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories/Projects">Projects</a>
+    </li>
+    <li class="nav-child">
+      <a href="/archive">Archive</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">Tags</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">About</a>
+    </li>
+  </ul>
+  <button class="theme-switcher" type="button" onclick="switchTheme()" aria-label="Toggle day and night theme">Light</button>
+</header>
+    <main class="main-body">
+  <!-- <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Project-Overview"><span class="toc-number">1.</span> <span class="toc-text">1 Project Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-System-Architecture"><span class="toc-number">2.</span> <span class="toc-text">2 System Architecture</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Hardware-Platform-AGIBOT-D1-Quadruped-Robot"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Hardware Platform: AGIBOT D1 Quadruped Robot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Software-Architecture-ROS1-Modular-Design"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Software Architecture: ROS1 Modular Design</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Perception-Layer"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1) Perception Layer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Decision-Making-Layer-Core"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2) Decision-Making Layer (Core)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Execution-Layer"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3) Execution Layer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Auxiliary-Nodes"><span class="toc-number">2.2.4.</span> <span class="toc-text">(4) Auxiliary Nodes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-ROS-Message-Flow-rqt-graph"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 ROS Message Flow (rqt_graph)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-d1-vln-client-Multi-Threaded-Design"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 d1_vln_client Multi-Threaded Design</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Core-Technical-Modules"><span class="toc-number">3.</span> <span class="toc-text">3 Core Technical Modules</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-VLN-Decision-Making-Layer-Server-Client"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 VLN Decision-Making Layer: Server + Client</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-VLN-Server-http-realworld-server-v3-py"><span class="toc-number">3.1.1.</span> <span class="toc-text">(1) VLN Server (http_realworld_server_v3.py)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-VLN-Client-d1-client-new-py"><span class="toc-number">3.1.2.</span> <span class="toc-text">(2) VLN Client (d1_client_new.py)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Low-Level-Motion-Control-PID-Optimization-pid-controller-v2-py"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 Low-Level Motion Control: PID Optimization (pid_controller_v2.py)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Core-Optimizations"><span class="toc-number">3.2.1.</span> <span class="toc-text">Core Optimizations</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Full-Execution-Pipeline"><span class="toc-number">4.</span> <span class="toc-text">4 Full Execution Pipeline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Experimental-Results"><span class="toc-number">5.</span> <span class="toc-text">5 Experimental Results</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Qualitative-Conclusions"><span class="toc-number">5.1.</span> <span class="toc-text">Qualitative Conclusions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Current-Challenges-and-Risks"><span class="toc-number">6.</span> <span class="toc-text">6 Current Challenges and Risks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Next-Steps"><span class="toc-number">7.</span> <span class="toc-text">Next Steps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">8.</span> <span class="toc-text">Summary</span></a></li></ol>
+  </div> -->
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">StreamVLN Deployment on AGIBOT D1 Quadruped Robot - End-to-End Closed-Loop Navigation Practice</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2026-03</div>
+      <!-- <div class="article-tags">
+        
+        <a href="/tags/Robotics">#Robotics</a>
+        
+        <a href="/tags/Projects">#Projects</a>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="article">
+  
+  <!-- # StreamVLN Deployment on AGIBOT D1 Quadruped Robot: End-to-End Closed-Loop Navigation Practice -->
+
+<p>Recently, I completed a highly rewarding project—<strong>successfully deploying large-model-based Vision-Language Navigation (VLN) for real-world end-to-end online closed-loop control on the AGIBOT D1 quadruped robot</strong>. Transforming from pure simulation&#x2F;offline scripts to a robot that can understand natural language, perceive its environment, and navigate autonomously—this full pipeline is now fully operational. This blog post comprehensively documents the system architecture, core modules, challenges encountered, and future plans.</p>
+<h2 id="1-Project-Overview"><a href="#1-Project-Overview" class="headerlink" title="1 Project Overview"></a>1 Project Overview</h2><p>Built on the ROS1 framework, this project integrates <strong>real-time RGB visual input, natural language navigation commands, StreamVLN large-model inference, and optimized PID low-level motion control</strong> into a complete “Perception → Decision-Making → Execution” closed-loop system. It enables the quadruped robot to navigate indoors autonomously using only natural language instructions.</p>
+<p><strong>Key Achievements</strong>:</p>
+<ul>
+<li>Established a full-link closed-loop system from camera&#x2F;odometry → VLN service → velocity control</li>
+<li>Implemented mapping from discrete high-level actions to continuous velocity commands with refined PID control for smoother motion</li>
+<li>Supported autonomous online navigation driven by natural language instructions</li>
+</ul>
+<p>Basic functionality has been validated in indoor corridor scenarios. The next phase will focus on motion smoothness, robustness across multiple scenarios, and quantitative evaluation of task success rates.</p>
+<hr>
+<h2 id="2-System-Architecture"><a href="#2-System-Architecture" class="headerlink" title="2 System Architecture"></a>2 System Architecture</h2><h3 id="2-1-Hardware-Platform-AGIBOT-D1-Quadruped-Robot"><a href="#2-1-Hardware-Platform-AGIBOT-D1-Quadruped-Robot" class="headerlink" title="2.1 Hardware Platform: AGIBOT D1 Quadruped Robot"></a>2.1 Hardware Platform: AGIBOT D1 Quadruped Robot</h3><p>The entire system runs on the AGIBOT D1 quadruped platform:</p>
+<ul>
+<li>Onboard Main Controller: ASUS NUC</li>
+<li>Perception Sensors: Odin1 Spatial Perception Module (providing RGB images and high-frequency odometry)</li>
+</ul>
+<div align="center">
+<img src="/image/dog_vln/agibot_d1_overview.jpg" width=75%>
+</div>
+
+<hr>
+<h3 id="2-2-Software-Architecture-ROS1-Modular-Design"><a href="#2-2-Software-Architecture-ROS1-Modular-Design" class="headerlink" title="2.2 Software Architecture: ROS1 Modular Design"></a>2.2 Software Architecture: ROS1 Modular Design</h3><p>The system adopts a <strong>three-layer modular architecture</strong> with clean decoupling, facilitating easy replacement of models&#x2F;controllers in subsequent iterations.</p>
+<h4 id="1-Perception-Layer"><a href="#1-Perception-Layer" class="headerlink" title="(1) Perception Layer"></a>(1) Perception Layer</h4><ul>
+<li><code>odin1</code> Node: Publishes undistorted RGB images via the topic <code>/odin1/image/undistorted</code></li>
+<li>High-frequency odometry and velocity information via <code>/odin1/odometry</code></li>
+</ul>
+<h4 id="2-Decision-Making-Layer-Core"><a href="#2-Decision-Making-Layer-Core" class="headerlink" title="(2) Decision-Making Layer (Core)"></a>(2) Decision-Making Layer (Core)</h4><ul>
+<li>Core Node: <code>d1_vln_client</code></li>
+<li>Subscribes to images and odometry, then calls the external VLN HTTP service</li>
+<li>Outputs high-level action sequences, which are converted to <code>TwistStamped</code> control commands via PID</li>
+</ul>
+<h4 id="3-Execution-Layer"><a href="#3-Execution-Layer" class="headerlink" title="(3) Execution Layer"></a>(3) Execution Layer</h4><ul>
+<li><code>zslbot_vel_controller</code>: Subscribes to <code>/cmd_vel</code></li>
+<li>Performs velocity clipping and safety checks to drive the robot base</li>
+</ul>
+<h4 id="4-Auxiliary-Nodes"><a href="#4-Auxiliary-Nodes" class="headerlink" title="(4) Auxiliary Nodes"></a>(4) Auxiliary Nodes</h4><ul>
+<li>Remote Control Takeover: <code>joy_node</code></li>
+<li>Depth Map Support (To be improved): <code>pcd2depth_node</code></li>
+</ul>
+<hr>
+<h3 id="2-3-ROS-Message-Flow-rqt-graph"><a href="#2-3-ROS-Message-Flow-rqt-graph" class="headerlink" title="2.3 ROS Message Flow (rqt_graph)"></a>2.3 ROS Message Flow (rqt_graph)</h3><p>The data flow is very clear:</p>
+<ol>
+<li><code>odin1</code> → RGB images + odometry</li>
+<li>Images + odometry → <code>d1_vln_client</code></li>
+<li><code>d1_vln_client</code> ↔ VLN Server (HTTP POST)</li>
+<li><code>d1_vln_client</code> → <code>/cmd_vel</code></li>
+<li><code>zslbot_vel_controller</code> → Robot Execution</li>
+</ol>
+<div align="center">
+<img src="/image/dog_vln/ros_rqt_graph_vln.png" width=75%>
+</div>
+
+<hr>
+<h3 id="2-4-d1-vln-client-Multi-Threaded-Design"><a href="#2-4-d1-vln-client-Multi-Threaded-Design" class="headerlink" title="2.4 d1_vln_client Multi-Threaded Design"></a>2.4 d1_vln_client Multi-Threaded Design</h3><p>To ensure real-time control performance, the client adopts a dual-thread separation design:</p>
+<ul>
+<li><strong>planning_thread</strong>: Calls the VLN model to output discrete actions (0-STOP&#x2F;1-FORWARD&#x2F;2-TURN LEFT&#x2F;3-TURN RIGHT)</li>
+<li><strong>control_thread</strong>: Runs at approximately 10Hz, continuously publishing velocity commands using optimized PID</li>
+</ul>
+<hr>
+<h2 id="3-Core-Technical-Modules"><a href="#3-Core-Technical-Modules" class="headerlink" title="3 Core Technical Modules"></a>3 Core Technical Modules</h2><h3 id="3-1-VLN-Decision-Making-Layer-Server-Client"><a href="#3-1-VLN-Decision-Making-Layer-Server-Client" class="headerlink" title="3.1 VLN Decision-Making Layer: Server + Client"></a>3.1 VLN Decision-Making Layer: Server + Client</h3><h4 id="1-VLN-Server-http-realworld-server-v3-py"><a href="#1-VLN-Server-http-realworld-server-v3-py" class="headerlink" title="(1) VLN Server (http_realworld_server_v3.py)"></a>(1) VLN Server (http_realworld_server_v3.py)</h4><ul>
+<li>Built with Flask for HTTP services</li>
+<li>Backbone: StreamVLNForCausalLM (Qwen-1.5, bfloat16, single-card CUDA)</li>
+<li>Triggers inference every 4 steps to reduce latency</li>
+<li>Automatically saves annotated images with actions&#x2F;timestamps</li>
+<li>Supports predicting future 4-step actions (<code>num_future_steps=4</code>)</li>
+</ul>
+<h4 id="2-VLN-Client-d1-client-new-py"><a href="#2-VLN-Client-d1-client-new-py" class="headerlink" title="(2) VLN Client (d1_client_new.py)"></a>(2) VLN Client (d1_client_new.py)</h4><ul>
+<li>Sends JPEG images + JSON (commands + reset flags) via <code>POST</code></li>
+<li>Clears model memory with the first call <code>reset=True</code></li>
+<li>Converts actions to 4x4 homogeneous target poses (step size 0.25m, rotation angle ±15°)<br>s- Delivers target poses to the low-level controller</li>
+</ul>
+<hr>
+<h3 id="3-2-Low-Level-Motion-Control-PID-Optimization-pid-controller-v2-py"><a href="#3-2-Low-Level-Motion-Control-PID-Optimization-pid-controller-v2-py" class="headerlink" title="3.2 Low-Level Motion Control: PID Optimization (pid_controller_v2.py)"></a>3.2 Low-Level Motion Control: PID Optimization (pid_controller_v2.py)</h3><p>Extensive <strong>anti-jitter&#x2F;smoothing optimizations</strong> were performed for the 10Hz control frequency.</p>
+<h4 id="Core-Optimizations"><a href="#Core-Optimizations" class="headerlink" title="Core Optimizations"></a>Core Optimizations</h4><ul>
+<li>Exponential Smoothing (α&#x3D;0.14)</li>
+<li>Translation dead zone 4cm, Heading dead zone ~4.5°</li>
+<li>Rate clipping: Δv&#x3D;0.18m&#x2F;s, Δw&#x3D;0.25rad&#x2F;s</li>
+<li>Prohibition of tiny negative linear velocity</li>
+<li>Automatic replanning triggered when pose error falls below a threshold</li>
+</ul>
+<hr>
+<h2 id="4-Full-Execution-Pipeline"><a href="#4-Full-Execution-Pipeline" class="headerlink" title="4 Full Execution Pipeline"></a>4 Full Execution Pipeline</h2><ol>
+<li>RGB images + odometry → <code>d1_vln_client</code></li>
+<li>VLN inference → 4-step action sequence</li>
+<li>Update homogeneous target poses based on actions</li>
+<li>PID 10Hz closed-loop → <code>/cmd_vel</code> → Robot Execution</li>
+</ol>
+<hr>
+<h2 id="5-Experimental-Results"><a href="#5-Experimental-Results" class="headerlink" title="5 Experimental Results"></a>5 Experimental Results</h2><p>We tested with a typical continuous instruction:<br><strong>“go straight along the office corridor. when you see the paper box, turn left , then go forwards, stop in front of the door.”</strong></p>
+<p>The system can output a continuous action sequence and finally stop at the specified position.</p>
+<div align="center">
+<img src="/image/dog_vln/results.jpg" width=75%>
+</div>
+
+<p>The real robot trajectory and PID control curve also verify closed-loop stability.</p>
+<div align="center">
+<img src="/image/dog_vln/pid_results.png" width=75%>
+</div>
+
+<h3 id="Qualitative-Conclusions"><a href="#Qualitative-Conclusions" class="headerlink" title="Qualitative Conclusions"></a>Qualitative Conclusions</h3><ul>
+<li>Completed the milestone from offline testing → real-world online closed-loop</li>
+<li>Complete decoupling of high-level semantic decision-making (VLN) and low-level control (PID)</li>
+<li>Issues such as dead zones and inconsistent message types have been localized and partially resolved</li>
+</ul>
+<hr>
+<h2 id="6-Current-Challenges-and-Risks"><a href="#6-Current-Challenges-and-Risks" class="headerlink" title="6 Current Challenges and Risks"></a>6 Current Challenges and Risks</h2><ol>
+<li><strong>Initialization Failure</strong>: First-frame inference may cause the robot to spin in place in narrow spaces</li>
+<li><strong>Traditional Local Planners Not Integrated</strong>: DWA&#x2F;TEB not yet connected</li>
+<li><strong>Incomplete Depth Map Integration</strong>: Obstacle perception relies on RGB, with limited obstacle avoidance</li>
+</ol>
+<hr>
+<h2 id="Next-Steps"><a href="#Next-Steps" class="headerlink" title="Next Steps"></a>Next Steps</h2><ol>
+<li><strong>Model Upgrade</strong><ul>
+<li>More efficient StreamVLN variants</li>
+<li>Fallback mechanism for initial planning failure</li>
+</ul>
+</li>
+<li><strong>Motion Smoothing</strong><ul>
+<li>Introduce DWA&#x2F;TEB to replace&#x2F;complement pure PID</li>
+</ul>
+</li>
+<li><strong>System Robustness</strong><ul>
+<li>Resolve initialization failure to support multiple indoor&#x2F;outdoor scenarios</li>
+</ul>
+</li>
+<li><strong>Perception Enhancement</strong><ul>
+<li>Full integration of depth maps for improved obstacle avoidance</li>
+</ul>
+</li>
+<li><strong>Toolchain</strong><ul>
+<li>One-click startup script</li>
+<li>Web UI: Real-time command issuance, status monitoring, log viewing</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This deployment <strong>achieved the first real-time autonomous navigation closed-loop driven by vision-language on the AGIBOT D1</strong>. The modular decoupled architecture provides an excellent foundation for subsequent iterations. The project focus will shift from “whether the link works” to “stable control, generalizable scenarios, and successful task execution”, paving the way for more complex VLN deployments.</p>
+
+</div>
+</main>
+    <footer>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng">LinkedIn</a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://www.instagram.com/cheukay_">Instagram</a>
+    <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
+  </div>
+
+  <div class="footer-info">Copyright &copy; 2016-2026 Zhuoqi.</div>
+  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
+    }
+  </script> -->
+</footer>
+  </div>
+</body>
+
+
+</html>

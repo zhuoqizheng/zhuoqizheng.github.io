@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhuoqi.me/2026/03/01/dog_vln/</loc>
+    
+    <lastmod>2026-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhuoqi.me/2026/04/01/2025gigs/</loc>
+    
+    <lastmod>2026-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhuoqi.me/2025/04/12/back_to_stage/</loc>
+    
+    <lastmod>2026-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://zhuoqi.me/2016/02/06/Zeppelin-BIGLY/</loc>
     
     <lastmod>2025-04-22</lastmod>
@@ -209,15 +236,6 @@
   </url>
   
   <url>
-    <loc>http://zhuoqi.me/2025/04/12/back_to_stage/</loc>
-    
-    <lastmod>2025-04-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://zhuoqi.me/2025/02/01/leo/</loc>
     
     <lastmod>2025-04-17</lastmod>
@@ -245,7 +263,7 @@
   </url>
   
   <url>
-    <loc>http://zhuoqi.me/archive/index.html</loc>
+    <loc>http://zhuoqi.me/googlef3cc90ec3989a97d.html</loc>
     
     <lastmod>2025-04-17</lastmod>
     
@@ -254,7 +272,7 @@
   </url>
   
   <url>
-    <loc>http://zhuoqi.me/googlef3cc90ec3989a97d.html</loc>
+    <loc>http://zhuoqi.me/archive/index.html</loc>
     
     <lastmod>2025-04-17</lastmod>
     
@@ -274,78 +292,78 @@
 
   <url>
     <loc>http://zhuoqi.me/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>http://zhuoqi.me/tags/Music/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zhuoqi.me/tags/University/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/Bullshit/</loc>
-    <lastmod>2025-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zhuoqi.me/tags/Music/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/Guitar/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/Robotics/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/Projects/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/SLAM/</loc>
-    <lastmod>2025-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zhuoqi.me/tags/Travel/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/Simulation/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/tags/Crowd/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhuoqi.me/tags/Travel/</loc>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -354,14 +372,14 @@
   
   <url>
     <loc>http://zhuoqi.me/categories/Others/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zhuoqi.me/categories/Projects/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

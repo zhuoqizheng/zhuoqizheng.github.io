@@ -32,10 +32,7 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
-
-  
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=JetBrains+Mono&family=Noto+Serif:wght@500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap.css">
 
   
 <link rel="stylesheet" href="/iconfont/iconfont.css">
@@ -159,25 +156,38 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 <script>
+  const THEME_KEY = 'isNight'
+
   function setIsNight(isNight) {
-    localStorage.setItem('isNight', isNight)
+    localStorage.setItem(THEME_KEY, isNight)
   }
 
   function getIsNight() {
-    return localStorage.getItem('isNight')
+    return localStorage.getItem(THEME_KEY)
+  }
+
+  function applyTheme(themeName) {
+    document.documentElement.className = themeName
+  }
+
+  function syncThemeButton() {
+    const switcher = document.getElementsByClassName('theme-switcher')[0]
+    if (!switcher) return
+    const isDark = document.documentElement.className === 'dark'
+    switcher.textContent = isDark ? 'Dark' : 'Light'
+    switcher.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme')
   }
 
   function switchTheme() {
-    let isNight = getIsNight()
-    if (isNight === 'false') {
-      document.documentElement.className = 'dark'
-      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
-      setIsNight('true')
-    } else {
-      document.documentElement.className = 'light'
-      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
+    const isDark = document.documentElement.className === 'dark'
+    if (isDark) {
+      applyTheme('light')
       setIsNight('false')
+    } else {
+      applyTheme('dark')
+      setIsNight('true')
     }
+    syncThemeButton()
   }
 
   let isNight = getIsNight()
@@ -185,11 +195,8 @@ mjx-container[display="true"] + br {
     isNight = 'false'
     setIsNight('false')
   }
-  if (isNight === 'false') {
-    document.documentElement.className = 'light'
-  } else {
-    document.documentElement.className = 'dark'
-  }
+  applyTheme(isNight === 'true' ? 'dark' : 'light')
+  document.addEventListener('DOMContentLoaded', syncThemeButton)
 </script>
 
 <body>
@@ -197,7 +204,8 @@ mjx-container[display="true"] + br {
     <header>
   <div class="logo-section">
     <a href="/">
-      <img src="/image/logo.png" alt="Logo">
+      <img class="logo-light" src="/image/logo.png" alt="Logo">
+      <img class="logo-dark" src="/image/logo_2.png" alt="Logo">
     </a>
 
   </div>
@@ -220,51 +228,31 @@ mjx-container[display="true"] + br {
       <a href="/about">About</a>
     </li>
   </ul>
-  <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
-  <script>
-    if (isNight === 'false') {
-      document.getElementsByClassName('theme-switcher')[0].textContent = '☀️'
-    } else {
-      document.getElementsByClassName('theme-switcher')[0].textContent = '🌙'
-    }
-  </script> -->
+  <button class="theme-switcher" type="button" onclick="switchTheme()" aria-label="Toggle day and night theme">Light</button>
 </header>
     <main class="main-body">
-  <div class="main-body-inside">
-    <div class="content-wrapper">
-      <div class="left-section">
-        <h3 class="blog-title">Research</h3>
-        <p class="blog-desc">Robotics </p>
-        <p class="blog-desc">Computer Vision</p>
-        <p class="blog-desc">Machine Learning</p>
+  <div class="main-body-inside home-main">
+    <section class="home-hero">
+      <h1 class="blog-title">Zhuoqi&#39;s</h1>
+      <p class="home-subtitle">Research Notes and Personal Fragments</p>
+      <p class="home-intro">I am a researcher in robotics and machine learning.</p>
+      <div class="home-links">
+        <a class="home-link" href="/archive">Archive</a>
+        <a class="home-link" href="/categories/Projects">Projects</a>
+        <a class="home-link" href="/about">About</a>
       </div>
-
-      <div class="center-section">
-        <img src="avatar.png">
-      </div>
-
-      <div class="right-section">
-        <h3 class="blog-title">Music</h3>
-        <p class="blog-desc">Blues</p>
-        <p class="blog-desc">Hard Rock, Prog Rock</p>
-        <p class="blog-desc">Heavy Metal, Thrash Metal</p>
-      </div>
-    </div>
-    
+    </section>
   </div>
 </main>
     <footer>
   <div class="footer-info">
-    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/zhuoqizheng">GitHub</a>
     <a class="footer-i" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zhuoqizheng">LinkedIn</a>
     <a class="footer-i" target="_blank" rel="noopener" href="https://www.instagram.com/cheukay_">Instagram</a>
     <a class="footer-i" href="mailto:zhengzhuoqi@gmail.com">Contact</a>
-
   </div>
 
-    <div 
-  class="footer-info">Copyright © 2016-2025 Zhuoqi.
-    </div>
+  <div class="footer-info">Copyright &copy; 2016-2026 Zhuoqi.</div>
   <!-- <div class="theme-switcher" onclick="switchTheme()">☀️</div>
   <script>
     if (isNight === 'false') {

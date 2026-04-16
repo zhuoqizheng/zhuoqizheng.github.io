@@ -1,13 +1,80 @@
 @media (max-width: 650px) {
   .show-area {
-    width: 100%;
-    padding: 0 2rem;
+    width: calc(100% - 2.4rem);
+    margin-top: 2.2rem;
   }
   footer {
     flex-direction: column;
     align-items: center;
   }
+  .logo-section img {
+    width: 72vw;
+    max-width: 20rem;
+  }
+  .nav {
+    gap: 0.45rem 0.75rem;
+  }
+  .nav-child {
+    font-size: 1.12rem;
+  }
+  .theme-switcher {
+    min-width: 6.6rem;
+    height: 2.4rem;
+    padding: 0 0.9rem;
+    font-size: 1rem;
+    top: 0;
+    right: 0;
+  }
+  .home-hero {
+    padding: 3.6rem 2rem;
+  }
+  .blog-title {
+    font-size: 4rem;
+  }
+  .home-subtitle {
+    font-size: 1.5rem;
+  }
+  .home-intro {
+    font-size: 1.55rem;
+  }
+  .article-title {
+    font-size: clamp(2.4rem, 8vw, 3.1rem);
+    line-height: 1.18;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .page-title {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.62rem !important;
+  }
   .footer-i {
     margin: 0 0.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .article-details {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .post-list-child {
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .post-list-left {
+    height: auto;
+    width: auto;
+  }
+  .post-list-child a {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .post-list-date {
+    white-space: nowrap;
+    padding-top: 0.2rem;
   }
 }
