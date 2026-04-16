@@ -178,6 +178,36 @@ mjx-container[display="true"] + br {
     switcher.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme')
   }
 
+  function updateScrollProgress() {
+    const progress = document.getElementById('scroll-progress')
+    if (!progress) return
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    const ratio = docHeight > 0 ? scrollTop / docHeight : 0
+    const clamped = Math.min(Math.max(ratio, 0), 1)
+    progress.style.transform = 'scaleX(' + clamped + ')'
+  }
+
+  function syncBackToTop() {
+    const button = document.getElementById('back-to-top')
+    if (!button) return
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0
+    if (scrollTop > 320) {
+      button.classList.add('show')
+    } else {
+      button.classList.remove('show')
+    }
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function handleScrollUi() {
+    updateScrollProgress()
+    syncBackToTop()
+  }
+
   function switchTheme() {
     const isDark = document.documentElement.className === 'dark'
     if (isDark) {
@@ -196,12 +226,19 @@ mjx-container[display="true"] + br {
     setIsNight('false')
   }
   applyTheme(isNight === 'true' ? 'dark' : 'light')
-  document.addEventListener('DOMContentLoaded', syncThemeButton)
+  document.addEventListener('DOMContentLoaded', function () {
+    syncThemeButton()
+    handleScrollUi()
+    window.addEventListener('scroll', handleScrollUi, { passive: true })
+  })
 </script>
 
-<body>
+<body class="is-inner">
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+  <button id="back-to-top" class="back-to-top" type="button" onclick="scrollToTop()" aria-label="Back to top">Top</button>
   <div class="show-area">
     <header>
+  
   <div class="logo-section">
     <a href="/">
       <img class="logo-light" src="/image/logo.png" alt="Logo">
@@ -212,19 +249,19 @@ mjx-container[display="true"] + br {
   <!-- <h2 class="blog-title">Zhuoqi&#39;s</h2> -->
 
   <ul class="nav">
-    <li class="nav-child">
+    <li class="nav-child ">
       <a href="/">Home</a>
     </li>
-    <li class="nav-child">
+    <li class="nav-child ">
       <a href="/categories/Projects">Projects</a>
     </li>
-    <li class="nav-child">
+    <li class="nav-child ">
       <a href="/archive">Archive</a>
     </li>
-    <li class="nav-child">
+    <li class="nav-child ">
       <a href="/tags">Tags</a>
     </li>
-    <li class="nav-child">
+    <li class="nav-child ">
       <a href="/about">About</a>
     </li>
   </ul>
