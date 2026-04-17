@@ -115,6 +115,11 @@ body::before {
   opacity: var(--patternOpacity);
   animation: pattern-float 36s linear infinite;
 }
+@media (max-width: 900px) {
+  body::before body::before {
+    animation: pattern-float-mobile 24s linear infinite;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   body::before {
     animation: none;
@@ -183,6 +188,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 .home-hero {
   width: 100%;
@@ -191,8 +198,15 @@ a {
   padding: 5.6rem 4rem;
   border: 1px solid var(--tbborder);
   border-radius: 1.6rem;
-  background: var(--surfaceColor);
+  background: rgba(255,255,255,0.62);
   text-align: center;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+.dark .home-hero {
+  background: rgba(30,30,30,0.56);
 }
 .home-subtitle {
   margin-top: 1rem;
@@ -219,6 +233,9 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   min-width: 10rem;
   padding: 0.8rem 1.4rem;
   border-radius: 999px;
@@ -227,8 +244,22 @@ a {
   font-size: 1.4rem;
   transition: all 0.25s ease;
 }
+.home-robot-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.86;
+}
+.dark .home-robot-canvas {
+  opacity: 0.78;
+}
 .home-link:hover {
   border-color: var(--spColor);
+  position: relative;
+  z-index: 1;
   color: var(--spColor);
 }
 .toc-container {

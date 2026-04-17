@@ -208,6 +208,484 @@ mjx-container[display="true"] + br {
     syncBackToTop()
   }
 
+  function initHomeRobotWalker() {
+    if (!document.body || !document.body.classList.contains('is-home')) return
+    const canvas = document.getElementById('home-robot-canvas')
+    if (!canvas) return
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (prefersReducedMotion.matches) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const DIRS = [
+      { dx: 0, dy: -1 },
+      { dx: 1, dy: 0 },
+      { dx: 0, dy: 1 },
+      { dx: -1, dy: 0 }
+    ]
+    const OPPOSITE = [2, 3, 0, 1]
+
+    const bounds = { width: 0, height: 0, dpr: 1, left: 0, top: 0 }
+    const grid = { cols: 0, rows: 0, size: 32, offsetX: 0, offsetY: 0, cells: [] }
+    const robot = {
+      x: 0,
+      y: 0,
+      heading: 0,
+      from: { x: 0, y: 0 },
+      to: { x: 0, y: 0 },
+      progress: 1,
+      speed: 2.1
+    }
+
+    const trail = []
+    const discovered = new Set()
+    const visitedCounts = new Map()
+
+    let rafId = 0
+    let lastFrame = 0
+    let styleTick = 0
+    let palette = {
+      line: 'rgba(120, 120, 120, 0.4)',
+      wall: 'rgba(120, 120, 120, 0.6)',
+      explored: 'rgba(120, 120, 120, 0.16)',
+      fog: 'rgba(255, 255, 255, 0.6)',
+      trail: 'rgba(120, 120, 120, 0.3)',
+      robot: '#8b5e34',
+      robotCore: '#f2e8d8'
+    }
+
+    function cellKey(x, y) {
+      return x + ',' + y
+    }
+
+    function isInside(x, y) {
+      return x >= 0 && y >= 0 && x < grid.cols && y < grid.rows
+    }
+
+    function indexOf(x, y) {
+      return y * grid.cols + x
+    }
+
+    function getCell(x, y) {
+      return grid.cells[indexOf(x, y)]
+    }
+
+    function cellCenter(x, y) {
+      return {
+        x: grid.offsetX + x * grid.size + grid.size * 0.5,
+        y: grid.offsetY + y * grid.size + grid.size * 0.5
+      }
+    }
+
+    function markDiscovered(cx, cy) {
+      const radius = 2
+      for (let y = cy - radius; y <= cy + radius; y += 1) {
+        for (let x = cx - radius; x <= cx + radius; x += 1) {
+          if (!isInside(x, y)) continue
+          const dist = Math.abs(x - cx) + Math.abs(y - cy)
+          if (dist <= radius + 1) {
+            discovered.add(cellKey(x, y))
+          }
+        }
+      }
+    }
+
+    function updateThemeColors() {
+      const rootStyle = getComputedStyle(document.documentElement)
+      const fontColor = rootStyle.getPropertyValue('--fontColor').trim()
+      const patternA = rootStyle.getPropertyValue('--patternColorA').trim()
+      const patternB = rootStyle.getPropertyValue('--patternColorB').trim()
+      const accent = rootStyle.getPropertyValue('--spColor').trim()
+      const surface = rootStyle.getPropertyValue('--surfaceColor').trim()
+
+      if (fontColor) palette.line = fontColor
+      if (fontColor) palette.wall = fontColor
+      if (patternA) palette.explored = patternA
+      if (surface) {
+        const isDark = document.documentElement.className === 'dark'
+        palette.fog = isDark ? 'rgba(20, 20, 20, 0.46)' : 'rgba(247, 244, 238, 0.52)'
+      }
+      if (patternB) palette.trail = patternB
+      if (accent) palette.robot = accent
+      palette.robotCore = document.documentElement.className === 'dark' ? '#f1e5cf' : '#f8f1e5'
+    }
+
+    function snapOffsetToPattern(position, size) {
+      const remainder = ((position % size) + size) % size
+      return (size - remainder) % size
+    }
+
+    function getPatternPhase(nowMs) {
+      const isMobile = window.matchMedia('(max-width: 900px)').matches
+      const duration = isMobile ? 24 : 36
+      const progress = ((nowMs / 1000) % duration) / duration
+      return {
+        x: (isMobile ? -30 : -24) * progress,
+        y: (isMobile ? 22 : 16) * progress
+      }
+    }
+
+    function smallestWrappedDelta(next, prev, size) {
+      let delta = next - prev
+      if (delta > size * 0.5) delta -= size
+      if (delta < -size * 0.5) delta += size
+      return delta
+    }
+
+    function syncGridOffset(nowMs) {
+      const rect = canvas.getBoundingClientRect()
+      bounds.left = rect.left
+      bounds.top = rect.top
+
+      const phase = getPatternPhase(nowMs || performance.now())
+      const nextOffsetX = snapOffsetToPattern(bounds.left - phase.x, grid.size)
+      const nextOffsetY = snapOffsetToPattern(bounds.top - phase.y, grid.size)
+
+      const deltaX = smallestWrappedDelta(nextOffsetX, grid.offsetX, grid.size)
+      const deltaY = smallestWrappedDelta(nextOffsetY, grid.offsetY, grid.size)
+
+      grid.offsetX = nextOffsetX
+      grid.offsetY = nextOffsetY
+
+      if (Math.abs(deltaX) > 0.001 || Math.abs(deltaY) > 0.001) {
+        for (let i = 0; i < trail.length; i += 1) {
+          trail[i].x += deltaX
+          trail[i].y += deltaY
+        }
+      }
+    }
+
+    function createGrid() {
+      grid.cells = []
+      grid.size = 32
+      syncGridOffset(performance.now())
+      grid.cols = Math.max(7, Math.floor((bounds.width - grid.offsetX) / grid.size))
+      grid.rows = Math.max(7, Math.floor((bounds.height - grid.offsetY) / grid.size))
+
+      for (let i = 0; i < grid.cols * grid.rows; i += 1) {
+        grid.cells.push({ visited: false, walls: [true, true, true, true] })
+      }
+
+      const sx = Math.floor(Math.random() * grid.cols)
+      const sy = Math.floor(Math.random() * grid.rows)
+      const stack = [{ x: sx, y: sy }]
+      getCell(sx, sy).visited = true
+
+      while (stack.length > 0) {
+        const current = stack[stack.length - 1]
+        const order = [0, 1, 2, 3].sort(() => Math.random() - 0.5)
+        let moved = false
+
+        for (let i = 0; i < order.length; i += 1) {
+          const dir = order[i]
+          const nx = current.x + DIRS[dir].dx
+          const ny = current.y + DIRS[dir].dy
+          if (!isInside(nx, ny)) continue
+          const nextCell = getCell(nx, ny)
+          if (nextCell.visited) continue
+
+          getCell(current.x, current.y).walls[dir] = false
+          nextCell.walls[OPPOSITE[dir]] = false
+          nextCell.visited = true
+          stack.push({ x: nx, y: ny })
+          moved = true
+          break
+        }
+
+        if (!moved) {
+          stack.pop()
+        }
+      }
+
+      for (let i = 0; i < grid.cells.length; i += 1) {
+        grid.cells[i].visited = false
+      }
+    }
+
+    function setupRobot() {
+      discovered.clear()
+      visitedCounts.clear()
+      trail.length = 0
+
+      const startX = Math.floor(Math.random() * grid.cols)
+      const startY = Math.floor(Math.random() * grid.rows)
+      const start = cellCenter(startX, startY)
+      robot.x = start.x
+      robot.y = start.y
+      robot.from = { x: startX, y: startY }
+      robot.to = { x: startX, y: startY }
+      robot.progress = 1
+      robot.heading = Math.floor(Math.random() * 4)
+
+      const startKey = cellKey(startX, startY)
+      visitedCounts.set(startKey, 1)
+      markDiscovered(startX, startY)
+      trail.push({ x: robot.x, y: robot.y, age: 0 })
+    }
+
+    function pickNextTarget() {
+      const cell = getCell(robot.to.x, robot.to.y)
+      const options = []
+
+      for (let dir = 0; dir < 4; dir += 1) {
+        if (cell.walls[dir]) continue
+        const nx = robot.to.x + DIRS[dir].dx
+        const ny = robot.to.y + DIRS[dir].dy
+        if (!isInside(nx, ny)) continue
+        const key = cellKey(nx, ny)
+        const visits = visitedCounts.get(key) || 0
+        const seen = discovered.has(key) ? 1 : 0
+        const headingPenalty = dir === robot.heading ? 0 : 0.2
+        options.push({ x: nx, y: ny, dir, score: visits + seen + headingPenalty + Math.random() * 0.25 })
+      }
+
+      if (options.length === 0) return null
+      options.sort((a, b) => a.score - b.score)
+      return options[0]
+    }
+
+    function update(dt) {
+      if (robot.progress >= 1) {
+        const target = pickNextTarget()
+        if (!target) return
+
+        robot.from = { x: robot.to.x, y: robot.to.y }
+        robot.to = { x: target.x, y: target.y }
+        robot.heading = target.dir
+        robot.progress = 0
+
+        const key = cellKey(robot.to.x, robot.to.y)
+        visitedCounts.set(key, (visitedCounts.get(key) || 0) + 1)
+        markDiscovered(robot.to.x, robot.to.y)
+      }
+
+      const step = Math.min(dt * robot.speed, 1)
+      robot.progress = Math.min(robot.progress + step, 1)
+
+      const fromCenter = cellCenter(robot.from.x, robot.from.y)
+      const toCenter = cellCenter(robot.to.x, robot.to.y)
+      robot.x = fromCenter.x + (toCenter.x - fromCenter.x) * robot.progress
+      robot.y = fromCenter.y + (toCenter.y - fromCenter.y) * robot.progress
+
+      trail.push({ x: robot.x, y: robot.y, age: 0 })
+      if (trail.length > 700) {
+        trail.shift()
+      }
+
+      for (let i = trail.length - 1; i >= 0; i -= 1) {
+        trail[i].age += dt
+        if (trail[i].age > 14) {
+          trail.splice(i, 1)
+        }
+      }
+    }
+
+    function drawKnownCells() {
+      ctx.fillStyle = palette.explored
+      for (let y = 0; y < grid.rows; y += 1) {
+        for (let x = 0; x < grid.cols; x += 1) {
+          if (!discovered.has(cellKey(x, y))) continue
+          const px = grid.offsetX + x * grid.size
+          const py = grid.offsetY + y * grid.size
+          ctx.globalAlpha = 0.28
+          ctx.fillRect(px, py, grid.size, grid.size)
+        }
+      }
+      ctx.globalAlpha = 1
+    }
+
+    function drawKnownWalls() {
+      const wallWidth = Math.max(1.2, grid.size * 0.085)
+      ctx.strokeStyle = palette.wall
+      ctx.lineWidth = wallWidth
+      ctx.lineCap = 'round'
+      ctx.globalAlpha = 0.38
+
+      for (let y = 0; y < grid.rows; y += 1) {
+        for (let x = 0; x < grid.cols; x += 1) {
+          if (!discovered.has(cellKey(x, y))) continue
+          const cell = getCell(x, y)
+          const px = grid.offsetX + x * grid.size
+          const py = grid.offsetY + y * grid.size
+
+          if (cell.walls[0]) {
+            ctx.beginPath()
+            ctx.moveTo(px, py)
+            ctx.lineTo(px + grid.size, py)
+            ctx.stroke()
+          }
+          if (cell.walls[1]) {
+            ctx.beginPath()
+            ctx.moveTo(px + grid.size, py)
+            ctx.lineTo(px + grid.size, py + grid.size)
+            ctx.stroke()
+          }
+          if (cell.walls[2]) {
+            ctx.beginPath()
+            ctx.moveTo(px, py + grid.size)
+            ctx.lineTo(px + grid.size, py + grid.size)
+            ctx.stroke()
+          }
+          if (cell.walls[3]) {
+            ctx.beginPath()
+            ctx.moveTo(px, py)
+            ctx.lineTo(px, py + grid.size)
+            ctx.stroke()
+          }
+        }
+      }
+
+      ctx.globalAlpha = 1
+    }
+
+    function drawTrail() {
+      if (trail.length < 2) return
+      ctx.strokeStyle = palette.trail
+      ctx.lineWidth = Math.max(1.1, grid.size * 0.12)
+      ctx.lineJoin = 'round'
+      ctx.lineCap = 'round'
+
+      for (let i = 1; i < trail.length; i += 1) {
+        const a = trail[i - 1]
+        const b = trail[i]
+        const life = Math.max(0, 1 - b.age / 12)
+        if (life <= 0) continue
+        ctx.globalAlpha = 0.08 + life * 0.42
+        ctx.beginPath()
+        ctx.moveTo(a.x, a.y)
+        ctx.lineTo(b.x, b.y)
+        ctx.stroke()
+      }
+
+      ctx.globalAlpha = 1
+    }
+
+    function drawFog() {
+      ctx.fillStyle = palette.fog
+      ctx.globalAlpha = 0.78
+
+      for (let y = 0; y < grid.rows; y += 1) {
+        for (let x = 0; x < grid.cols; x += 1) {
+          if (discovered.has(cellKey(x, y))) continue
+          const px = grid.offsetX + x * grid.size
+          const py = grid.offsetY + y * grid.size
+          ctx.fillRect(px, py, grid.size, grid.size)
+        }
+      }
+
+      ctx.globalAlpha = 1
+    }
+
+    function drawRobot() {
+      const facing = robot.heading
+      const angle = facing * Math.PI * 0.5
+      const body = Math.max(8, grid.size * 0.42)
+
+      ctx.save()
+      ctx.translate(robot.x, robot.y)
+      ctx.rotate(angle)
+
+      ctx.fillStyle = palette.robot
+      ctx.globalAlpha = 0.94
+      ctx.fillRect(-body * 0.58, -body * 0.46, body * 1.16, body * 0.92)
+
+      ctx.fillStyle = palette.robotCore
+      ctx.globalAlpha = 0.9
+      ctx.fillRect(-body * 0.24, -body * 0.2, body * 0.48, body * 0.28)
+
+      ctx.fillStyle = palette.robot
+      ctx.globalAlpha = 0.9
+      ctx.beginPath()
+      ctx.arc(body * 0.42, 0, Math.max(1.8, body * 0.14), 0, Math.PI * 2)
+      ctx.fill()
+
+      ctx.globalAlpha = 1
+      ctx.restore()
+    }
+
+    function drawMinimapHud() {
+      const known = discovered.size
+      const total = grid.cols * grid.rows
+      const ratio = total > 0 ? known / total : 0
+      const hudX = grid.offsetX + 8
+      const hudY = grid.offsetY + 8
+      const hudW = Math.min(220, bounds.width * 0.35)
+
+      ctx.fillStyle = palette.fog
+      ctx.globalAlpha = 0.72
+      ctx.fillRect(hudX, hudY, hudW, 26)
+
+      ctx.fillStyle = palette.line
+      ctx.globalAlpha = 0.64
+      ctx.fillRect(hudX + 7, hudY + 16, hudW - 14, 4)
+
+      ctx.fillStyle = palette.robot
+      ctx.globalAlpha = 0.9
+      ctx.fillRect(hudX + 7, hudY + 16, (hudW - 14) * ratio, 4)
+
+      ctx.fillStyle = palette.line
+      ctx.globalAlpha = 0.85
+      ctx.font = '12px var(--font-body)'
+      ctx.fillText('SLAM map ' + Math.round(ratio * 100) + '%', hudX + 8, hudY + 12)
+      ctx.globalAlpha = 1
+    }
+
+    function frame(now) {
+      const timestamp = now || performance.now()
+      const dt = Math.min((timestamp - lastFrame) / 1000 || 0.016, 0.05)
+      lastFrame = timestamp
+
+      styleTick += dt
+      if (styleTick >= 0.6) {
+        updateThemeColors()
+        syncGridOffset(timestamp)
+        styleTick = 0
+      }
+
+      update(dt)
+      ctx.clearRect(0, 0, bounds.width, bounds.height)
+      drawKnownCells()
+      drawTrail()
+      drawKnownWalls()
+      drawFog()
+      drawRobot()
+      drawMinimapHud()
+      rafId = window.requestAnimationFrame(frame)
+    }
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect()
+      bounds.dpr = Math.max(window.devicePixelRatio || 1, 1)
+      bounds.width = Math.max(rect.width, 320)
+      bounds.height = Math.max(rect.height, 320)
+      bounds.left = rect.left
+      bounds.top = rect.top
+
+      canvas.width = Math.floor(bounds.width * bounds.dpr)
+      canvas.height = Math.floor(bounds.height * bounds.dpr)
+      ctx.setTransform(bounds.dpr, 0, 0, bounds.dpr, 0, 0)
+
+      updateThemeColors()
+      createGrid()
+      setupRobot()
+    }
+
+    resizeCanvas()
+    lastFrame = performance.now()
+    rafId = window.requestAnimationFrame(frame)
+
+    window.addEventListener('resize', resizeCanvas)
+    window.addEventListener('pagehide', function cleanupRobotWalker() {
+      if (rafId) {
+        window.cancelAnimationFrame(rafId)
+      }
+      window.removeEventListener('resize', resizeCanvas)
+      window.removeEventListener('pagehide', cleanupRobotWalker)
+    })
+  }
+
   function switchTheme() {
     const isDark = document.documentElement.className === 'dark'
     if (isDark) {
@@ -229,6 +707,7 @@ mjx-container[display="true"] + br {
   document.addEventListener('DOMContentLoaded', function () {
     syncThemeButton()
     handleScrollUi()
+    initHomeRobotWalker()
     window.addEventListener('scroll', handleScrollUi, { passive: true })
   })
 </script>
@@ -269,10 +748,12 @@ mjx-container[display="true"] + br {
 </header>
     <main class="main-body">
   <div class="main-body-inside home-main">
+    <canvas id="home-robot-canvas" class="home-robot-canvas" aria-hidden="true"></canvas>
     <section class="home-hero">
       <!-- <h1 class="blog-title">Zhuoqi&#39;s</h1> -->
-      <p class="home-subtitle">Research Notes and Personal Fragments</p>
-      <p class="home-intro">I am a researcher in robotics and machine learning.</p>
+      <p class="home-subtitle">Research Notes and Fragments</p>
+      <p class="home-intro">A Researcher in Robotics and AI.</p>
+      <p class="home-intro">Amateur guitarist</p>
       <div class="home-links">
         <a class="home-link" href="/archive">Archive</a>
         <a class="home-link" href="/categories/Projects">Projects</a>
